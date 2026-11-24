@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yakov — веб-разработка и автоматизация</title>
+<meta name="description" content="Лендинги, правки сайтов, Telegram-боты и автоматизации. Демо-проекты и цены.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="wrap top">
+  <b>Yakov</b>
+  <nav><a href="#services" data-ru="Услуги" data-en="Services"></a><a href="#demos" data-ru="Демо" data-en="Demos"></a><a href="#contact" data-ru="Контакт" data-en="Contact"></a>
+  <button id="lang">EN</button></nav>
+</header>
+
+<section class="wrap hero">
+  <h1 data-ru="Сайты, Telegram-боты и автоматизации для малого бизнеса" data-en="Websites, Telegram bots and automations for small business"></h1>
+  <p data-ru="Делаю лендинги с приёмом заявок в Telegram, правлю существующие сайты, настраиваю простые автоматизации. Быстро, по фиксированной цене, с понятным результатом." data-en="I build landing pages that send leads to Telegram, fix existing websites and set up simple automations. Fast, fixed price, clear result."></p>
+  <a class="btn" href="#contact" data-ru="Обсудить задачу" data-en="Discuss your task"></a>
+</section>
+
+<section id="services" class="wrap">
+  <h2 data-ru="Услуги и цены" data-en="Services and prices"></h2>
+  <div class="grid">
+    <div class="card"><h3 data-ru="Правки сайта" data-en="Website fixes"></h3><p data-ru="Вёрстка, тексты, блоки, адаптив под телефон, ошибки." data-en="Layout, text, sections, mobile fixes, bugs."></p><b data-ru="от $20" data-en="from $20"></b></div>
+    <div class="card"><h3 data-ru="Лендинг под ключ" data-en="Landing page"></h3><p data-ru="Одна страница с формой, заявки приходят в Telegram." data-en="One page with a form, leads arrive in Telegram."></p><b data-ru="от $80" data-en="from $80"></b></div>
+    <div class="card"><h3 data-ru="Калькулятор / квиз" data-en="Calculator / quiz"></h3><p data-ru="Расчёт стоимости на сайте, встраивается в любой сайт." data-en="Price calculator that embeds into any website."></p><b data-ru="от $50" data-en="from $50"></b></div>
+    <div class="card"><h3 data-ru="Telegram-бот" data-en="Telegram bot"></h3><p data-ru="Заявки, запись, ответы на вопросы, уведомления." data-en="Leads, bookings, FAQ answers, notifications."></p><b data-ru="от $100" data-en="from $100"></b></div>
+    <div class="card"><h3 data-ru="Автоматизация" data-en="Automation"></h3><p data-ru="Форма → Google Таблица → Telegram, связка сервисов по API." data-en="Form → Google Sheets → Telegram, connecting services via API."></p><b data-ru="от $60" data-en="from $60"></b></div>
+  </div>
+  <p class="muted" data-ru="Точная цена — после описания задачи. Оплата: 50% предоплата, 50% после сдачи. Принимаю USDT." data-en="Exact price after you describe the task. Payment: 50% upfront, 50% on delivery. USDT accepted."></p>
+</section>
+
+<section id="demos" class="wrap">
+  <h2 data-ru="Демо-проекты" data-en="Demo projects"></h2>
+  <p class="note" data-ru="Это демонстрационные работы, сделанные для портфолио. Они не являются заказами реальных клиентов." data-en="These are demo projects made for this portfolio. They are not real client work."></p>
+  <div class="grid">
+    <a class="card link" href="demos/landing/"><span class="tag">DEMO</span><h3 data-ru="Лендинг кофейни с заявками в Telegram" data-en="Coffee shop landing with Telegram leads"></h3><p data-ru="Форма заявки, проверка полей, отправка в Telegram через бесплатный Cloudflare Worker (токен бота не хранится на сайте)." data-en="Lead form with validation, sent to Telegram via a free Cloudflare Worker (the bot token is never on the page)."></p></a>
+    <a class="card link" href="demos/calculator/"><span class="tag">DEMO</span><h3 data-ru="Калькулятор стоимости ремонта" data-en="Renovation cost calculator"></h3><p data-ru="Расчёт цены в реальном времени, работает без сервера, легко встроить на сайт." data-en="Live price estimate, no server needed, easy to embed."></p></a>
+  </div>
+  <h3 data-ru="Личный проект" data-en="Personal project"></h3>
+  <div class="card"><h3 data-ru="Искатель заказов" data-en="Job finder"></h3><p data-ru="Собственный инструмент: каждые 15 минут собирает заказы с фриланс-бирж, оценивает их с помощью ИИ и присылает подходящие в Telegram. Python, GitHub Actions, Telegram Bot API." data-en="My own tool: every 15 minutes it collects jobs from freelance sites, scores them with AI and sends matching ones to Telegram. Python, GitHub Actions, Telegram Bot API."></p></div>
+</section>
+
+<section id="contact" class="wrap">
+  <h2 data-ru="Контакт" data-en="Contact"></h2>
+  <p data-ru="Напишите в Telegram — коротко опишите задачу, отвечу с ценой и сроком." data-en="Message me on Telegram with a short task description — I'll reply with price and timeline."></p>
+  <a class="btn" id="tg" href="https://t.me/wakeupyakov">Telegram</a>
+</section>
+
+<footer class="wrap muted">© Yakov</footer>
+<script src="lang.js"></script>
+</body>
+</html>
