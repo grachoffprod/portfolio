@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DEMO — Калькулятор ремонта</title>
+<title>DEMO — Renovation calculator</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font:16px/1.55 system-ui,Segoe UI,Roboto,sans-serif;color:#1d2a2a;background:#f2f6f5}
 .bar{background:#ffe9a8;text-align:center;padding:8px;font-size:14px}.bar a{color:inherit}
@@ -17,17 +17,17 @@ input,select{font:inherit;padding:10px;border:1px solid #b9cbc8;border-radius:8p
 </style>
 </head>
 <body>
-<div class="bar"><span data-ru="Демонстрационный проект из портфолио Yakov. Цены условные." data-en="Demo project from Yakov's portfolio. Prices are illustrative."></span> <a href="../../" data-ru="← к портфолио" data-en="← back to portfolio"></a></div>
+<div class="bar"><span data-ru="Demo project from Yakov's portfolio. Prices are illustrative." data-en="Demo project from Yakov's portfolio. Prices are illustrative."></span> <a href="../../" data-ru="← back to portfolio" data-en="← back to portfolio"></a></div>
 <div class="wrap">
   <button id="lang">EN</button>
-  <h1 data-ru="Сколько стоит ремонт?" data-en="How much is a renovation?"></h1>
+  <h1 data-ru="How much is a renovation?" data-en="How much is a renovation?"></h1>
   <div class="box" id="calc">
-    <label><span data-ru="Площадь, м²" data-en="Area, m²"></span><input id="area" type="number" min="1" max="1000" value="40"></label>
-    <label><span data-ru="Тип ремонта" data-en="Renovation type"></span>
-      <select id="type"><option value="35">Косметический / Cosmetic</option><option value="70" selected>Капитальный / Full</option><option value="120">Дизайнерский / Designer</option></select></label>
-    <label class="ck"><input type="checkbox" id="demo"><span data-ru="Демонтаж (+$8/м²)" data-en="Demolition (+$8/m²)"></span></label>
-    <label class="ck"><input type="checkbox" id="mat"><span data-ru="Закупка материалов (+15%)" data-en="Materials purchase (+15%)"></span></label>
-    <div><span data-ru="Ориентировочно:" data-en="Estimate:"></span><div class="total" id="total"></div><span id="days"></span></div>
+    <label><span data-ru="Area, m²" data-en="Area, m²"></span><input id="area" type="number" min="1" max="1000" value="40"></label>
+    <label><span data-ru="Renovation type" data-en="Renovation type"></span>
+      <select id="type"><option value="35">Cosmetic</option><option value="70" selected>Full</option><option value="120">Designer</option></select></label>
+    <label class="ck"><input type="checkbox" id="demo"><span data-ru="Demolition (+$8/m²)" data-en="Demolition (+$8/m²)"></span></label>
+    <label class="ck"><input type="checkbox" id="mat"><span data-ru="Materials purchase (+15%)" data-en="Materials purchase (+15%)"></span></label>
+    <div><span data-ru="Estimate:" data-en="Estimate:"></span><div class="total" id="total"></div><span id="days"></span></div>
   </div>
 </div>
 <script src="../../lang.js"></script>
@@ -39,7 +39,7 @@ function calc() {
   if (document.getElementById('mat').checked) sum *= 1.15;
   var days = Math.max(3, Math.ceil(a / 4));
   document.getElementById('total').textContent = '$' + Math.round(sum).toLocaleString('en-US');
-  document.getElementById('days').textContent = currentLang() === 'ru' ? 'Срок: ~' + days + ' дн.' : 'Timeline: ~' + days + ' days';
+  document.getElementById('days').textContent = currentLang() === 'ru' ? 'Timeline: ~' + days + ' days' : 'Timeline: ~' + days + ' days';
 }
 document.getElementById('calc').addEventListener('input', calc);
 document.addEventListener('langchange', calc);

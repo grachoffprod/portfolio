@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DEMO — Кофейня «Зерно»</title>
+<title>DEMO — Zerno Coffee</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font:16px/1.55 system-ui,Segoe UI,Roboto,sans-serif;color:#2b211c;background:#fbf6f0}
 .bar{background:#ffe9a8;text-align:center;padding:8px;font-size:14px}.bar a{color:inherit}
@@ -21,24 +21,24 @@ button{font:inherit;font-weight:600;background:#7a3e1d;color:#fff;border:0;borde
 </style>
 </head>
 <body>
-<div class="bar"><span data-ru="Демонстрационный проект из портфолио Yakov. Кофейня вымышленная." data-en="Demo project from Yakov's portfolio. The coffee shop is fictional."></span> <a href="../../" data-ru="← к портфолио" data-en="← back to portfolio"></a></div>
+<div class="bar"><span data-ru="Demo project from Yakov's portfolio. The coffee shop is fictional." data-en="Demo project from Yakov's portfolio. The coffee shop is fictional."></span> <a href="../../" data-ru="← back to portfolio" data-en="← back to portfolio"></a></div>
 <div class="wrap">
   <button id="lang">EN</button>
-  <h1 data-ru="Кофейня «Зерно» — кофе с собой и завтраки весь день" data-en="Zerno Coffee — coffee to go and all-day breakfast"></h1>
-  <p data-ru="Обжариваем сами. Бронь столика и кейтеринг для офисов — оставьте заявку, перезвоним за 10 минут." data-en="We roast our own beans. Table booking and office catering — leave a request, we'll call back in 10 minutes."></p>
+  <h1 data-ru="Zerno Coffee — coffee to go and all-day breakfast" data-en="Zerno Coffee — coffee to go and all-day breakfast"></h1>
+  <p data-ru="We roast our own beans. Table booking and office catering — leave a request, we'll call back in 10 minutes." data-en="We roast our own beans. Table booking and office catering — leave a request, we'll call back in 10 minutes."></p>
   <div class="grid">
-    <div class="c"><b data-ru="Свежая обжарка" data-en="Fresh roast"></b><p data-ru="Каждую неделю — новые зёрна." data-en="New beans every week."></p></div>
-    <div class="c"><b data-ru="Завтраки до 16:00" data-en="Breakfast till 4 pm"></b><p data-ru="Сырники, омлеты, гранола." data-en="Pancakes, omelettes, granola."></p></div>
-    <div class="c"><b data-ru="Кейтеринг" data-en="Catering"></b><p data-ru="Кофе-брейк для офиса от 10 человек." data-en="Office coffee breaks from 10 people."></p></div>
+    <div class="c"><b data-ru="Fresh roast" data-en="Fresh roast"></b><p data-ru="New beans every week." data-en="New beans every week."></p></div>
+    <div class="c"><b data-ru="Breakfast till 4 pm" data-en="Breakfast till 4 pm"></b><p data-ru="Pancakes, omelettes, granola." data-en="Pancakes, omelettes, granola."></p></div>
+    <div class="c"><b data-ru="Catering" data-en="Catering"></b><p data-ru="Office coffee breaks from 10 people." data-en="Office coffee breaks from 10 people."></p></div>
   </div>
-  <h2 data-ru="Оставить заявку" data-en="Leave a request"></h2>
+  <h2 data-ru="Leave a request" data-en="Leave a request"></h2>
   <form id="f" novalidate>
-    <input name="name" data-ru="Ваше имя" data-en="Your name">
-    <input name="phone" data-ru="Телефон, например +7 900 000-00-00" data-en="Phone, e.g. +1 555 000 0000">
-    <select name="type"><option value="table">Столик / Table</option><option value="catering">Кейтеринг / Catering</option></select>
-    <textarea name="comment" rows="3" data-ru="Комментарий (необязательно)" data-en="Comment (optional)"></textarea>
+    <input name="name" data-ru="Your name" data-en="Your name">
+    <input name="phone" data-ru="Phone, e.g. +1 555 000 0000" data-en="Phone, e.g. +1 555 000 0000">
+    <select name="type"><option value="table">Table</option><option value="catering">Catering</option></select>
+    <textarea name="comment" rows="3" data-ru="Comment (optional)" data-en="Comment (optional)"></textarea>
     <div class="err" id="err"></div>
-    <button data-ru="Отправить заявку" data-en="Send request"></button>
+    <button data-ru="Send request" data-en="Send request"></button>
   </form>
   <div class="tg" id="tg"></div>
 </div>
@@ -48,7 +48,7 @@ button{font:inherit;font-weight:600;background:#7a3e1d;color:#fff;border:0;borde
 // Empty = demo mode: the page only shows what would arrive in Telegram.
 var WORKER_URL = '';
 var T = {
-  ru:{name:'Введите имя',phone:'Введите телефон (не меньше 7 цифр)',ok:'Заявка отправлена в Telegram',demo:'Демо-режим: так заявка выглядела бы в Telegram',fail:'Не удалось отправить, попробуйте позже'},
+  ru:{name:'Enter your name',phone:'Enter a phone number (7+ digits)',ok:'Request sent to Telegram',demo:'Demo mode: this is how the request would look in Telegram',fail:'Could not send, please try later'},
   en:{name:'Enter your name',phone:'Enter a phone number (7+ digits)',ok:'Request sent to Telegram',demo:'Demo mode: this is how the request would look in Telegram',fail:'Could not send, please try later'}
 };
 document.getElementById('f').addEventListener('submit', async function (e) {
@@ -58,7 +58,7 @@ document.getElementById('f').addEventListener('submit', async function (e) {
   if (!d.name) return err.textContent = t.name;
   if ((d.phone.match(/\d/g) || []).length < 7) return err.textContent = t.phone;
   err.textContent = '';
-  var text = '🆕 Новая заявка\nИмя: ' + d.name + '\nТелефон: ' + d.phone + '\nТип: ' + d.type + (d.comment ? '\nКомментарий: ' + d.comment : '');
+  var text = '🆕 New request\nName: ' + d.name + '\nPhone: ' + d.phone + '\nType: ' + d.type + (d.comment ? '\nComment: ' + d.comment : '');
   var box = document.getElementById('tg'), head = t.demo;
   if (WORKER_URL) {
     try { var r = await fetch(WORKER_URL, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(d)}); head = r.ok ? t.ok : t.fail; }

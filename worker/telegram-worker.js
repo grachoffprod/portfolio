@@ -11,8 +11,8 @@ export default {
     const clip = (v) => String(v || '').slice(0, 500);
     if (!clip(d.name).trim() || (clip(d.phone).match(/\d/g) || []).length < 7)
       return new Response('Invalid', { status: 400, headers: cors });
-    const text = `🆕 Новая заявка\nИмя: ${clip(d.name)}\nТелефон: ${clip(d.phone)}\nТип: ${clip(d.type)}` +
-      (d.comment ? `\nКомментарий: ${clip(d.comment)}` : '');
+    const text = `🆕 New request\nName: ${clip(d.name)}\nPhone: ${clip(d.phone)}\nType: ${clip(d.type)}` +
+      (d.comment ? `\nComment: ${clip(d.comment)}` : '');
     const r = await fetch(`https://api.telegram.org/bot${env.BOT_TOKEN}/sendMessage`, {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ chat_id: env.CHAT_ID, text }),
