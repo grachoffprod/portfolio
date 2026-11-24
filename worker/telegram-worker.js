@@ -1,6 +1,6 @@
 // Cloudflare Worker (free plan): receives the landing form and forwards it to Telegram.
 // Secrets are set in the Cloudflare dashboard, never in this file or on the page:
-//   BOT_TOKEN — token from @BotFather, CHAT_ID — your chat id, ALLOWED_ORIGIN — e.g. https://yashkettt.github.io
+//   BOT_TOKEN — token from @BotFather, CHAT_ID — your chat id, ALLOWED_ORIGIN — e.g. https://grachoffprod.github.io
 export default {
   async fetch(req, env) {
     const cors = { 'Access-Control-Allow-Origin': env.ALLOWED_ORIGIN, 'Access-Control-Allow-Headers': 'Content-Type' };
