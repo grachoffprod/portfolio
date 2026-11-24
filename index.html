@@ -4,53 +4,37 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title data-ru="Yakov — веб-разработка и автоматизация" data-en="Yakov — web development and automation">Yakov — web development and automation</title>
-<meta name="description" content="Landing pages, website fixes, Telegram bots and automations. Demo projects and prices.">
+<meta name="description" content="Landing pages, website fixes, Telegram bots and automations for small businesses.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="wrap top">
-  <b>Yakov</b>
-  <nav><a href="#services" data-ru="Услуги" data-en="Services"></a><a href="#demos" data-ru="Демо" data-en="Demos"></a><a href="#contact" data-ru="Контакт" data-en="Contact"></a>
-  <button id="lang">RU</button></nav>
+  <a class="brand" href="#top">Yakov</a>
+  <nav aria-label="Main navigation"><a href="#services" data-ru="Услуги" data-en="Services"></a><a href="#personal" data-ru="Проект" data-en="Project"></a><a href="#contact" data-ru="Контакт" data-en="Contact"></a><button id="lang" type="button" aria-label="Switch language">RU</button></nav>
 </header>
-
-<section class="wrap hero">
-  <span class="eyebrow" data-ru="Веб-разработка · автоматизация" data-en="Web development · automation"></span>
-  <h1 data-ru="Сайты, Telegram-боты и автоматизации для малого бизнеса" data-en="Websites, Telegram bots and automations for small business"></h1>
-  <p data-ru="Делаю лендинги с приёмом заявок в Telegram, правлю существующие сайты, настраиваю простые автоматизации. Быстро, по фиксированной цене, с понятным результатом." data-en="I build landing pages that send leads to Telegram, fix existing websites and set up simple automations. Fast, fixed price, clear result."></p>
-  <a class="btn" href="#contact" data-ru="Обсудить задачу" data-en="Discuss your task"></a>
-  <a class="text-link" href="#demos" data-ru="Посмотреть демо ↓" data-en="Explore demos ↓"></a>
-</section>
-
-<section id="services" class="wrap reveal">
-  <h2 data-ru="Услуги и цены" data-en="Services and prices"></h2>
-  <div class="grid">
-    <div class="card"><h3 data-ru="Правки сайта" data-en="Website fixes"></h3><p data-ru="Вёрстка, тексты, блоки, адаптив под телефон, ошибки." data-en="Layout, text, sections, mobile fixes, bugs."></p><b data-ru="от $20" data-en="from $20"></b></div>
-    <div class="card"><h3 data-ru="Лендинг под ключ" data-en="Landing page"></h3><p data-ru="Одна страница с формой, заявки приходят в Telegram." data-en="One page with a form, leads arrive in Telegram."></p><b data-ru="от $80" data-en="from $80"></b></div>
-    <div class="card"><h3 data-ru="Калькулятор / квиз" data-en="Calculator / quiz"></h3><p data-ru="Расчёт стоимости на сайте, встраивается в любой сайт." data-en="Price calculator that embeds into any website."></p><b data-ru="от $50" data-en="from $50"></b></div>
-    <div class="card"><h3 data-ru="Telegram-бот" data-en="Telegram bot"></h3><p data-ru="Заявки, запись, ответы на вопросы, уведомления." data-en="Leads, bookings, FAQ answers, notifications."></p><b data-ru="от $100" data-en="from $100"></b></div>
-    <div class="card"><h3 data-ru="Автоматизация" data-en="Automation"></h3><p data-ru="Форма → Google Таблица → Telegram, связка сервисов по API." data-en="Form → Google Sheets → Telegram, connecting services via API."></p><b data-ru="от $60" data-en="from $60"></b></div>
-  </div>
-  <p class="muted" data-ru="Точная цена — после описания задачи. Оплата: 50% предоплата, 50% после сдачи. Принимаю USDT." data-en="Exact price after you describe the task. Payment: 50% upfront, 50% on delivery. USDT accepted."></p>
-</section>
-
-<section id="demos" class="wrap reveal">
-  <h2 data-ru="Демо-проекты" data-en="Demo projects"></h2>
-  <p class="note" data-ru="Это демонстрационные работы, сделанные для портфолио. Они не являются заказами реальных клиентов." data-en="These are demo projects made for this portfolio. They are not real client work."></p>
-  <div class="grid">
-    <a class="card link" href="demos/landing/"><span class="tag">DEMO</span><h3 data-ru="Лендинг кофейни с заявками в Telegram" data-en="Coffee shop landing with Telegram leads"></h3><p data-ru="Форма заявки, проверка полей, отправка в Telegram через бесплатный Cloudflare Worker (токен бота не хранится на сайте)." data-en="Lead form with validation, sent to Telegram via a free Cloudflare Worker (the bot token is never on the page)."></p></a>
-    <a class="card link" href="demos/calculator/"><span class="tag">DEMO</span><h3 data-ru="Калькулятор стоимости ремонта" data-en="Renovation cost calculator"></h3><p data-ru="Расчёт цены в реальном времени, работает без сервера, легко встроить на сайт." data-en="Live price estimate, no server needed, easy to embed."></p></a>
-  </div>
-  <h3 data-ru="Личный проект" data-en="Personal project"></h3>
-  <div class="card"><h3 data-ru="Искатель заказов" data-en="Job finder"></h3><p data-ru="Собственный инструмент: каждые 15 минут собирает заказы с фриланс-бирж, оценивает их с помощью ИИ и присылает подходящие в Telegram. Python, GitHub Actions, Telegram Bot API." data-en="My own tool: every 15 minutes it collects jobs from freelance sites, scores them with AI and sends matching ones to Telegram. Python, GitHub Actions, Telegram Bot API."></p></div>
-</section>
-
-<section id="contact" class="wrap reveal">
-  <h2 data-ru="Контакт" data-en="Contact"></h2>
-  <p data-ru="Напишите в Telegram — коротко опишите задачу, отвечу с ценой и сроком." data-en="Message me on Telegram with a short task description — I'll reply with price and timeline."></p>
-  <a class="btn" id="tg" href="https://t.me/wakeupyakov">Telegram</a>
-</section>
-
+<main id="top">
+  <section class="wrap hero">
+    <span class="eyebrow" data-ru="Веб-разработка · автоматизация" data-en="Web development · automation"></span>
+    <h1 data-ru="Сайты, Telegram-боты и автоматизация для малого бизнеса" data-en="Websites, Telegram bots and automation for small business"></h1>
+    <p data-ru="Делаю лендинги с приёмом заявок в Telegram, исправляю сайты и настраиваю простые автоматизации. Быстро, по фиксированной цене, с понятным результатом." data-en="I build landing pages that send leads to Telegram, fix existing websites and set up simple automations. Fast, fixed price, clear result."></p>
+    <a class="btn" href="#contact" data-ru="Обсудить задачу" data-en="Discuss your task"></a>
+    <a class="text-link" href="#services" data-ru="Посмотреть услуги ↓" data-en="Explore services ↓"></a>
+    <div class="stats" aria-label="Service highlights"><div><b>5</b><span data-ru="направлений" data-en="services"></span></div><div><b>100%</b><span data-ru="демо без сети" data-en="offline demos"></span></div><div><b>EN / RU</b><span data-ru="языка сайта" data-en="site languages"></span></div></div>
+  </section>
+  <section id="services" class="wrap reveal">
+    <h2 data-ru="Услуги и цены" data-en="Services and prices"></h2>
+    <div class="grid services">
+      <article class="service card" data-demo="fixes"><h3 data-ru="Правки сайта" data-en="Website fixes"></h3><p data-ru="Вёрстка, тексты, блоки, адаптив под телефон, ошибки." data-en="Layout, text, sections, mobile fixes, bugs."></p><b data-ru="от $20" data-en="from $20"></b><button class="demo-toggle" aria-expanded="false" aria-controls="panel-fixes" data-ru="Демо" data-en="Demo"></button><div class="demo-panel" id="panel-fixes" hidden><div class="note" data-ru="Демо для портфолио — симуляция, не реальная работа для клиента." data-en="Portfolio demo — a simulation, not real client work."></div><h4 data-ru="Сравните до и после" data-en="Compare before and after"></h4><p data-ru="Передвиньте ползунок: слева показана сломанная версия, справа — исправленная." data-en="Move the slider: the left side shows the broken version, the right side shows the fix."></p><div class="compare" data-compare><div class="compare-before"><strong data-ru="Загрузка..." data-en="Loading..."></strong><span data-ru="Нажмите здесь" data-en="Click here"></span><i>•••</i></div><div class="compare-after"><strong data-ru="Всё на своих местах" data-en="Everything in place"></strong><span data-ru="Кнопка работает" data-en="Button works"></span><button type="button" data-ru="Связаться" data-en="Contact"></button></div><input type="range" min="0" max="100" value="52" aria-label="Before and after comparison"></div><a class="open-demo" href="demos/fixes/" data-ru="Открыть полное демо ↗" data-en="Open full demo ↗"></a></div></article>
+      <article class="service card" data-demo="landing"><h3 data-ru="Лендинг под ключ" data-en="Landing page"></h3><p data-ru="Одна страница с формой, заявки приходят в Telegram." data-en="One page with a form, leads arrive in Telegram."></p><b data-ru="от $80" data-en="from $80"></b><button class="demo-toggle" aria-expanded="false" aria-controls="panel-landing" data-ru="Демо" data-en="Demo"></button><div class="demo-panel" id="panel-landing" hidden><div class="note" data-ru="Демо для портфолио — симуляция, не реальная работа для клиента." data-en="Portfolio demo — a simulation, not real client work."></div><p data-ru="Пример лендинга кофейни с интерактивной формой заявки." data-en="A coffee shop landing page with an interactive request form."></p><iframe class="demo-frame landing-frame" src="demos/landing/" title="Coffee shop landing page demo" loading="lazy"></iframe><a class="open-demo" href="demos/landing/" data-ru="Открыть полное демо ↗" data-en="Open full demo ↗"></a></div></article>
+      <article class="service card" data-demo="calculator"><h3 data-ru="Калькулятор / квиз" data-en="Calculator / quiz"></h3><p data-ru="Расчёт стоимости на сайте, встраивается в любой сайт." data-en="A price calculator that embeds into any website."></p><b data-ru="от $50" data-en="from $50"></b><button class="demo-toggle" aria-expanded="false" aria-controls="panel-calculator" data-ru="Демо" data-en="Demo"></button><div class="demo-panel" id="panel-calculator" hidden><div class="note" data-ru="Демо для портфолио — симуляция, не реальная работа для клиента." data-en="Portfolio demo — a simulation, not real client work."></div><p data-ru="Поиграйте с настройками, чтобы увидеть расчёт." data-en="Adjust the options to see the estimate update."></p><iframe class="demo-frame calc-frame" src="demos/calculator/" title="Renovation calculator demo" loading="lazy"></iframe><a class="open-demo" href="demos/calculator/" data-ru="Открыть полное демо ↗" data-en="Open full demo ↗"></a></div></article>
+      <article class="service card" data-demo="bot"><h3 data-ru="Telegram-бот" data-en="Telegram bot"></h3><p data-ru="Заявки, запись, ответы на вопросы, уведомления." data-en="Leads, bookings, FAQ answers, notifications."></p><b data-ru="от $100" data-en="from $100"></b><button class="demo-toggle" aria-expanded="false" aria-controls="panel-bot" data-ru="Демо" data-en="Demo"></button><div class="demo-panel" id="panel-bot" hidden><div class="note" data-ru="Демо для портфолио — симуляция, не реальная работа для клиента." data-en="Portfolio demo — a simulation, not real client work."></div><div class="chat" data-chat><div class="chat-head">Yakov booking bot <span>● <span data-ru="демо" data-en="demo"></span></span></div><div class="chat-messages" aria-live="polite"><p class="bubble bot-message" data-ru="Привет! Что хотите забронировать?" data-en="Hi! What would you like to book?"></p><div class="chat-actions"><button data-choice="service" data-ru="Стрижка" data-en="Haircut"></button><button data-choice="service" data-ru="Консультация" data-en="Consultation"></button></div></div></div><a class="open-demo" href="demos/bot/" data-ru="Открыть полное демо ↗" data-en="Open full demo ↗"></a></div></article>
+      <article class="service card" data-demo="automation"><h3 data-ru="Автоматизация" data-en="Automation"></h3><p data-ru="Форма → Google Таблица → Telegram, связка сервисов по API." data-en="Form → Google Sheets → Telegram, connecting services via API."></p><b data-ru="от $60" data-en="from $60"></b><button class="demo-toggle" aria-expanded="false" aria-controls="panel-automation" data-ru="Демо" data-en="Demo"></button><div class="demo-panel" id="panel-automation" hidden><div class="note" data-ru="Демо для портфолио — симуляция, не реальная работа для клиента." data-en="Portfolio demo — a simulation, not real client work."></div><div class="flow"><span data-ru="Форма" data-en="Form"></span><i>→</i><span>Google Sheets</span><i>→</i><span>Telegram</span></div><form class="automation-form"><label><span data-ru="Имя" data-en="Name"></span><input name="name" required data-ru="Ваше имя" data-en="Your name"></label><label><span data-ru="Телефон" data-en="Phone"></span><input name="phone" required placeholder="+1 555 000 0000"></label><button class="btn" type="submit" data-ru="Отправить" data-en="Submit"></button></form><div class="sheet-wrap" hidden><table class="sheet"><thead><tr><th data-ru="Имя" data-en="Name"></th><th data-ru="Телефон" data-en="Phone"></th></tr></thead><tbody></tbody></table><p class="telegram-notice" aria-live="polite"></p></div><a class="open-demo" href="demos/automation/" data-ru="Открыть полное демо ↗" data-en="Open full demo ↗"></a></div></article>
+    </div>
+    <p class="muted" data-ru="Точная цена — после описания задачи. Оплата: 50% предоплата, 50% после сдачи. Принимаю USDT." data-en="Exact price after you describe the task. Payment: 50% upfront, 50% on delivery. USDT accepted."></p>
+  </section>
+  <section id="personal" class="wrap reveal personal"><h2 data-ru="Личный проект" data-en="Personal project"></h2><article class="card"><h3 data-ru="Искатель заказов" data-en="Job finder"></h3><p data-ru="Собственный инструмент: каждые 15 минут собирает заказы с фриланс-бирж, оценивает их с помощью ИИ и присылает подходящие в Telegram. Python, GitHub Actions, Telegram Bot API." data-en="My own tool: every 15 minutes it collects jobs from freelance sites, scores them with AI and sends matching ones to Telegram. Python, GitHub Actions, Telegram Bot API."></p></article></section>
+  <section id="contact" class="wrap reveal"><h2 data-ru="Контакт" data-en="Contact"></h2><p data-ru="Напишите в Telegram — коротко опишите задачу, отвечу с ценой и сроком." data-en="Message me on Telegram with a short task description — I'll reply with price and timeline."></p><a class="btn" href="https://t.me/wakeupyakov">Telegram</a></section>
+</main>
 <footer class="wrap muted">© Yakov</footer>
 <script src="lang.js"></script>
 </body>
