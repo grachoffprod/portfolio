@@ -1,10 +1,11 @@
-# Портфолио Yakov
+# Yakov's Portfolio
 
-Статичный сайт (RU/EN), без сборки. Демо-проекты явно подписаны как демонстрационные.
+A static website (RU/EN) with no build step. Demo projects are clearly labeled as demonstrations.
 
-## Бесплатная публикация (GitHub Pages)
-1. На github.com создайте **публичный** репозиторий `resume`.
-2. В этой папке:
+## Free hosting with GitHub Pages
+
+1. Create a **public** repository named `resume` on github.com.
+2. In this folder, run:
    ```
    git init
    git add .
@@ -13,11 +14,13 @@
    git remote add origin https://github.com/grachoffprod/resume.git
    git push -u origin main
    ```
-3. Repository → Settings → Pages → Source: `main` / root. Через 1–2 минуты сайт откроется по адресу
-   **https://grachoffprod.github.io/resume/** — эту ссылку вставьте в `config/profile.yaml` → `portfolio_url`.
+3. Go to Repository → Settings → Pages and set Source to `main` / root. The site should be available in 1–2 minutes at
+   **https://grachoffprod.github.io/resume/**. Add this URL to `config/profile.yaml` as `portfolio_url`.
 
-## Реальная отправка заявок в Telegram (необязательно)
-1. Cloudflare → Workers → Create → вставьте `worker/telegram-worker.js`.
-2. В Settings → Variables добавьте секреты `BOT_TOKEN`, `CHAT_ID` и переменную `ALLOWED_ORIGIN=https://grachoffprod.github.io`. Токен вводите только там, не в код и не в чат.
-3. Адрес воркера впишите в `WORKER_URL` в `demos/landing/index.html`.
-Без этого лендинг работает в демо-режиме: показывает, как заявка выглядела бы в Telegram.
+## Sending real leads to Telegram (optional)
+
+1. In Cloudflare, go to Workers → Create and paste in `worker/telegram-worker.js`.
+2. Under Settings → Variables, add the secrets `BOT_TOKEN` and `CHAT_ID`, and set `ALLOWED_ORIGIN=https://grachoffprod.github.io`. Enter the token only there, never in the code or chat.
+3. Set the worker URL in `WORKER_URL` in `demos/landing/index.html`.
+
+Without this setup, the landing page runs in demo mode and shows what a Telegram lead notification would look like.
