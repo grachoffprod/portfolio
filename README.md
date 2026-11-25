@@ -4,18 +4,18 @@ A static website (RU/EN) with no build step. Demo projects are clearly labeled a
 
 ## Free hosting with GitHub Pages
 
-1. Create a **public** repository named `resume` on github.com.
+1. Create a **public** repository named `portfolio` on github.com.
 2. In this folder, run:
    ```
    git init
    git add .
    git commit -m "portfolio"
    git branch -M main
-   git remote add origin https://github.com/grachoffprod/resume.git
+   git remote add origin https://github.com/grachoffprod/portfolio.git
    git push -u origin main
    ```
 3. Go to Repository → Settings → Pages and set Source to `main` / root. The site should be available in 1–2 minutes at
-   **https://grachoffprod.github.io/resume/**. Add this URL to `config/profile.yaml` as `portfolio_url`.
+   **https://grachoffprod.github.io/portfolio/**. Add this URL to `config/profile.yaml` as `portfolio_url`.
 
 ## Sending real leads to Telegram (optional)
 
