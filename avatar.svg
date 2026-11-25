@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="g" cx="70%" cy="25%" r="80%"><stop offset="0" stop-color="#3a0b0b"/><stop offset=".55" stop-color="#0a0a0a"/></radialGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#fff" stroke-opacity=".05"/></pattern>
+  </defs>
+  <rect width="512" height="512" fill="url(#g)"/>
+  <rect width="512" height="512" fill="url(#grid)"/>
+  <text x="70" y="186" font-family="Consolas,Menlo,monospace" font-size="40" fill="#ff2d2d">&lt;/&gt;</text>
+  <text x="256" y="350" text-anchor="middle" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-weight="800" font-size="260" letter-spacing="-12" fill="#fff">Y</text>
+  <circle cx="368" cy="330" r="22" fill="#ff2d2d"/>
+  <rect x="150" y="402" width="212" height="6" rx="3" fill="#ff2d2d"/>
+</svg>
