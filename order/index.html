@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title data-i18n="title">Order a project · Yakov</title>
+<meta name="description" content="Describe your project, get a price and a deadline, pay a 50% deposit online.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="order.css">
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand notranslate" translate="no" href="../">Yakov<span>.</span></a>
+  <nav aria-label="Main navigation"><a href="../#services" data-i18n="navServices">Services</a><button id="lang" type="button">EN</button></nav>
+</header>
+<main class="wrap order">
+  <section class="order-head">
+    <h1 data-i18n-html="h1">Tell me about <em>your project</em></h1>
+    <p class="muted" data-i18n="lead">Fill in the brief. I'll reply within a day with a price and a deadline. Pay a 50% deposit online, the rest on delivery.</p>
+    <ol class="steps">
+      <li data-i18n="step1">Brief</li><li data-i18n="step2">Price and deadline</li><li data-i18n="step3">50% deposit</li><li data-i18n="step4">Delivery</li>
+    </ol>
+  </section>
+
+  <form id="order-form" class="brief" novalidate>
+    <label class="field"><span data-i18n="lService">Service</span>
+      <select name="service">
+        <option value="fixes" data-i18n="oFixes">Website fixes</option>
+        <option value="landing" data-i18n="oLanding">Landing page</option>
+        <option value="calculator" data-i18n="oCalc">Price calculator</option>
+        <option value="bot" data-i18n="oBot">Booking bot</option>
+        <option value="automation" data-i18n="oAuto">Automation</option>
+        <option value="ai" data-i18n="oAi">AI assistant</option>
+        <option value="other" data-i18n="oOther">Something else</option>
+      </select>
+    </label>
+    <label class="field"><span data-i18n="lTask">What needs to be done?</span>
+      <textarea name="task" rows="5" required maxlength="3000" data-i18n-attr="placeholder:phTask" placeholder="Your business, what the site or bot should do, who your clients are"></textarea>
+    </label>
+    <label class="field"><span><span data-i18n="lExamples">Examples and links</span> <i class="opt" data-i18n="optional">optional</i></span>
+      <textarea name="examples" rows="3" maxlength="2000" data-i18n-attr="placeholder:phExamples" placeholder="Your current site, sites you like, Google Drive with photos"></textarea>
+    </label>
+    <div class="row">
+      <label class="field"><span data-i18n="lDeadline">Deadline</span>
+        <select name="deadline">
+          <option value="asap" data-i18n="dAsap">As soon as possible</option>
+          <option value="week" data-i18n="dWeek">Within a week</option>
+          <option value="month" data-i18n="dMonth">Within a month</option>
+          <option value="flexible" data-i18n="dFlex">No rush</option>
+        </select>
+      </label>
+      <label class="field"><span data-i18n="lBudget">Budget</span>
+        <select name="budget">
+          <option value="under100" data-i18n="bUnder100">Up to $100</option>
+          <option value="100-300" data-i18n="b100">$100–300</option>
+          <option value="300-1000" data-i18n="b300">$300–1000</option>
+          <option value="over1000" data-i18n="b1000">Over $1000</option>
+          <option value="unsure" data-i18n="bUnsure">Not sure yet</option>
+        </select>
+      </label>
+    </div>
+    <label class="field"><span data-i18n="lName">Your name</span>
+      <input name="name" required maxlength="100" autocomplete="name" data-i18n-attr="placeholder:phName" placeholder="Anna">
+    </label>
+    <fieldset class="field">
+      <legend data-i18n="lContact">How should I reply?</legend>
+      <div class="seg">
+        <label><input type="radio" name="contact_method" value="email" checked><span>Email</span></label>
+        <label><input type="radio" name="contact_method" value="telegram"><span>Telegram</span></label>
+        <label><input type="radio" name="contact_method" value="whatsapp"><span>WhatsApp</span></label>
+      </div>
+      <input name="contact" type="email" required maxlength="200" aria-label="Contact" data-i18n-attr="aria-label:lContactValue" placeholder="you@example.com">
+    </fieldset>
+    <p id="order-error" class="err" role="alert" hidden></p>
+    <button id="order-submit" class="btn big" type="submit" data-i18n="submit">Send the brief</button>
+    <p class="muted small" data-i18n="privacy">Your data is used only to reply to this request.</p>
+  </form>
+
+  <section id="order-done" class="done" hidden>
+    <h2 tabindex="-1" data-i18n="doneTitle">Brief received</h2>
+    <p class="muted" data-i18n="doneLead">I'll reply within a day with a price and a deadline. If it suits you, you can pay the deposit right here.</p>
+    <div class="pay">
+      <h3 data-i18n="payTitle">Pay the 50% deposit</h3>
+      <a id="pay-card" class="btn big" href="#" target="_blank" rel="noopener" data-i18n="payCard">Pay by card · Apple Pay · Google Pay</a>
+      <p id="pay-card-later" class="muted" hidden data-i18n="payCardLater">I'll send you a payment link together with the price.</p>
+      <div id="pay-usdt" class="usdt">
+        <p data-i18n="payUsdt">Or pay in USDT (TRC-20):</p>
+        <div class="usdt-row"><code id="usdt-address" class="notranslate" translate="no"></code><button id="copy-usdt" class="btn ghost" type="button" data-i18n="copy">Copy</button></div>
+      </div>
+    </div>
+    <a class="btn ghost" href="../" data-i18n="backHome">Back to the site</a>
+  </section>
+</main>
+<footer class="wrap site-footer"><span class="notranslate" translate="no">© 2026 Yakov</span><a href="mailto:yakov.agency@gmail.com" class="notranslate" translate="no">yakov.agency@gmail.com</a></footer>
+<script>
+window.I18N = {
+  en: {
+    title: 'Order a project · Yakov', navServices: 'Services',
+    h1: 'Tell me about <em>your project</em>', lead: 'Fill in the brief. I\'ll reply within a day with a price and a deadline. Pay a 50% deposit online, the rest on delivery.',
+    step1: 'Brief', step2: 'Price and deadline', step3: '50% deposit', step4: 'Delivery',
+    lService: 'Service', oFixes: 'Website fixes', oLanding: 'Landing page', oCalc: 'Price calculator', oBot: 'Booking bot', oAuto: 'Automation', oAi: 'AI assistant', oOther: 'Something else',
+    lTask: 'What needs to be done?', phTask: 'Your business, what the site or bot should do, who your clients are',
+    lExamples: 'Examples and links', optional: 'optional', phExamples: 'Your current site, sites you like, Google Drive with photos',
+    lDeadline: 'Deadline', dAsap: 'As soon as possible', dWeek: 'Within a week', dMonth: 'Within a month', dFlex: 'No rush',
+    lBudget: 'Budget', bUnder100: 'Up to $100', b100: '$100–300', b300: '$300–1000', b1000: 'Over $1000', bUnsure: 'Not sure yet',
+    lName: 'Your name', phName: 'Anna', lContact: 'How should I reply?', lContactValue: 'Your contact',
+    phEmail: 'you@example.com', phTelegram: '@username', phWhatsapp: '+47 000 00 000',
+    submit: 'Send the brief', sending: 'Sending…', sendError: 'Could not send. Check your connection and try again, or write to yakov.agency@gmail.com.',
+    privacy: 'Your data is used only to reply to this request.',
+    doneTitle: 'Brief received', doneLead: 'I\'ll reply within a day with a price and a deadline. If it suits you, you can pay the deposit right here.',
+    payTitle: 'Pay the 50% deposit', payCard: 'Pay by card · Apple Pay · Google Pay', payCardLater: 'I\'ll send you a payment link together with the price.',
+    payUsdt: 'Or pay in USDT (TRC-20):', copy: 'Copy', copied: 'Copied', backHome: 'Back to the site'
+  },
+  ru: {
+    title: 'Заказать проект · Yakov', navServices: 'Услуги',
+    h1: 'Расскажите <em>о проекте</em>', lead: 'Заполните бриф. В течение дня отвечу с ценой и сроком. Предоплата 50% онлайн, остальное после сдачи.',
+    step1: 'Бриф', step2: 'Цена и срок', step3: 'Предоплата 50%', step4: 'Сдача',
+    lService: 'Услуга', oFixes: 'Правки сайта', oLanding: 'Лендинг', oCalc: 'Калькулятор цен', oBot: 'Бот для записи', oAuto: 'Автоматизация', oAi: 'AI-ассистент', oOther: 'Другое',
+    lTask: 'Что нужно сделать?', phTask: 'Чем занимаетесь, что должен делать сайт или бот, кто ваши клиенты',
+    lExamples: 'Примеры и ссылки', optional: 'необязательно', phExamples: 'Ваш сайт, сайты, которые нравятся, Google Диск с фото',
+    lDeadline: 'Срок', dAsap: 'Как можно скорее', dWeek: 'За неделю', dMonth: 'За месяц', dFlex: 'Не горит',
+    lBudget: 'Бюджет', bUnder100: 'До $100', b100: '$100–300', b300: '$300–1000', b1000: 'Больше $1000', bUnsure: 'Пока не знаю',
+    lName: 'Ваше имя', phName: 'Анна', lContact: 'Куда ответить?', lContactValue: 'Ваш контакт',
+    phEmail: 'you@example.com', phTelegram: '@username', phWhatsapp: '+7 900 000 00 00',
+    submit: 'Отправить бриф', sending: 'Отправляю…', sendError: 'Не отправилось. Проверьте интернет и попробуйте ещё раз или напишите на yakov.agency@gmail.com.',
+    privacy: 'Данные нужны только для ответа на эту заявку.',
+    doneTitle: 'Бриф получен', doneLead: 'В течение дня отвечу с ценой и сроком. Если всё устроит, предоплату можно внести здесь.',
+    payTitle: 'Предоплата 50%', payCard: 'Оплатить картой · Apple Pay · Google Pay', payCardLater: 'Ссылку на оплату пришлю вместе с ценой.',
+    payUsdt: 'Или в USDT (TRC-20):', copy: 'Копировать', copied: 'Скопировано', backHome: 'Вернуться на сайт'
+  },
+  uk: {
+    title: 'Замовити проєкт · Yakov', navServices: 'Послуги',
+    h1: 'Розкажіть <em>про проєкт</em>', lead: 'Заповніть бриф. Протягом дня відповім з ціною і терміном. Передоплата 50% онлайн, решта після здачі.',
+    step1: 'Бриф', step2: 'Ціна і термін', step3: 'Передоплата 50%', step4: 'Здача',
+    lService: 'Послуга', oFixes: 'Правки сайту', oLanding: 'Лендинг', oCalc: 'Калькулятор цін', oBot: 'Бот для запису', oAuto: 'Автоматизація', oAi: 'AI-асистент', oOther: 'Інше',
+    lTask: 'Що потрібно зробити?', phTask: 'Чим займаєтеся, що має робити сайт чи бот, хто ваші клієнти',
+    lExamples: 'Приклади й посилання', optional: 'необов\'язково', phExamples: 'Ваш сайт, сайти, які подобаються, Google Диск з фото',
+    lDeadline: 'Термін', dAsap: 'Якнайшвидше', dWeek: 'За тиждень', dMonth: 'За місяць', dFlex: 'Не горить',
+    lBudget: 'Бюджет', bUnder100: 'До $100', b100: '$100–300', b300: '$300–1000', b1000: 'Понад $1000', bUnsure: 'Поки не знаю',
+    lName: 'Ваше ім\'я', phName: 'Анна', lContact: 'Куди відповісти?', lContactValue: 'Ваш контакт',
+    phEmail: 'you@example.com', phTelegram: '@username', phWhatsapp: '+380 00 000 0000',
+    submit: 'Надіслати бриф', sending: 'Надсилаю…', sendError: 'Не надіслалося. Перевірте інтернет і спробуйте ще раз або напишіть на yakov.agency@gmail.com.',
+    privacy: 'Дані потрібні лише для відповіді на цю заявку.',
+    doneTitle: 'Бриф отримано', doneLead: 'Протягом дня відповім з ціною і терміном. Якщо все влаштує, передоплату можна внести тут.',
+    payTitle: 'Передоплата 50%', payCard: 'Оплатити карткою · Apple Pay · Google Pay', payCardLater: 'Посилання на оплату надішлю разом із ціною.',
+    payUsdt: 'Або в USDT (TRC-20):', copy: 'Копіювати', copied: 'Скопійовано', backHome: 'Повернутися на сайт'
+  },
+  de: {
+    title: 'Projekt anfragen · Yakov', navServices: 'Leistungen',
+    h1: 'Erzählen Sie mir <em>von Ihrem Projekt</em>', lead: 'Füllen Sie das Briefing aus. Innerhalb eines Tages erhalten Sie Preis und Termin. 50% Anzahlung online, der Rest bei Übergabe.',
+    step1: 'Briefing', step2: 'Preis und Termin', step3: '50% Anzahlung', step4: 'Übergabe',
+    lService: 'Leistung', oFixes: 'Website-Fixes', oLanding: 'Landingpage', oCalc: 'Preisrechner', oBot: 'Buchungsbot', oAuto: 'Automatisierung', oAi: 'KI-Assistent', oOther: 'Etwas anderes',
+    lTask: 'Was soll umgesetzt werden?', phTask: 'Ihr Geschäft, was die Website oder der Bot tun soll, wer Ihre Kunden sind',
+    lExamples: 'Beispiele und Links', optional: 'optional', phExamples: 'Ihre aktuelle Website, Seiten, die Ihnen gefallen, Google Drive mit Fotos',
+    lDeadline: 'Termin', dAsap: 'So schnell wie möglich', dWeek: 'Innerhalb einer Woche', dMonth: 'Innerhalb eines Monats', dFlex: 'Keine Eile',
+    lBudget: 'Budget', bUnder100: 'Bis 100 $', b100: '100–300 $', b300: '300–1000 $', b1000: 'Über 1000 $', bUnsure: 'Noch unklar',
+    lName: 'Ihr Name', phName: 'Anna', lContact: 'Wie soll ich antworten?', lContactValue: 'Ihr Kontakt',
+    phEmail: 'sie@beispiel.de', phTelegram: '@username', phWhatsapp: '+49 000 0000000',
+    submit: 'Briefing senden', sending: 'Wird gesendet…', sendError: 'Senden fehlgeschlagen. Prüfen Sie die Verbindung und versuchen Sie es erneut oder schreiben Sie an yakov.agency@gmail.com.',
+    privacy: 'Ihre Daten werden nur zur Beantwortung dieser Anfrage verwendet.',
+    doneTitle: 'Briefing erhalten', doneLead: 'Innerhalb eines Tages erhalten Sie Preis und Termin. Wenn alles passt, können Sie die Anzahlung direkt hier leisten.',
+    payTitle: '50% Anzahlung leisten', payCard: 'Mit Karte · Apple Pay · Google Pay zahlen', payCardLater: 'Den Zahlungslink schicke ich Ihnen zusammen mit dem Preis.',
+    payUsdt: 'Oder in USDT (TRC-20):', copy: 'Kopieren', copied: 'Kopiert', backHome: 'Zurück zur Website'
+  },
+  es: {
+    title: 'Encargar un proyecto · Yakov', navServices: 'Servicios',
+    h1: 'Cuéntame <em>tu proyecto</em>', lead: 'Rellena el brief. En un día te respondo con precio y plazo. Pagas el 50% por adelantado en línea y el resto a la entrega.',
+    step1: 'Brief', step2: 'Precio y plazo', step3: 'Anticipo del 50%', step4: 'Entrega',
+    lService: 'Servicio', oFixes: 'Arreglos web', oLanding: 'Landing page', oCalc: 'Calculadora de precios', oBot: 'Bot de reservas', oAuto: 'Automatización', oAi: 'Asistente de IA', oOther: 'Otra cosa',
+    lTask: '¿Qué hay que hacer?', phTask: 'Tu negocio, qué debe hacer la web o el bot, quiénes son tus clientes',
+    lExamples: 'Ejemplos y enlaces', optional: 'opcional', phExamples: 'Tu web actual, webs que te gustan, Google Drive con fotos',
+    lDeadline: 'Plazo', dAsap: 'Lo antes posible', dWeek: 'En una semana', dMonth: 'En un mes', dFlex: 'Sin prisa',
+    lBudget: 'Presupuesto', bUnder100: 'Hasta 100 $', b100: '100–300 $', b300: '300–1000 $', b1000: 'Más de 1000 $', bUnsure: 'Aún no lo sé',
+    lName: 'Tu nombre', phName: 'Ana', lContact: '¿Dónde te respondo?', lContactValue: 'Tu contacto',
+    phEmail: 'tu@ejemplo.com', phTelegram: '@usuario', phWhatsapp: '+34 600 000 000',
+    submit: 'Enviar el brief', sending: 'Enviando…', sendError: 'No se pudo enviar. Revisa la conexión e inténtalo de nuevo o escribe a yakov.agency@gmail.com.',
+    privacy: 'Tus datos solo se usan para responder a esta solicitud.',
+    doneTitle: 'Brief recibido', doneLead: 'En un día te respondo con precio y plazo. Si te encaja, puedes pagar el anticipo aquí mismo.',
+    payTitle: 'Pagar el anticipo del 50%', payCard: 'Pagar con tarjeta · Apple Pay · Google Pay', payCardLater: 'Te enviaré el enlace de pago junto con el precio.',
+    payUsdt: 'O en USDT (TRC-20):', copy: 'Copiar', copied: 'Copiado', backHome: 'Volver al sitio'
+  },
+  fr: {
+    title: 'Commander un projet · Yakov', navServices: 'Services',
+    h1: 'Parlez-moi <em>de votre projet</em>', lead: 'Remplissez le brief. Je réponds sous un jour avec un prix et un délai. Acompte de 50% en ligne, le reste à la livraison.',
+    step1: 'Brief', step2: 'Prix et délai', step3: 'Acompte de 50%', step4: 'Livraison',
+    lService: 'Service', oFixes: 'Corrections de site', oLanding: 'Landing page', oCalc: 'Calculateur de prix', oBot: 'Bot de réservation', oAuto: 'Automatisation', oAi: 'Assistant IA', oOther: 'Autre chose',
+    lTask: 'Que faut-il faire ?', phTask: 'Votre activité, ce que le site ou le bot doit faire, qui sont vos clients',
+    lExamples: 'Exemples et liens', optional: 'facultatif', phExamples: 'Votre site actuel, des sites que vous aimez, un Google Drive avec des photos',
+    lDeadline: 'Délai', dAsap: 'Au plus vite', dWeek: 'Sous une semaine', dMonth: 'Sous un mois', dFlex: 'Pas pressé',
+    lBudget: 'Budget', bUnder100: 'Jusqu\'à 100 $', b100: '100–300 $', b300: '300–1000 $', b1000: 'Plus de 1000 $', bUnsure: 'Je ne sais pas encore',
+    lName: 'Votre nom', phName: 'Anne', lContact: 'Où vous répondre ?', lContactValue: 'Votre contact',
+    phEmail: 'vous@exemple.fr', phTelegram: '@identifiant', phWhatsapp: '+33 6 00 00 00 00',
+    submit: 'Envoyer le brief', sending: 'Envoi…', sendError: 'Échec de l\'envoi. Vérifiez la connexion et réessayez ou écrivez à yakov.agency@gmail.com.',
+    privacy: 'Vos données servent uniquement à répondre à cette demande.',
+    doneTitle: 'Brief reçu', doneLead: 'Je réponds sous un jour avec un prix et un délai. Si cela vous convient, vous pouvez payer l\'acompte ici.',
+    payTitle: 'Payer l\'acompte de 50%', payCard: 'Payer par carte · Apple Pay · Google Pay', payCardLater: 'Je vous enverrai le lien de paiement avec le prix.',
+    payUsdt: 'Ou en USDT (TRC-20) :', copy: 'Copier', copied: 'Copié', backHome: 'Retour au site'
+  },
+  zh: {
+    title: '项目下单 · Yakov', navServices: '服务',
+    h1: '说说<em>您的项目</em>', lead: '填写需求表，我会在一天内回复报价和工期。在线支付 50% 定金，交付后付清余款。',
+    step1: '需求', step2: '报价与工期', step3: '50% 定金', step4: '交付',
+    lService: '服务', oFixes: '网站修复', oLanding: '落地页', oCalc: '报价计算器', oBot: '预约机器人', oAuto: '自动化', oAi: 'AI 助手', oOther: '其他',
+    lTask: '需要做什么？', phTask: '您的业务、网站或机器人要实现的功能、您的客户是谁',
+    lExamples: '示例和链接', optional: '选填', phExamples: '现有网站、喜欢的网站、存放照片的 Google Drive',
+    lDeadline: '工期', dAsap: '越快越好', dWeek: '一周内', dMonth: '一个月内', dFlex: '不着急',
+    lBudget: '预算', bUnder100: '100 美元以内', b100: '100–300 美元', b300: '300–1000 美元', b1000: '1000 美元以上', bUnsure: '还不确定',
+    lName: '您的名字', phName: '安娜', lContact: '我该如何回复您？', lContactValue: '您的联系方式',
+    phEmail: 'you@example.com', phTelegram: '@username', phWhatsapp: '+86 000 0000 0000',
+    submit: '发送需求', sending: '发送中…', sendError: '发送失败。请检查网络后重试，或发邮件至 yakov.agency@gmail.com。',
+    privacy: '您的信息仅用于回复本次需求。',
+    doneTitle: '需求已收到', doneLead: '我会在一天内回复报价和工期。如果合适，可以直接在这里支付定金。',
+    payTitle: '支付 50% 定金', payCard: '银行卡 · Apple Pay · Google Pay 支付', payCardLater: '我会随报价一起发送付款链接。',
+    payUsdt: '或使用 USDT (TRC-20)：', copy: '复制', copied: '已复制', backHome: '返回网站'
+  },
+  ar: {
+    title: 'اطلب مشروعًا · Yakov', navServices: 'الخدمات',
+    h1: 'حدّثني <em>عن مشروعك</em>', lead: 'املأ النموذج، وسأرد خلال يوم بالسعر والمدة. تدفع 50% مقدمًا عبر الإنترنت والباقي عند التسليم.',
+    step1: 'الطلب', step2: 'السعر والمدة', step3: 'دفعة 50%', step4: 'التسليم',
+    lService: 'الخدمة', oFixes: 'إصلاح المواقع', oLanding: 'صفحة هبوط', oCalc: 'حاسبة الأسعار', oBot: 'بوت الحجز', oAuto: 'الأتمتة', oAi: 'مساعد ذكاء اصطناعي', oOther: 'شيء آخر',
+    lTask: 'ما المطلوب؟', phTask: 'نشاطك، وما يجب أن يفعله الموقع أو البوت، ومن هم عملاؤك',
+    lExamples: 'أمثلة وروابط', optional: 'اختياري', phExamples: 'موقعك الحالي، مواقع تعجبك، Google Drive فيه صور',
+    lDeadline: 'المدة', dAsap: 'في أسرع وقت', dWeek: 'خلال أسبوع', dMonth: 'خلال شهر', dFlex: 'لا عجلة',
+    lBudget: 'الميزانية', bUnder100: 'حتى 100 $', b100: '100–300 $', b300: '300–1000 $', b1000: 'أكثر من 1000 $', bUnsure: 'لا أعرف بعد',
+    lName: 'اسمك', phName: 'سارة', lContact: 'كيف أرد عليك؟', lContactValue: 'وسيلة التواصل',
+    phEmail: 'you@example.com', phTelegram: '@username', phWhatsapp: '+971 50 000 0000',
+    submit: 'أرسل الطلب', sending: 'جارٍ الإرسال…', sendError: 'تعذّر الإرسال. تحقق من الاتصال وأعد المحاولة أو راسلني على yakov.agency@gmail.com.',
+    privacy: 'تُستخدم بياناتك فقط للرد على هذا الطلب.',
+    doneTitle: 'تم استلام الطلب', doneLead: 'سأرد خلال يوم بالسعر والمدة. إن ناسبك ذلك، يمكنك دفع المقدم هنا مباشرة.',
+    payTitle: 'ادفع مقدم 50%', payCard: 'ادفع بالبطاقة · Apple Pay · Google Pay', payCardLater: 'سأرسل لك رابط الدفع مع السعر.',
+    payUsdt: 'أو بعملة USDT (TRC-20):', copy: 'نسخ', copied: 'تم النسخ', backHome: 'العودة إلى الموقع'
+  }
+};
+</script>
+<script src="../lang.js"></script>
+<script src="order.js"></script>
+</body>
+</html>
