@@ -14,7 +14,10 @@ nav{display:flex;align-items:center;gap:22px}
 nav a{color:var(--muted);text-decoration:none;transition:color .2s}
 nav a:hover{color:var(--white)}
 #lang{color:var(--text);border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:6px 12px;cursor:pointer;font:inherit;font-weight:700;transition:border-color .2s,background .2s}
+#lang{padding:6px 9px;min-width:54px}
 #lang:hover{border-color:var(--red);background:var(--red-dim)}
+.goog-te-banner-frame,.skiptranslate iframe,#goog-gt-tt{display:none!important}
+body{top:0!important}
 
 .hero{padding-top:78px;padding-bottom:44px}
 .eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:13px;font-weight:600;color:#ddd;background:var(--panel)}
