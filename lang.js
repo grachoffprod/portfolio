@@ -76,6 +76,8 @@
   if (oldButton && oldButton.tagName !== 'SELECT') {
     var selector = document.createElement('select');
     selector.id = 'lang';
+    selector.className = 'notranslate';
+    selector.setAttribute('translate', 'no');
     selector.setAttribute('aria-label', 'Select language');
     var options = [['ru', 'RU'], ['en', 'EN']];
     if (detected !== 'ru' && detected !== 'en') options.push([detected, detected.toUpperCase()]);
