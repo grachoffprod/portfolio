@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title data-ru="Yakov — веб-разработка и автоматизация" data-en="Yakov — web development and automation">Yakov — web development and automation</title>
+<title data-i18n="title">Yakov — websites, bots and automation</title>
 <meta name="description" content="Landing pages, website fixes, Telegram bots, AI assistants and automations for small businesses.">
 <meta name="theme-color" content="#0a0a0a">
 <link rel="stylesheet" href="style.css">
@@ -11,58 +11,166 @@
 <body>
 <div class="cursor-glow" aria-hidden="true"></div>
 <header class="wrap top">
-  <a class="brand" href="#top">Yakov<span>.</span></a>
-  <nav aria-label="Main navigation"><a href="#services" data-ru="Услуги" data-en="Services"></a><a href="#personal" data-ru="Проект" data-en="Project"></a><a href="#contact" data-ru="Контакт" data-en="Contact"></a><button id="lang" type="button" aria-label="Switch language">RU</button></nav>
+  <a class="brand notranslate" translate="no" href="#top">Yakov<span>.</span></a>
+  <nav aria-label="Main navigation"><a href="#services" data-i18n="navServices">Services</a><a href="#contact" data-i18n="navContact">Contact</a><button id="lang" type="button">EN</button></nav>
 </header>
 <main id="top">
   <section class="wrap hero">
-    <span class="eyebrow"><i class="dot"></i><span data-ru="Открыт для новых проектов" data-en="Open for new projects"></span></span>
-    <h1><span data-ru="Сайты, боты и автоматизация," data-en="Websites, bots and automation"></span> <em data-ru="которые приносят заявки" data-en="that bring you leads"></em></h1>
-    <p data-ru="Делаю лендинги с заявками в Telegram, исправляю сайты, пишу ботов и ИИ-ассистентов, связываю сервисы между собой. Фиксированная цена и понятный результат." data-en="I build landing pages that send leads to Telegram, fix websites, create bots and AI assistants, and connect your services together. Fixed price, clear result."></p>
+    <h1 data-i18n-html="h1">Websites and bots <em>that bring you clients</em></h1>
+    <p data-i18n="lead">I build them for small businesses. Fixed price, ready in days.</p>
     <div class="hero-actions">
-      <a class="btn" href="#contact" data-ru="Обсудить задачу" data-en="Discuss your task"></a>
-      <a class="btn ghost" href="#services" data-ru="Смотреть живые демо ↓" data-en="See live demos ↓"></a>
+      <a class="btn" href="#contact" data-i18n="ctaTalk">Discuss your project</a>
+      <a class="btn ghost" href="#services" data-i18n="ctaDemos">See examples ↓</a>
     </div>
-    <div class="stats"><div><b data-count="6">0</b><span data-ru="услуг с живым демо" data-en="services with live demos"></span></div><div><b data-count="24" data-suffix="h">0</b><span data-ru="первый ответ" data-en="first reply"></span></div></div>
   </section>
-
-  <div class="marquee" aria-hidden="true"><div class="marquee-track">
-    <span>Landing pages</span><b>✦</b><span>Telegram bots</span><b>✦</b><span>AI assistants</span><b>✦</b><span>Google Sheets</span><b>✦</b><span>API integrations</span><b>✦</b><span>Calculators</span><b>✦</b><span>Website fixes</span><b>✦</b>
-    <span>Landing pages</span><b>✦</b><span>Telegram bots</span><b>✦</b><span>AI assistants</span><b>✦</b><span>Google Sheets</span><b>✦</b><span>API integrations</span><b>✦</b><span>Calculators</span><b>✦</b><span>Website fixes</span><b>✦</b>
-  </div></div>
 
   <section id="services" class="wrap reveal">
     <div class="section-head">
-      <h2 data-ru="Услуги и цены" data-en="Services and prices"></h2>
-      <p class="muted swipe-hint" data-ru="Листайте карточки →" data-en="Swipe the cards →"></p>
+      <h2 data-i18n="servicesTitle">What I do</h2>
+      <p class="muted swipe-hint" data-i18n="swipe">Swipe →</p>
     </div>
     <div class="services" role="list">
-      <article class="service" role="listitem" data-demo="fixes"><span class="num">01</span><h3 data-ru="Правки сайта" data-en="Website fixes"></h3><p data-ru="Сломанная вёрстка, мобильная версия, скорость, ошибки." data-en="Broken layout, mobile version, speed, bugs."></p><div class="card-foot"><b data-ru="от $20" data-en="from $20"></b><button class="demo-btn" type="button"><span data-ru="Демо" data-en="Demo"></span><i>→</i></button></div></article>
-      <article class="service" role="listitem" data-demo="landing"><span class="num">02</span><h3 data-ru="Лендинг под ключ" data-en="Landing page"></h3><p data-ru="Продающая страница с формой, заявки сразу в Telegram." data-en="A selling page with a form, leads go straight to Telegram."></p><div class="card-foot"><b data-ru="от $80" data-en="from $80"></b><button class="demo-btn" type="button"><span data-ru="Демо" data-en="Demo"></span><i>→</i></button></div></article>
-      <article class="service" role="listitem" data-demo="calculator"><span class="num">03</span><h3 data-ru="Калькулятор / квиз" data-en="Calculator / quiz"></h3><p data-ru="Клиент сам считает цену и оставляет заявку." data-en="Clients estimate the price themselves and leave a request."></p><div class="card-foot"><b data-ru="от $50" data-en="from $50"></b><button class="demo-btn" type="button"><span data-ru="Демо" data-en="Demo"></span><i>→</i></button></div></article>
-      <article class="service" role="listitem" data-demo="bot"><span class="num">04</span><h3 data-ru="Telegram-бот" data-en="Telegram bot"></h3><p data-ru="Запись, заявки, ответы на вопросы, уведомления админу." data-en="Bookings, leads, FAQ answers, admin notifications."></p><div class="card-foot"><b data-ru="от $100" data-en="from $100"></b><button class="demo-btn" type="button"><span data-ru="Демо" data-en="Demo"></span><i>→</i></button></div></article>
-      <article class="service" role="listitem" data-demo="automation"><span class="num">05</span><h3 data-ru="Автоматизация" data-en="Automation"></h3><p data-ru="Форма → Google Таблица → Telegram. Сервисы работают сами." data-en="Form → Google Sheets → Telegram. Your tools work on their own."></p><div class="card-foot"><b data-ru="от $60" data-en="from $60"></b><button class="demo-btn" type="button"><span data-ru="Демо" data-en="Demo"></span><i>→</i></button></div></article>
-      <article class="service" role="listitem" data-demo="ai"><span class="num">06</span><span class="badge" data-ru="Новое" data-en="New"></span><h3 data-ru="ИИ-ассистент для сайта" data-en="AI assistant for your site"></h3><p data-ru="Отвечает клиентам 24/7 и передаёт заявки менеджеру." data-en="Answers customers 24/7 and hands leads to your manager."></p><div class="card-foot"><b data-ru="от $120" data-en="from $120"></b><button class="demo-btn" type="button"><span data-ru="Демо" data-en="Demo"></span><i>→</i></button></div></article>
+      <a class="service" role="listitem" href="demos/fixes/"><h3 data-i18n="sFixes">Website fixes</h3><p data-i18n="sFixesD">Broken layout, mobile version, slow loading.</p><div class="card-foot"><b data-i18n="pFixes">from $20</b><span class="demo-btn"><span data-i18n="demo">Example</span><i>→</i></span></div></a>
+      <a class="service" role="listitem" href="demos/landing/"><h3 data-i18n="sLanding">Landing page</h3><p data-i18n="sLandingD">A page that turns visitors into requests.</p><div class="card-foot"><b data-i18n="pLanding">from $80</b><span class="demo-btn"><span data-i18n="demo">Example</span><i>→</i></span></div></a>
+      <a class="service" role="listitem" href="demos/calculator/"><h3 data-i18n="sCalc">Price calculator</h3><p data-i18n="sCalcD">Clients see the price and leave a request.</p><div class="card-foot"><b data-i18n="pCalc">from $50</b><span class="demo-btn"><span data-i18n="demo">Example</span><i>→</i></span></div></a>
+      <a class="service" role="listitem" href="demos/bot/"><h3 data-i18n="sBot">Booking bot</h3><p data-i18n="sBotD">Clients book in Telegram on their own.</p><div class="card-foot"><b data-i18n="pBot">from $100</b><span class="demo-btn"><span data-i18n="demo">Example</span><i>→</i></span></div></a>
+      <a class="service" role="listitem" href="demos/automation/"><h3 data-i18n="sAuto">Automation</h3><p data-i18n="sAutoD">Requests land in a spreadsheet and Telegram.</p><div class="card-foot"><b data-i18n="pAuto">from $60</b><span class="demo-btn"><span data-i18n="demo">Example</span><i>→</i></span></div></a>
+      <a class="service" role="listitem" href="demos/ai/"><h3 data-i18n="sAi">AI assistant</h3><p data-i18n="sAiD">Answers your clients' questions 24/7.</p><div class="card-foot"><b data-i18n="pAi">from $120</b><span class="demo-btn"><span data-i18n="demo">Example</span><i>→</i></span></div></a>
     </div>
-
-    <div class="stage" id="stage" aria-live="polite">
-      <div class="stage-inner">
-        <div class="stage-bar">
-          <div class="stage-title"><span class="num" id="stage-num">01</span><b id="stage-name"></b></div>
-          <span class="stage-note" data-ru="Демо для портфолио — симуляция, не работа для клиента" data-en="Portfolio demo — a simulation, not client work"></span>
-          <div class="stage-actions"><a id="stage-open" class="mini-link" href="#" target="_blank" rel="noopener" data-ru="Открыть ↗" data-en="Open ↗"></a><button id="stage-close" class="close" type="button" aria-label="Close demo">✕</button></div>
-        </div>
-        <div class="frame-wrap"><div class="loader" aria-hidden="true"></div><iframe id="stage-frame" title="Live demo" loading="lazy"></iframe></div>
-      </div>
-    </div>
-    <p class="muted price-note" data-ru="Точная цена — после описания задачи. Оплата: 50% предоплата, 50% после сдачи. Принимаю USDT." data-en="Exact price after you describe the task. Payment: 50% upfront, 50% on delivery. USDT accepted."></p>
+    <p class="muted price-note" data-i18n="payNote">50% upfront, 50% on delivery. USDT accepted.</p>
   </section>
 
-  <section id="personal" class="wrap reveal personal"><h2 data-ru="Личный проект" data-en="Personal project"></h2><article class="card"><span class="num" data-ru="Работает каждый день" data-en="Running daily"></span><h3 data-ru="Искатель заказов" data-en="Job finder"></h3><p data-ru="Собственный инструмент: каждые 15 минут собирает заказы с фриланс-бирж, оценивает их с помощью ИИ и присылает подходящие в Telegram." data-en="My own tool: every 15 minutes it collects jobs from freelance sites, scores them with AI and sends the matching ones to Telegram."></p><div class="tags"><span>Python</span><span>GitHub Actions</span><span>Telegram Bot API</span><span>AI</span></div></article></section>
-
-  <section id="contact" class="wrap reveal contact"><h2 data-ru="Есть задача?" data-en="Got a task?"></h2><p data-ru="Напишите в Telegram — коротко опишите задачу, отвечу с ценой и сроком." data-en="Message me on Telegram with a short description — I'll reply with a price and timeline."></p><div class="contact-btns"><a class="btn big icon-btn" href="https://t.me/wakeupyakov"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13.1l-4.7-1.5c-1-.3-1-1 .2-1.5l18.5-7.1c.9-.3 1.6.2 1.4 1.3z"/></svg><span data-ru="Написать в Telegram" data-en="Message on Telegram"></span></a><a class="btn big icon-btn" href="mailto:yakov.agency@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5h18v14H3z M3 6l9 7 9-7"/></svg><span data-ru="Написать на почту" data-en="Send an email"></span></a></div></section>
+  <section id="contact" class="wrap reveal contact">
+    <h2 data-i18n="contactTitle">Have a project?</h2>
+    <p data-i18n="contactLead">Tell me in a few words what you need. I'll reply with a price and a deadline.</p>
+    <div class="contact-btns">
+      <a class="btn big icon-btn" href="https://t.me/wakeupyakov"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13.1l-4.7-1.5c-1-.3-1-1 .2-1.5l18.5-7.1c.9-.3 1.6.2 1.4 1.3z"/></svg><span>Telegram</span></a>
+      <a class="btn big ghost icon-btn" href="mailto:yakov.agency@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5h18v14H3z M3 6l9 7 9-7"/></svg><span>Email</span></a>
+    </div>
+  </section>
 </main>
-<footer class="wrap site-footer"><span>© 2026 Yakov</span><span data-ru="Сайты, боты и автоматизация под ключ" data-en="Websites, bots and automation, end to end"></span><span data-ru="Все демо-проекты на сайте — учебные примеры" data-en="All demo projects on this site are sample work"></span></footer>
+<footer class="wrap site-footer"><span class="notranslate" translate="no">© 2026 Yakov</span><span data-i18n="footer">Examples on this site are demos with made-up data.</span></footer>
+<script>
+window.I18N = {
+  en: {
+    title: 'Yakov — websites, bots and automation', navServices: 'Services', navContact: 'Contact',
+    h1: 'Websites and bots <em>that bring you clients</em>', lead: 'I build them for small businesses. Fixed price, ready in days.',
+    ctaTalk: 'Discuss your project', ctaDemos: 'See examples ↓', servicesTitle: 'What I do', swipe: 'Swipe →', demo: 'Example',
+    sFixes: 'Website fixes', sFixesD: 'Broken layout, mobile version, slow loading.', pFixes: 'from $20',
+    sLanding: 'Landing page', sLandingD: 'A page that turns visitors into requests.', pLanding: 'from $80',
+    sCalc: 'Price calculator', sCalcD: 'Clients see the price and leave a request.', pCalc: 'from $50',
+    sBot: 'Booking bot', sBotD: 'Clients book in Telegram on their own.', pBot: 'from $100',
+    sAuto: 'Automation', sAutoD: 'Requests land in a spreadsheet and Telegram.', pAuto: 'from $60',
+    sAi: 'AI assistant', sAiD: 'Answers your clients\' questions 24/7.', pAi: 'from $120',
+    payNote: '50% upfront, 50% on delivery. USDT accepted.',
+    contactTitle: 'Have a project?', contactLead: 'Tell me in a few words what you need. I\'ll reply with a price and a deadline.',
+    footer: 'Examples on this site are demos with made-up data.'
+  },
+  de: {
+    title: 'Yakov — Websites, Bots und Automatisierung', navServices: 'Leistungen', navContact: 'Kontakt',
+    h1: 'Websites und Bots, <em>die neue Kunden bringen</em>',
+    lead: 'Ich entwickle Lösungen für kleine Unternehmen. Festpreis, in wenigen Tagen fertig.',
+    ctaTalk: 'Projekt besprechen', ctaDemos: 'Beispiele ansehen ↓', servicesTitle: 'Mein Angebot', swipe: 'Wischen →', demo: 'Beispiel',
+    sFixes: 'Website-Fixes', sFixesD: 'Fehler im Layout, auf dem Handy oder beim Laden.', pFixes: 'ab 20 $',
+    sLanding: 'Landingpage', sLandingD: 'Eine Seite, die Besucher zu Anfragen macht.', pLanding: 'ab 80 $',
+    sCalc: 'Preiskalkulator', sCalcD: 'Kunden sehen den Preis und senden direkt eine Anfrage.', pCalc: 'ab 50 $',
+    sBot: 'Buchungsbot', sBotD: 'Kunden buchen selbst über Telegram.', pBot: 'ab 100 $',
+    sAuto: 'Automatisierung', sAutoD: 'Anfragen landen in einer Tabelle und bei Telegram.', pAuto: 'ab 60 $',
+    sAi: 'KI-Assistent', sAiD: 'Beantwortet Kundenfragen rund um die Uhr.', pAi: 'ab 120 $',
+    payNote: '50 % Anzahlung, 50 % bei Übergabe. USDT möglich.', contactTitle: 'Sie haben ein Projekt?',
+    contactLead: 'Schreiben Sie kurz, was Sie brauchen. Ich melde mich mit Preis und Zeitplan.',
+    footer: 'Die Beispiele auf dieser Website sind Demos mit erfundenen Daten.'
+  },
+  es: {
+    title: 'Yakov — webs, bots y automatización', navServices: 'Servicios', navContact: 'Contacto',
+    h1: 'Webs y bots <em>que te ayudan a conseguir clientes</em>',
+    lead: 'Los creo para pequeños negocios. Precio cerrado y listos en pocos días.',
+    ctaTalk: 'Hablemos de tu proyecto', ctaDemos: 'Ver ejemplos ↓', servicesTitle: 'Qué hago', swipe: 'Desliza →', demo: 'Ejemplo',
+    sFixes: 'Arreglos web', sFixesD: 'Diseño roto, versión móvil o carga lenta.', pFixes: 'desde 20 $',
+    sLanding: 'Página de aterrizaje', sLandingD: 'Una página que convierte visitas en consultas.', pLanding: 'desde 80 $',
+    sCalc: 'Calculadora de precios', sCalcD: 'Tus clientes ven el precio y envían una consulta.', pCalc: 'desde 50 $',
+    sBot: 'Bot de reservas', sBotD: 'Tus clientes reservan por su cuenta en Telegram.', pBot: 'desde 100 $',
+    sAuto: 'Automatización', sAutoD: 'Las consultas llegan a una hoja de cálculo y a Telegram.', pAuto: 'desde 60 $',
+    sAi: 'Asistente de IA', sAiD: 'Responde las preguntas de tus clientes a cualquier hora.', pAi: 'desde 120 $',
+    payNote: '50 % por adelantado y 50 % al entregar. Acepto USDT.', contactTitle: '¿Tienes un proyecto?',
+    contactLead: 'Cuéntame brevemente qué necesitas. Te responderé con precio y plazo.',
+    footer: 'Los ejemplos de esta web son demos con datos inventados.'
+  },
+  fr: {
+    title: 'Yakov — sites web, bots et automatisation', navServices: 'Services', navContact: 'Contact',
+    h1: 'Des sites et des bots <em>qui vous apportent des clients</em>',
+    lead: 'Je les crée pour les petites entreprises. Tarif fixe, prêts en quelques jours.',
+    ctaTalk: 'Parlons de votre projet', ctaDemos: 'Voir les exemples ↓', servicesTitle: 'Mes services', swipe: 'Faites défiler →', demo: 'Exemple',
+    sFixes: 'Corrections de site', sFixesD: 'Mise en page cassée, version mobile ou chargement lent.', pFixes: 'à partir de 20 $',
+    sLanding: 'Page de présentation', sLandingD: 'Une page qui transforme les visites en demandes.', pLanding: 'à partir de 80 $',
+    sCalc: 'Calculateur de prix', sCalcD: 'Vos clients voient le prix et envoient leur demande.', pCalc: 'à partir de 50 $',
+    sBot: 'Bot de réservation', sBotD: 'Vos clients réservent eux-mêmes sur Telegram.', pBot: 'à partir de 100 $',
+    sAuto: 'Automatisation', sAutoD: 'Les demandes arrivent dans un tableur et sur Telegram.', pAuto: 'à partir de 60 $',
+    sAi: 'Assistant IA', sAiD: 'Répond aux questions de vos clients à toute heure.', pAi: 'à partir de 120 $',
+    payNote: '50 % à l’avance, 50 % à la livraison. USDT accepté.', contactTitle: 'Vous avez un projet ?',
+    contactLead: 'Dites-moi en quelques mots ce qu’il vous faut. Je vous répondrai avec un tarif et un délai.',
+    footer: 'Les exemples de ce site sont des démos avec des données fictives.'
+  },
+  zh: {
+    title: 'Yakov — 网站、机器人与自动化', navServices: '服务', navContact: '联系',
+    h1: '网站和机器人，<em>帮你带来更多客户</em>',
+    lead: '专为小型企业打造。价格固定，几天内即可交付。',
+    ctaTalk: '聊聊你的项目', ctaDemos: '查看案例 ↓', servicesTitle: '我能做什么', swipe: '滑动 →', demo: '案例',
+    sFixes: '网站修复', sFixesD: '修复布局错乱、手机显示和加载慢等问题。', pFixes: '20 美元起',
+    sLanding: '营销落地页', sLandingD: '把访客变成咨询客户的页面。', pLanding: '80 美元起',
+    sCalc: '价格计算器', sCalcD: '客户直接查看价格并提交需求。', pCalc: '50 美元起',
+    sBot: '预约机器人', sBotD: '客户通过 Telegram 自助预约。', pBot: '100 美元起',
+    sAuto: '自动化', sAutoD: '客户咨询自动同步到表格和 Telegram。', pAuto: '60 美元起',
+    sAi: 'AI 助手', sAiD: '全天候解答客户的问题。', pAi: '120 美元起',
+    payNote: '预付 50%，交付时付清余款。接受 USDT。', contactTitle: '有项目想做吗？',
+    contactLead: '简单说说你的需求，我会回复报价和交付时间。',
+    footer: '本站案例均为使用虚构数据制作的演示。'
+  },
+  ar: {
+    title: 'Yakov — مواقع إلكترونية وروبوتات وأتمتة', navServices: 'الخدمات', navContact: 'تواصل معنا',
+    h1: 'مواقع وروبوتات <em>تجلب لك عملاء جددًا</em>',
+    lead: 'أصممها للمشروعات الصغيرة. سعر ثابت وتسليم خلال أيام.',
+    ctaTalk: 'لنتحدث عن مشروعك', ctaDemos: 'شاهد الأمثلة ↓', servicesTitle: 'ما أقدمه', swipe: 'اسحب ←', demo: 'مثال',
+    sFixes: 'إصلاح المواقع', sFixesD: 'إصلاح التصميم أو نسخة الهاتف أو بطء التحميل.', pFixes: 'ابتداءً من 20 $',
+    sLanding: 'صفحة تسويقية', sLandingD: 'صفحة تحوّل الزوار إلى عملاء محتملين.', pLanding: 'ابتداءً من 80 $',
+    sCalc: 'حاسبة الأسعار', sCalcD: 'يرى العملاء السعر ويرسلون طلبهم مباشرة.', pCalc: 'ابتداءً من 50 $',
+    sBot: 'روبوت للحجوزات', sBotD: 'يحجز العملاء بأنفسهم عبر Telegram.', pBot: 'ابتداءً من 100 $',
+    sAuto: 'الأتمتة', sAutoD: 'تصل الطلبات إلى جدول بيانات وإلى Telegram.', pAuto: 'ابتداءً من 60 $',
+    sAi: 'مساعد ذكاء اصطناعي', sAiD: 'يجيب عن أسئلة عملائك على مدار الساعة.', pAi: 'ابتداءً من 120 $',
+    payNote: '50٪ مقدمًا و50٪ عند التسليم. نقبل USDT.', contactTitle: 'هل لديك مشروع؟',
+    contactLead: 'اكتب باختصار ما تحتاج إليه. سأرد عليك بالسعر والمدة.',
+    footer: 'الأمثلة في هذا الموقع عروض تجريبية ببيانات خيالية.'
+  },
+  ru: {
+    title: 'Yakov — сайты, боты и автоматизация', navServices: 'Услуги', navContact: 'Контакты',
+    h1: 'Сайты и боты, <em>которые приводят клиентов</em>', lead: 'Делаю для малого бизнеса. Фиксированная цена, готово за несколько дней.',
+    ctaTalk: 'Обсудить проект', ctaDemos: 'Смотреть примеры ↓', servicesTitle: 'Что я делаю', swipe: 'Листайте →', demo: 'Пример',
+    sFixes: 'Исправление сайта', sFixesD: 'Поехала вёрстка, нет мобильной версии, сайт долго грузится.', pFixes: 'от $20',
+    sLanding: 'Лендинг', sLandingD: 'Страница, с которой посетители оставляют заявки.', pLanding: 'от $80',
+    sCalc: 'Калькулятор цены', sCalcD: 'Клиент сам видит цену и оставляет заявку.', pCalc: 'от $50',
+    sBot: 'Бот для записи', sBotD: 'Клиенты сами записываются через Telegram.', pBot: 'от $100',
+    sAuto: 'Автоматизация', sAutoD: 'Заявки сами попадают в таблицу и Telegram.', pAuto: 'от $60',
+    sAi: 'ИИ-ассистент', sAiD: 'Отвечает на вопросы клиентов круглосуточно.', pAi: 'от $120',
+    payNote: '50% предоплата, 50% после сдачи. Принимаю USDT.',
+    contactTitle: 'Есть задача?', contactLead: 'Опишите в двух словах, что нужно. Отвечу с ценой и сроком.',
+    footer: 'Примеры на сайте — демо с вымышленными данными.'
+  },
+  uk: {
+    title: 'Yakov — сайти, боти та автоматизація', navServices: 'Послуги', navContact: 'Контакти',
+    h1: 'Сайти й боти, <em>які приводять клієнтів</em>', lead: 'Роблю для малого бізнесу. Фіксована ціна, готово за кілька днів.',
+    ctaTalk: 'Обговорити проєкт', ctaDemos: 'Дивитися приклади ↓', servicesTitle: 'Що я роблю', swipe: 'Гортайте →', demo: 'Приклад',
+    sFixes: 'Виправлення сайту', sFixesD: 'Поїхала верстка, немає мобільної версії, сайт довго вантажиться.', pFixes: 'від $20',
+    sLanding: 'Лендинг', sLandingD: 'Сторінка, з якої відвідувачі залишають заявки.', pLanding: 'від $80',
+    sCalc: 'Калькулятор ціни', sCalcD: 'Клієнт сам бачить ціну й залишає заявку.', pCalc: 'від $50',
+    sBot: 'Бот для запису', sBotD: 'Клієнти самі записуються через Telegram.', pBot: 'від $100',
+    sAuto: 'Автоматизація', sAutoD: 'Заявки самі потрапляють у таблицю й Telegram.', pAuto: 'від $60',
+    sAi: 'ШІ-асистент', sAiD: 'Відповідає на запитання клієнтів цілодобово.', pAi: 'від $120',
+    payNote: '50% передоплата, 50% після здачі. Приймаю USDT.',
+    contactTitle: 'Є задача?', contactLead: 'Опишіть у двох словах, що потрібно. Відповім із ціною та терміном.',
+    footer: 'Приклади на сайті — демо з вигаданими даними.'
+  }
+};
+</script>
 <script src="lang.js"></script>
 <script src="main.js"></script>
 </body>

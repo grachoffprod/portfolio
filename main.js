@@ -1,69 +1,66 @@
-// Main page interactions: demo stage, card animations, counters, reveal, cursor glow.
+// Main page interactions: card tilt, reveal, cursor glow. Cards link straight to demo pages.
 (function () {
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-  var stage = document.getElementById('stage');
-  var frame = document.getElementById('stage-frame');
-  var openLink = document.getElementById('stage-open');
   var cards = Array.prototype.slice.call(document.querySelectorAll('.service'));
-  var current = null;
-
-  function cardTitle(card) { return card.querySelector('h3').textContent; }
-
-  function openDemo(card) {
-    var name = card.dataset.demo;
-    if (current === card) { closeDemo(); return; }
-    cards.forEach(function (c) { c.classList.toggle('active', c === card); c.classList.toggle('dim', c !== card); });
-    current = card;
-    var url = 'demos/' + name + '/';
-    document.getElementById('stage-num').textContent = card.querySelector('.num').textContent;
-    document.getElementById('stage-name').textContent = cardTitle(card);
-    openLink.href = url;
-    stage.classList.remove('loaded');
-    // Swap animation when switching between demos while the stage is already open.
-    if (stage.classList.contains('open') && !reduced) {
-      stage.classList.add('swap');
-      setTimeout(function () { frame.src = url; stage.classList.remove('swap'); }, 220);
-    } else frame.src = url;
-    stage.classList.add('open');
-    card.classList.add('pulse');
-    setTimeout(function () { card.classList.remove('pulse'); }, 600);
-    setTimeout(function () { stage.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' }); }, reduced ? 0 : 280);
-  }
-  function closeDemo() {
-    stage.classList.remove('open');
-    cards.forEach(function (c) { c.classList.remove('active', 'dim'); });
-    if (current) current.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'nearest', inline: 'center' });
-    current = null;
-    setTimeout(function () { if (!current) frame.removeAttribute('src'); }, 500);
-  }
-  frame.addEventListener('load', function () { if (frame.getAttribute('src')) stage.classList.add('loaded'); });
-  cards.forEach(function (card) {
-    card.addEventListener('click', function () { openDemo(card); });
-  });
-  document.getElementById('stage-close').addEventListener('click', closeDemo);
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && current) closeDemo(); });
-  document.addEventListener('langchange', function () {
-    if (current) document.getElementById('stage-name').textContent = cardTitle(current);
-  });
 
   // Card tilt + spotlight following the pointer.
   if (finePointer && !reduced) {
     cards.forEach(function (card) {
+      var cardFrame = 0;
+      var pointer = null;
       card.addEventListener('pointermove', function (e) {
-        var r = card.getBoundingClientRect();
-        var x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
-        card.style.setProperty('--mx', x * 100 + '%');
-        card.style.setProperty('--my', y * 100 + '%');
-        card.style.transform = 'perspective(800px) rotateX(' + ((0.5 - y) * 6) + 'deg) rotateY(' + ((x - 0.5) * 6) + 'deg) translateY(-4px)';
+        pointer = { x: e.clientX, y: e.clientY };
+        if (cardFrame) return;
+        cardFrame = requestAnimationFrame(function () {
+          cardFrame = 0;
+          var r = card.getBoundingClientRect();
+          var x = (pointer.x - r.left) / r.width, y = (pointer.y - r.top) / r.height;
+          card.style.setProperty('--mx', x * 100 + '%');
+          card.style.setProperty('--my', y * 100 + '%');
+          card.style.transform = 'perspective(800px) rotateX(' + ((0.5 - y) * 6) + 'deg) rotateY(' + ((x - 0.5) * 6) + 'deg) translateY(-4px)';
+        });
       });
-      card.addEventListener('pointerleave', function () { card.style.transform = ''; });
+      card.addEventListener('pointerleave', function () {
+        if (cardFrame) cancelAnimationFrame(cardFrame);
+        cardFrame = 0;
+        pointer = null;
+        card.style.transform = '';
+      });
     });
     var glow = document.querySelector('.cursor-glow');
-    window.addEventListener('pointermove', function (e) {
-      glow.style.transform = 'translate(' + e.clientX + 'px,' + e.clientY + 'px)';
-      glow.classList.add('on');
-    });
+    if (glow) {
+      var glowFrame = 0;
+      var glowX = 0, glowY = 0;
+      window.addEventListener('pointermove', function (e) {
+        glowX = e.clientX;
+        glowY = e.clientY;
+        if (glowFrame) return;
+        glowFrame = requestAnimationFrame(function () {
+          glowFrame = 0;
+          glow.style.transform = 'translate(' + glowX + 'px,' + glowY + 'px)';
+          glow.classList.add('on');
+        });
+      });
+    }
+  }
+
+  // Keep the marquee idle outside the viewport and while its page is hidden.
+  var marqueeTrack = document.querySelector('.marquee-track');
+  if (marqueeTrack) {
+    var marqueeVisible = true;
+    function pauseMarquee() {
+      marqueeTrack.classList.toggle('lm-paused', !marqueeVisible || document.hidden);
+    }
+    if ('IntersectionObserver' in window) {
+      var marqueeObserver = new IntersectionObserver(function (entries) {
+        marqueeVisible = entries[0].isIntersecting;
+        pauseMarquee();
+      });
+      marqueeObserver.observe(marqueeTrack.closest('.marquee') || marqueeTrack);
+    }
+    document.addEventListener('visibilitychange', pauseMarquee);
+    pauseMarquee();
   }
 
   // Mobile carousel: highlight the card in the middle.

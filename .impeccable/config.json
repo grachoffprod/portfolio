@@ -1,0 +1,71 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "pulsing-dot",
+        "value": "*",
+        "files": [
+          "demos/bot/index.html"
+        ],
+        "createdAt": "2026-11-26T15:47:56.315Z",
+        "reason": "Claude: the blinking dots are the chat typing indicator, shown only while the bot is 'typing' in the scenario"
+      },
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "demos/fixes/index.html"
+        ],
+        "createdAt": "2026-11-26T16:12:05.569Z",
+        "reason": "Claude: the cramped text is the deliberate 'broken website' state that the demo then fixes"
+      },
+      {
+        "rule": "pulsing-dot",
+        "value": "*",
+        "files": [
+          "demos/landing/index.html"
+        ],
+        "createdAt": "2026-11-26T16:23:43.590Z",
+        "reason": "Claude: the only infinite small animations are the chat typing dots (shown only while 'typing') and the coffee steam illustration"
+      },
+      {
+        "rule": "pulsing-dot",
+        "value": "*",
+        "files": [
+          "demos/fixes/index.html"
+        ],
+        "createdAt": "2026-11-26T16:23:43.891Z",
+        "reason": "Claude: the only infinite small animations are the chat typing dots (shown only while 'typing') and the coffee steam illustration"
+      },
+      {
+        "rule": "pulsing-dot",
+        "value": "*",
+        "files": [
+          "demos/calculator/index.html"
+        ],
+        "createdAt": "2026-11-26T16:23:44.173Z",
+        "reason": "Claude: the only infinite small animations are the chat typing dots (shown only while 'typing') and the coffee steam illustration"
+      },
+      {
+        "rule": "pulsing-dot",
+        "value": "*",
+        "files": [
+          "demos/automation/index.html"
+        ],
+        "createdAt": "2026-11-26T16:23:44.406Z",
+        "reason": "Claude: the only infinite small animations are the chat typing dots (shown only while 'typing') and the coffee steam illustration"
+      },
+      {
+        "rule": "pulsing-dot",
+        "value": "*",
+        "files": [
+          "demos/ai/index.html"
+        ],
+        "createdAt": "2026-11-26T16:23:44.666Z",
+        "reason": "Claude: the only infinite small animations are the chat typing dots (shown only while 'typing') and the coffee steam illustration"
+      }
+    ]
+  }
+}

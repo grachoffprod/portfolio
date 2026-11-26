@@ -1,5 +1,258 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090909"><title data-en="Lead flow · Flowstate" data-ru="Поток заявок · Flowstate">Lead flow · Flowstate</title><style>
-:root{color-scheme:dark;--bg:#090909;--panel:#121212;--line:#292929;--muted:#a4a4a4;--red:#ff5c5c}*{box-sizing:border-box}h1{overflow-wrap:anywhere}body{margin:0;background:var(--bg);color:#f5f5f5;font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:9px max(14px,calc((100vw - 1100px)/2));border-bottom:1px solid var(--line);font-size:12px;color:#ccc}.notice{display:flex;align-items:center;gap:8px}.dot{width:7px;height:7px;border-radius:50%;background:var(--red)}.top a{color:#fff;text-decoration:none;white-space:nowrap}#lang{font:600 12px system-ui;color:#eee;background:#171717;border:1px solid #393939;border-radius:8px;padding:7px 10px}.wrap{max-width:1100px;margin:auto;padding:22px 16px}.head{display:flex;justify-content:space-between;align-items:end;gap:16px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#aaa}.head h1{font-size:clamp(25px,4vw,39px);letter-spacing:-.05em;margin:5px 0}.head p{margin:0;color:#aaa;font-size:13px}.autorun{flex:none;background:#f2f2f2;color:#111;border:0;border-radius:9px;padding:10px 13px;font:700 12px system-ui;cursor:pointer}.stats{display:flex;gap:8px;margin-top:16px}.stat{flex:1;border:1px solid #292929;border-radius:11px;background:#111;padding:10px 12px}.stat span{display:block;font-size:12px;color:#aaa}.stat strong{font-size:20px;letter-spacing:-.04em}.flow{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:16px 0 13px}.connector{position:absolute;left:9%;right:9%;top:31px;height:1px;background:#343434}.connector:after{content:"";position:absolute;left:0;width:30%;height:1px;background:var(--red);box-shadow:0 0 10px #ff5c5c;animation:travel 2.8s linear infinite}@keyframes travel{from{transform:translateX(0)}to{transform:translateX(220%)}}.node{position:relative;z-index:1;min-width:0;min-height:86px;display:flex;align-items:center;gap:9px;padding:12px;border:1px solid #343434;border-radius:12px;background:#111}.icon{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:9px;background:#222;color:#fff;font-weight:800;font-size:12px}.node:nth-of-type(2) .icon{color:#fff}.node:nth-of-type(3) .icon{background:#222}.node strong{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px}.node small{display:block;color:#999;font-size:12px}.pulse{position:absolute;left:9%;top:25px;width:11px;height:11px;border-radius:50%;background:var(--red);box-shadow:0 0 14px #ff5c5c;opacity:0}.pulse.run{opacity:1;animation:packet 2s linear forwards}@keyframes packet{to{left:90%}}.toggle{grid-column:4;justify-self:end;display:flex;align-items:center;gap:8px;color:#bbb;font-size:12px}.toggle input{accent-color:var(--red);width:16px;height:16px;margin:0}.work{display:grid;grid-template-columns:minmax(240px,.72fr) minmax(0,1.28fr);gap:12px}.card{min-width:0;border:1px solid var(--line);border-radius:13px;background:var(--panel);padding:15px}.card h2{font-size:13px;margin:0 0 12px}.form{display:grid;gap:9px}.form label{display:grid;gap:4px;color:#bbb;font-size:12px}.form input,.form select{width:100%;min-width:0;padding:9px 10px;background:#090909;color:#f5f5f5;border:1px solid #393939;border-radius:8px;font:13px system-ui}.form button{background:#262626;color:#fff;border:1px solid #444;border-radius:8px;padding:10px;font:650 12px system-ui;cursor:pointer}.form small{font-size:12px;color:#898989}.output{min-width:0}.sheet-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}.sheet-head h2{margin:0}.sheets-tag{font-size:12px;color:#bbb;border:1px solid #343434;border-radius:5px;padding:4px 6px}.table-wrap{overflow:hidden;border:1px solid #303030;border-radius:8px}.table{border-collapse:collapse;width:100%;table-layout:fixed;font-size:12px}.table th,.table td{padding:9px 7px;text-align:left;border-bottom:1px solid #2b2b2b;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.table th{font-weight:650;color:#bbb;background:#1b1b1b}.table td{color:#ddd}.table tbody tr{animation:row .5s ease}.table tbody tr:last-child{background:#202020;box-shadow:inset 2px 0 var(--red)}@keyframes row{from{opacity:0;background:#ff5c5c22}}.notify{display:flex;align-items:flex-start;gap:10px;margin-top:10px;padding:10px;border:1px solid #363636;border-radius:9px;background:#171717;opacity:0;transform:translateX(10px)}.notify.show{opacity:1;transform:translateX(0);transition:.35s}.tgmark{display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:#eee;color:#111;font-size:12px;font-weight:850;flex:none}.notify strong{display:block;font-size:12px}.notify p{margin:3px 0 0;color:#bbb;font-size:12px}.log{margin-top:12px;padding-top:11px;border-top:1px solid #2b2b2b}.log h3{margin:0 0 6px;font-size:12px;color:#bbb}.logline{display:flex;gap:8px;align-items:baseline;color:#999;font-size:12px;padding:3px 0}.logline time{font-variant-numeric:tabular-nums;color:#ccc}.logline i{width:5px;height:5px;border-radius:50%;background:var(--red);flex:none}.logline.pending{opacity:.55}.toast{position:fixed;right:18px;top:62px;max-width:calc(100vw - 36px);padding:11px 14px;background:#efefef;color:#111;border-radius:10px;box-shadow:0 12px 38px #0009;font-size:12px;font-weight:650;opacity:0;transform:translateY(-10px);pointer-events:none}.toast.show{opacity:1;transform:translateY(0);transition:.3s}:focus-visible{outline:2px solid #fff;outline-offset:3px}@media(max-width:720px){.work{grid-template-columns:1fr}.flow{grid-template-columns:repeat(2,minmax(0,1fr))}.connector{display:none}.pulse{display:none}.toggle{grid-column:2}.node{min-height:72px}}@media(max-width:420px){.top .notice{flex:1;min-width:0;align-items:flex-start}.top .notice span{line-height:1.2}.top a{white-space:normal;max-width:118px;line-height:1.2}.top>div:last-child{gap:6px!important}.top #lang{flex:none}.top{padding:9px 10px;font-size:12px}.wrap{padding:17px 11px}.head{align-items:flex-start}.head p{font-size:12px}.autorun{padding:9px 10px;font-size:12px}.stats{gap:6px}.stat{padding:9px 8px}.stat strong{font-size:18px}.node{padding:9px;gap:7px}.icon{width:29px;height:29px}.node strong{font-size:12px}.node small{font-size:12px}.card{padding:12px}.table th,.table td{padding:8px 5px;font-size:12px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
-</style></head><body><header class="top"><div class="notice"><i class="dot"></i><span data-en="Portfolio demo — simulation, not real client work" data-ru="Демо портфолио — симуляция, не реальный заказ">Portfolio demo — simulation, not real client work</span></div><div style="display:flex;align-items:center;gap:11px"><a href="../../" data-en="← back to portfolio" data-ru="← назад в портфолио">← back to portfolio</a><button id="lang" type="button">RU</button></div></header><main class="wrap"><div class="head"><div><div class="eyebrow" data-en="Connected workflows · 01" data-ru="Связанные процессы · 01">Connected workflows · 01</div><h1 data-en="Every lead, right where it belongs." data-ru="Каждая заявка — в нужном месте.">Every lead, right where it belongs.</h1><p data-en="One form. A tidy sheet. A team that knows right away." data-ru="Одна форма. Понятная таблица. Команда сразу в курсе.">One form. A tidy sheet. A team that knows right away.</p></div><button class="autorun" id="auto" data-en="↻ Auto-run" data-ru="↻ Автозапуск">↻ Auto-run</button></div><div class="stats"><div class="stat"><span data-en="Leads today" data-ru="Заявки сегодня">Leads today</span><strong id="count">12</strong></div><div class="stat"><span data-en="Time saved this week" data-ru="Экономия за неделю">Time saved this week</span><strong id="saved">3.4 h</strong></div><div class="stat"><span data-en="Last run" data-ru="Последний запуск">Last run</span><strong id="last">—</strong></div></div><section class="flow"><div class="connector"></div><div class="pulse" id="pulse"></div><div class="node"><span class="icon">↗</span><div><strong data-en="Website form" data-ru="Форма сайта">Website form</strong><small data-en="New lead submitted" data-ru="Новая заявка">New lead submitted</small></div></div><div class="node"><span class="icon">▦</span><div><strong>Google Sheets</strong><small data-en="Row added automatically" data-ru="Строка добавлена автоматически">Row added automatically</small></div></div><div class="node"><span class="icon">➤</span><div><strong>Telegram</strong><small data-en="Team notified instantly" data-ru="Команда сразу получает уведомление">Team notified instantly</small></div></div><div class="node"><span class="icon">✉</span><div><strong data-en="Email (optional)" data-ru="Почта (по желанию)">Email (optional)</strong><small data-en="A copy for your inbox" data-ru="Копия на вашу почту">A copy for your inbox</small></div></div><label class="toggle"><input type="checkbox" id="email"><span data-en="Include email step" data-ru="Добавить отправку почты">Include email step</span></label></section><section class="work"><div class="card"><h2 data-en="Try the workflow" data-ru="Попробуйте связку">Try the workflow</h2><form id="lead" class="form"><label><span data-en="Name" data-ru="Имя">Name</span><input name="name" data-en="Your name" data-ru="Ваше имя" placeholder="Your name" required></label><label><span data-en="Phone" data-ru="Телефон">Phone</span><input name="phone" placeholder="+1 555 000 0000" required></label><label><span data-en="Interested in" data-ru="Интересует">Interested in</span><select name="need"><option value="Website refresh" data-en="Website refresh" data-ru="Обновление сайта">Website refresh</option><option value="Lead automation" data-en="Lead automation" data-ru="Автоматизация заявок">Lead automation</option><option value="Online booking" data-en="Online booking" data-ru="Онлайн-запись">Online booking</option></select></label><button data-en="Run this lead →" data-ru="Запустить заявку →">Run this lead →</button><small data-en="Local simulation · no data leaves this page" data-ru="Локальная симуляция · данные остаются на странице">Local simulation · no data leaves this page</small></form></div><div class="card output"><div class="sheet-head"><h2>Google Sheets</h2><span class="sheets-tag" data-en="LEADS · LIVE" data-ru="ЗАЯВКИ · ДЕМО">LEADS · LIVE</span></div><div class="table-wrap"><table class="table"><thead><tr><th data-en="Name" data-ru="Имя">Name</th><th data-en="Phone" data-ru="Телефон">Phone</th><th data-en="Interest" data-ru="Запрос">Interest</th></tr></thead><tbody id="rows"><tr><td>Maya Chen</td><td>+1 555 000 0192</td><td data-en="Website" data-ru="Сайт">Website</td></tr></tbody></table></div><div class="notify" id="notify"><span class="tgmark">➤</span><div><strong>Telegram · <span data-en="New website lead" data-ru="Новая заявка с сайта">New website lead</span></strong><p id="telegramText"></p></div></div><div class="log"><h3 data-en="Execution log" data-ru="Журнал запусков">Execution log</h3><div id="logs"><div class="logline"><i></i><time>09:41:12</time><span data-en="Workflow ready · waiting for a lead" data-ru="Связка готова · ждёт заявку">Workflow ready · waiting for a lead</span></div></div></div></div></section></main><div class="toast" id="toast"></div><script src="../../lang.js"></script><script>
-const form=document.getElementById('lead'),rows=document.getElementById('rows'),logs=document.getElementById('logs'),pulse=document.getElementById('pulse'),notify=document.getElementById('notify');const samples=[{name:'Alex Morgan',phone:'+1 555 000 0147',need:'Website refresh'},{name:'Jamie Rivera',phone:'+1 555 000 0283',need:'Lead automation'},{name:'Taylor Kim',phone:'+1 555 000 0431',need:'Online booking'}];function localTime(){return new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',second:'2-digit'}).format(new Date())}function log(text){const d=document.createElement('div');d.className='logline';const i=document.createElement('i'),time=document.createElement('time'),span=document.createElement('span');time.textContent=localTime();span.textContent=text;d.append(i,time,span);logs.prepend(d)}function translateNeed(v){if(currentLang()==='en')return v;return {'Website refresh':'Обновление сайта','Lead automation':'Автоматизация заявок','Online booking':'Онлайн-запись'}[v]||v}function run(data){notify.classList.remove('show');pulse.classList.remove('run');void pulse.offsetWidth;pulse.classList.add('run');const steps=currentLang()==='ru'?['Форма принята','Строка добавлена в таблицу','Уведомление отправлено в Telegram']:['Form received','Row added to Google Sheets','Telegram notification delivered'];logs.innerHTML='';log(steps[0]);setTimeout(()=>{const tr=document.createElement('tr');[data.name,data.phone,translateNeed(data.need)].forEach(v=>{const td=document.createElement('td');td.textContent=v;tr.appendChild(td)});rows.prepend(tr);log(steps[1]);setTimeout(()=>{document.getElementById('telegramText').textContent=(currentLang()==='ru'?'Имя: ':'Name: ')+data.name+' · '+data.phone+'\n'+translateNeed(data.need);notify.classList.add('show');log(steps[2]);document.getElementById('count').textContent=+document.getElementById('count').textContent+1;document.getElementById('saved').textContent=(3.4+(+document.getElementById('count').textContent%5)*.2).toFixed(1)+' h';document.getElementById('last').textContent=localTime().slice(0,5);const toast=document.getElementById('toast');toast.textContent=currentLang()==='ru'?'Все шаги выполнены · это локальная симуляция':'All steps complete · simulated locally';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2400)},650)},650)}form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const data=Object.fromEntries(new FormData(form));run(data);form.reset()});document.getElementById('auto').addEventListener('click',()=>run(samples[Math.floor(Math.random()*samples.length)]));
-</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0a0a0a">
+<title data-i18n="title">Automation · Demo</title>
+<link rel="stylesheet" href="../demo.css">
+<style>
+/* Website form inside the phone */
+.form-site{position:absolute;inset:0;background:#fff;color:#14161a;padding:52px 18px 18px;display:flex;flex-direction:column;gap:12px}
+.form-site .brand{font-weight:900;font-size:14px;letter-spacing:.04em}
+.form-site .mh{margin:0 0 4px;font-size:21px;line-height:1.15;letter-spacing:-.02em}
+.form-site p{margin:0 0 6px;color:#5b616b;font-size:13.5px}
+.fld{border:1.5px solid #dde0e5;border-radius:12px;padding:11px 12px;font-size:14px;min-height:44px;transition:border-color .2s}
+.fld:empty:before{content:attr(data-ph);color:#7b818b}
+.fld.focus{border-color:#14161a}
+.f-btn{margin-top:4px;border-radius:12px;padding:12px;background:#14161a;color:#fff;text-align:center;font-weight:800;font-size:14px;transition:transform .2s,background .2s}
+.f-btn.tap{transform:scale(.95);background:var(--red)}
+.ok-screen{position:absolute;inset:0;background:#fff;display:grid;place-content:center;justify-items:center;gap:8px;text-align:center;padding:30px;opacity:0;transition:opacity .5s}
+.ok-screen.on{opacity:1}
+.ok-screen i{width:56px;height:56px;border-radius:50%;background:#14161a;color:#fff;display:grid;place-items:center;font-style:normal;font-size:24px}
+.ok-screen b{font-size:19px}.ok-screen p{margin:0;color:#5b616b;font-size:14px}
+/* Flow on the right */
+.flow{display:grid;gap:10px}
+.node{display:flex;gap:12px;align-items:center;padding:12px 14px;border-radius:14px;background:var(--panel2);border:1px solid var(--line);transition:border-color .35s,background .35s}
+.node .ic{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--panel3);flex:none;font-size:16px}
+.node b{display:block;font-size:15px}
+.node small{color:var(--muted);font-size:13px}
+.node .st{margin-inline-start:auto;font-size:12.5px;font-weight:700;color:var(--muted);white-space:nowrap}
+.node.on{border-color:rgba(255,45,45,.6);background:var(--red-dim)}
+.node.ok .st{color:var(--green)}
+.wire{height:14px;width:2px;margin-inline-start:31px;background:var(--line);position:relative;overflow:hidden}
+.wire.on:after{content:"";position:absolute;left:0;right:0;top:-14px;height:14px;background:var(--red);animation:flowdown .5s linear forwards}
+@keyframes flowdown{to{top:14px}}
+.sheet{width:100%;border-collapse:collapse;font-size:13.5px}
+.sheet th{color:var(--muted);text-align:start;font-weight:600;padding:7px 8px;border-bottom:1px solid var(--line)}
+.sheet td{padding:8px;border-bottom:1px solid var(--line);white-space:nowrap}
+.sheet tr.new td{animation:rowin .6s var(--ease) both;background:var(--red-dim)}
+@keyframes rowin{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.sheet-wrap{overflow-x:auto}
+</style>
+</head>
+<body>
+<header class="bar"><div class="wrap">
+  <a class="back notranslate" translate="no" href="../../"><i>←</i><span>Yakov<b>.</b></span></a>
+  <span class="sp"></span>
+  <button id="lang" type="button">EN</button>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="tag"><span class="n">05</span><span data-i18n="service">Automation</span></p>
+    <h1 data-i18n-html="h1">Requests sort themselves. <em>You just call back.</em></h1>
+    <p class="lead" data-i18n="lead">Every request from your website goes into a spreadsheet and to your Telegram at once. No copying by hand, nothing lost.</p>
+  </section>
+
+  <section class="show">
+    <div>
+      <div class="controls">
+        <button class="ctl" id="play" type="button"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg><span data-i18n="play">Play again</span></button>
+      </div>
+      <div class="nowcap" id="nowcap" aria-live="polite"></div>
+      <div class="phone">
+        <div class="screen">
+          <div class="notch"></div>
+          <div class="push" id="push"><span class="ava">TG</span><div><b></b><p></p></div><small data-i18n="now">now</small></div>
+          <div class="form-site">
+            <span class="brand notranslate" translate="no">CLEANLY</span>
+            <div class="mh" data-i18n="fH">Book a home cleaning</div>
+            <p data-i18n="fP">Leave your number and we'll call you back in 15 minutes.</p>
+            <div class="fld" id="fName" data-i18n-attr="data-ph:phName"></div>
+            <div class="fld" id="fPhone" data-i18n-attr="data-ph:phPhone"></div>
+            <div class="fld" id="fWhat" data-i18n-attr="data-ph:phWhat"></div>
+            <div class="f-btn" id="send" data-i18n="fSend">Request a call</div>
+            <div class="ok-screen" id="ok"><i>✓</i><b data-i18n="okT">Thank you!</b><p data-i18n="okP">We'll call you within 15 minutes.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="side">
+      <div class="panel">
+        <h2 data-i18n="howTitle">What happens after "Send"</h2>
+        <div class="flow">
+          <div class="node" id="n1"><span class="ic">✎</span><div><b data-i18n="n1">Form on the website</b><small data-i18n="n1d">The client leaves a request</small></div><span class="st"></span></div>
+          <div class="wire" id="w1"></div>
+          <div class="node" id="n2"><span class="ic">▦</span><div><b data-i18n="n2">Google Sheets</b><small data-i18n="n2d">A new row with all the data</small></div><span class="st"></span></div>
+          <div class="wire" id="w2"></div>
+          <div class="node" id="n3"><span class="ic">➤</span><div><b>Telegram</b><small data-i18n="n3d">A message to you or your team</small></div><span class="st"></span></div>
+        </div>
+      </div>
+      <div class="panel">
+        <h2 data-i18n="sheetTitle">Your requests spreadsheet</h2>
+        <div class="sheet-wrap"><table class="sheet">
+          <thead><tr><th data-i18n="thTime">Time</th><th data-i18n="thName">Name</th><th data-i18n="thPhone">Phone</th><th data-i18n="thWhat">Service</th></tr></thead>
+          <tbody id="rows">
+            <tr><td>09:12</td><td data-i18n="r1n">Olga</td><td>+1 555 010 4471</td><td data-i18n="r1w">Regular cleaning</td></tr>
+            <tr><td>10:40</td><td data-i18n="r2n">Mark</td><td>+1 555 013 9902</td><td data-i18n="r2w">Windows</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <ol class="steps" id="steps" hidden>
+        <li><div><b data-i18n="s1">The client fills in the form</b><small data-i18n="s1d">Name, phone and what they need.</small></div></li>
+        <li><div><b data-i18n="s2">The request lands in a spreadsheet</b><small data-i18n="s2d">A new row with the date and time, in a second.</small></div></li>
+        <li><div><b data-i18n="s3">You get a message in Telegram</b><small data-i18n="s3d">Or your manager does. You can call back right away.</small></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="get">
+    <div class="panel">
+      <h2 data-i18n="getTitle">What you get</h2>
+      <ul>
+        <li data-i18n="g1">Requests from your website saved in Google Sheets</li>
+        <li data-i18n="g2">Instant alerts to Telegram for you or your team</li>
+        <li data-i18n="g3">Works with forms, CRM, email and other services</li>
+        <li data-i18n="g4">Setup and a short guide</li>
+      </ul>
+    </div>
+    <div class="panel price">
+      <div class="row"><span data-i18n="priceL">Price</span><b data-i18n="priceV">from $60</b></div>
+      <div class="row"><span data-i18n="timeL">Timeline</span><b data-i18n="timeV">1–3 days</b></div>
+      <a class="cta" href="https://t.me/wakeupyakov" data-i18n="cta">I want automation</a>
+      <p class="fine" data-i18n="fine">Cleanly is a fictional cleaning company made for this demo.</p>
+    </div>
+  </section>
+</main>
+
+<script>
+window.I18N = {
+  en: {
+    title: 'Automation · Demo', service: 'Automation', h1: 'Requests sort themselves. <em>You just call back.</em>',
+    lead: 'Every request from your website goes into a spreadsheet and to your Telegram at once. No copying by hand, nothing lost.',
+    play: 'Play again', now: 'now', howTitle: 'What happens after "Send"',
+    n1: 'Form on the website', n1d: 'The client leaves a request', n2: 'Google Sheets', n2d: 'A new row with all the data', n3d: 'A message to you or your team',
+    st_wait: 'waiting', st_ok: 'done',
+    sheetTitle: 'Your requests spreadsheet', thTime: 'Time', thName: 'Name', thPhone: 'Phone', thWhat: 'Service',
+    r1n: 'Olga', r1w: 'Regular cleaning', r2n: 'Mark', r2w: 'Windows',
+    s1: 'The client fills in the form', s1d: 'Name, phone and what they need.',
+    s2: 'The request lands in a spreadsheet', s2d: 'A new row with the date and time, in a second.',
+    s3: 'You get a message in Telegram', s3d: 'Or your manager does. You can call back right away.',
+    getTitle: 'What you get', g1: 'Requests from your website saved in Google Sheets', g2: 'Instant alerts to Telegram for you or your team', g3: 'Works with forms, CRM, email and other services', g4: 'Setup and a short guide',
+    priceL: 'Price', priceV: 'from $60', timeL: 'Timeline', timeV: '1–3 days', cta: 'I want automation', fine: 'Cleanly is a fictional cleaning company made for this demo.',
+    fH: 'Book a home cleaning', fP: 'Leave your number and we\'ll call you back in 15 minutes.', phName: 'Name', phPhone: 'Phone', phWhat: 'What needs cleaning?',
+    fSend: 'Request a call', okT: 'Thank you!', okP: 'We\'ll call you within 15 minutes.',
+    vName: 'Nina', vPhone: '+1 555 016 2208', vWhat: 'After renovation, 60 m²',
+    pushT: 'Cleanly · new request', pushP: 'Nina · +1 555 016 2208 · after renovation, 60 m²'
+  },
+  de: {
+    title: 'Automatisierung · Demo', service: 'Automatisierung', h1: 'Anfragen sortieren sich selbst. <em>Sie rufen nur noch zurück.</em>', lead: 'Jede Anfrage von Ihrer Website landet sofort in einer Tabelle und bei Telegram. Kein manuelles Kopieren, nichts geht verloren.',
+    play: 'Noch einmal ansehen', now: 'jetzt', howTitle: 'Was nach „Senden“ passiert', n1: 'Formular auf der Website', n1d: 'Der Kunde sendet eine Anfrage', n2: 'Google Sheets', n2d: 'Eine neue Zeile mit allen Angaben', n3d: 'Eine Nachricht an Sie oder Ihr Team', st_wait: 'wartet', st_ok: 'erledigt', sheetTitle: 'Ihre Anfragen-Tabelle', thTime: 'Zeit', thName: 'Name', thPhone: 'Telefon', thWhat: 'Leistung', r1n: 'Lena', r1w: 'Regelmäßige Reinigung', r2n: 'Jonas', r2w: 'Fensterreinigung',
+    s1: 'Kunde füllt das Formular aus', s1d: 'Name, Telefonnummer und gewünschte Leistung.', s2: 'Anfrage erscheint in der Tabelle', s2d: 'Mit Datum und Uhrzeit, in einer Sekunde.', s3: 'Sie erhalten eine Nachricht per Telegram', s3d: 'Oder Ihre Teamleitung. Sie können sofort zurückrufen.', getTitle: 'Das bekommen Sie', g1: 'Anfragen von Ihrer Website in Google Sheets gespeichert', g2: 'Sofortige Telegram-Benachrichtigungen für Sie oder Ihr Team', g3: 'Verbindet Formulare, CRM, E-Mail und weitere Dienste', g4: 'Einrichtung und eine kurze Anleitung',
+    priceL: 'Preis', priceV: 'ab 60 $', timeL: 'Dauer', timeV: '1–3 Tage', cta: 'Ich möchte Automatisierung', fine: 'Cleanly ist ein erfundenes Reinigungsunternehmen für diese Demo.', fH: 'Haushaltsreinigung buchen', fP: 'Hinterlassen Sie Ihre Nummer. Wir rufen innerhalb von 15 Minuten zurück.', phName: 'Name', phPhone: 'Telefon', phWhat: 'Was soll gereinigt werden?', fSend: 'Rückruf anfordern', okT: 'Vielen Dank!', okP: 'Wir rufen Sie innerhalb von 15 Minuten zurück.', vName: 'Lena', vPhone: '+1 555 016 2208', vWhat: 'Nach der Renovierung, 60 m²', pushT: 'Cleanly · neue Anfrage', pushP: 'Lena · +1 555 016 2208 · nach Renovierung, 60 m²'
+  },
+  es: {
+    title: 'Automatización · Demo', service: 'Automatización', h1: 'Las consultas se organizan solas. <em>Tú solo devuelves la llamada.</em>', lead: 'Cada consulta de tu web llega al instante a una hoja de cálculo y a Telegram. Sin copiar a mano y sin perder nada.',
+    play: 'Ver otra vez', now: 'ahora', howTitle: 'Qué pasa al pulsar «Enviar»', n1: 'Formulario en la web', n1d: 'El cliente envía una consulta', n2: 'Google Sheets', n2d: 'Una fila nueva con todos los datos', n3d: 'Un mensaje para ti o tu equipo', st_wait: 'pendiente', st_ok: 'listo', sheetTitle: 'Tu hoja de consultas', thTime: 'Hora', thName: 'Nombre', thPhone: 'Teléfono', thWhat: 'Servicio', r1n: 'Lucía', r1w: 'Limpieza habitual', r2n: 'Pablo', r2w: 'Ventanas',
+    s1: 'El cliente completa el formulario', s1d: 'Nombre, teléfono y qué necesita.', s2: 'La consulta llega a una hoja', s2d: 'Una fila nueva con fecha y hora, en un segundo.', s3: 'Te llega un mensaje por Telegram', s3d: 'O a tu encargado. Puedes devolver la llamada enseguida.', getTitle: 'Qué recibes', g1: 'Consultas de tu web guardadas en Google Sheets', g2: 'Avisos instantáneos por Telegram para ti o tu equipo', g3: 'Conexión con formularios, CRM, correo y otros servicios', g4: 'Configuración y una guía breve',
+    priceL: 'Precio', priceV: 'desde 60 $', timeL: 'Plazo', timeV: '1–3 días', cta: 'Quiero automatizar', fine: 'Cleanly es una empresa de limpieza ficticia creada para esta demo.', fH: 'Reserva una limpieza a domicilio', fP: 'Déjanos tu número y te llamaremos en 15 minutos.', phName: 'Nombre', phPhone: 'Teléfono', phWhat: '¿Qué hay que limpiar?', fSend: 'Solicitar llamada', okT: '¡Gracias!', okP: 'Te llamaremos en menos de 15 minutos.', vName: 'Lucía', vPhone: '+1 555 016 2208', vWhat: 'Después de una reforma, 60 m²', pushT: 'Cleanly · consulta nueva', pushP: 'Lucía · +1 555 016 2208 · después de una reforma, 60 m²'
+  },
+  fr: {
+    title: 'Automatisation · Démo', service: 'Automatisation', h1: 'Les demandes se trient toutes seules. <em>Vous n’avez qu’à rappeler.</em>', lead: 'Chaque demande de votre site arrive aussitôt dans un tableur et sur Telegram. Rien à recopier, rien ne se perd.',
+    play: 'Revoir', now: 'maintenant', howTitle: 'Après avoir cliqué sur « Envoyer »', n1: 'Formulaire sur le site', n1d: 'Le client envoie une demande', n2: 'Google Sheets', n2d: 'Une nouvelle ligne avec toutes les informations', n3d: 'Un message pour vous ou votre équipe', st_wait: 'en attente', st_ok: 'terminé', sheetTitle: 'Votre tableau de demandes', thTime: 'Heure', thName: 'Nom', thPhone: 'Téléphone', thWhat: 'Prestation', r1n: 'Camille', r1w: 'Ménage régulier', r2n: 'Hugo', r2w: 'Vitres',
+    s1: 'Le client remplit le formulaire', s1d: 'Nom, téléphone et besoin.', s2: 'La demande arrive dans le tableau', s2d: 'Une nouvelle ligne avec la date et l’heure, en une seconde.', s3: 'Vous recevez un message sur Telegram', s3d: 'Ou votre responsable. Vous pouvez rappeler tout de suite.', getTitle: 'Ce que vous obtenez', g1: 'Les demandes du site enregistrées dans Google Sheets', g2: 'Des alertes Telegram immédiates pour vous ou votre équipe', g3: 'Connexion aux formulaires, au CRM, aux e-mails et à d’autres services', g4: 'Installation et guide rapide',
+    priceL: 'Prix', priceV: 'à partir de 60 $', timeL: 'Délai', timeV: '1–3 jours', cta: 'Je veux automatiser', fine: 'Cleanly est une entreprise de nettoyage fictive créée pour cette démo.', fH: 'Réserver un ménage à domicile', fP: 'Laissez votre numéro et nous vous rappelons sous 15 minutes.', phName: 'Nom', phPhone: 'Téléphone', phWhat: 'Que faut-il nettoyer ?', fSend: 'Demander un rappel', okT: 'Merci !', okP: 'Nous vous rappelons sous 15 minutes.', vName: 'Camille', vPhone: '+1 555 016 2208', vWhat: 'Après travaux, 60 m²', pushT: 'Cleanly · nouvelle demande', pushP: 'Camille · +1 555 016 2208 · après travaux, 60 m²'
+  },
+  zh: {
+    title: '自动化 · 演示', service: '自动化', h1: '咨询自动整理好，<em>你只需回个电话。</em>', lead: '网站收到的每条咨询都会同步到表格和 Telegram。无需手动复制，也不会遗漏。',
+    play: '再看一次', now: '现在', howTitle: '点击“提交”后', n1: '网站表单', n1d: '客户提交咨询', n2: 'Google Sheets', n2d: '自动新增一行，包含全部信息', n3d: '通知发给你或团队', st_wait: '等待中', st_ok: '已完成', sheetTitle: '客户咨询表', thTime: '时间', thName: '姓名', thPhone: '电话', thWhat: '服务', r1n: '李娜', r1w: '日常清洁', r2n: '王磊', r2w: '擦窗',
+    s1: '客户填写表单', s1d: '姓名、电话和所需服务。', s2: '咨询自动进入表格', s2d: '一秒内新增一行，并记录日期和时间。', s3: '你通过 Telegram 收到通知', s3d: '也可以发给负责人，你能马上回电。', getTitle: '你将获得', g1: '网站咨询自动保存到 Google Sheets', g2: '你或团队即时收到 Telegram 通知', g3: '连接表单、CRM、邮件和其他服务', g4: '配置服务和简明指南',
+    priceL: '价格', priceV: '60 美元起', timeL: '周期', timeV: '1–3 天', cta: '我想实现自动化', fine: 'Cleanly 是为本演示虚构的清洁公司。', fH: '预约上门清洁', fP: '留下电话，我们会在 15 分钟内回电。', phName: '姓名', phPhone: '电话', phWhat: '需要清洁什么？', fSend: '预约回电', okT: '谢谢！', okP: '我们会在 15 分钟内联系你。', vName: '李娜', vPhone: '+1 555 016 2208', vWhat: '装修后清洁，60 平方米', pushT: 'Cleanly · 新咨询', pushP: '李娜 · +1 555 016 2208 · 装修后清洁，60 平方米'
+  },
+  ar: {
+    title: 'الأتمتة · عرض تجريبي', service: 'الأتمتة', h1: 'تُرتّب الطلبات تلقائيًا. <em>ويبقى عليك الاتصال بالعميل.</em>', lead: 'يصل كل طلب من موقعك فورًا إلى جدول بيانات وإلى Telegram. بلا نسخ يدوي أو طلبات ضائعة.',
+    play: 'شاهد مرة أخرى', now: 'الآن', howTitle: 'ماذا يحدث بعد الضغط على «إرسال»', n1: 'نموذج على الموقع', n1d: 'يرسل العميل طلبًا', n2: 'Google Sheets', n2d: 'صف جديد بكل البيانات', n3d: 'رسالة إليك أو إلى فريقك', st_wait: 'قيد الانتظار', st_ok: 'تم', sheetTitle: 'جدول طلباتك', thTime: 'الوقت', thName: 'الاسم', thPhone: 'الهاتف', thWhat: 'الخدمة', r1n: 'سارة', r1w: 'تنظيف دوري', r2n: 'عمر', r2w: 'تنظيف النوافذ',
+    s1: 'يملأ العميل النموذج', s1d: 'الاسم ورقم الهاتف وما يحتاج إليه.', s2: 'يصل الطلب إلى الجدول', s2d: 'يُضاف صف جديد بالتاريخ والوقت خلال ثانية.', s3: 'تصلك رسالة عبر Telegram', s3d: 'أو تصل إلى مديرك، ويمكنك الاتصال بالعميل فورًا.', getTitle: 'ما ستحصل عليه', g1: 'حفظ طلبات موقعك في Google Sheets', g2: 'تنبيهات فورية عبر Telegram لك أو لفريقك', g3: 'ربط النماذج ونظام CRM والبريد وخدمات أخرى', g4: 'الإعداد ودليل مختصر',
+    priceL: 'السعر', priceV: 'ابتداءً من 60 $', timeL: 'المدة', timeV: '1–3 أيام', cta: 'أريد أتمتة عملي', fine: 'Cleanly شركة تنظيف خيالية أُنشئت لهذا العرض التجريبي.', fH: 'احجز تنظيفًا للمنزل', fP: 'اترك رقمك وسنتصل بك خلال 15 دقيقة.', phName: 'الاسم', phPhone: 'الهاتف', phWhat: 'ما الذي يحتاج إلى تنظيف؟', fSend: 'اطلب اتصالًا', okT: 'شكرًا لك!', okP: 'سنتصل بك خلال 15 دقيقة.', vName: 'سارة', vPhone: '+1 555 016 2208', vWhat: 'بعد التجديد، 60 م²', pushT: 'Cleanly · طلب جديد', pushP: 'سارة · +1 555 016 2208 · بعد التجديد، 60 م²'
+  },
+  ru: {
+    title: 'Автоматизация · Демо', service: 'Автоматизация', h1: 'Заявки разбираются сами. <em>Вам остаётся перезвонить.</em>',
+    lead: 'Каждая заявка с сайта сразу попадает в таблицу и вам в Telegram. Ничего не нужно копировать руками, ничего не теряется.',
+    play: 'Показать ещё раз', now: 'сейчас', howTitle: 'Что происходит после «Отправить»',
+    n1: 'Форма на сайте', n1d: 'Клиент оставляет заявку', n2: 'Google Таблица', n2d: 'Новая строка со всеми данными', n3d: 'Сообщение вам или команде',
+    st_wait: 'ждёт', st_ok: 'готово',
+    sheetTitle: 'Ваша таблица заявок', thTime: 'Время', thName: 'Имя', thPhone: 'Телефон', thWhat: 'Услуга',
+    r1n: 'Ольга', r1w: 'Поддерживающая уборка', r2n: 'Марк', r2w: 'Мытьё окон',
+    s1: 'Клиент заполняет форму', s1d: 'Имя, телефон и что нужно сделать.',
+    s2: 'Заявка попадает в таблицу', s2d: 'Новая строка с датой и временем, за секунду.',
+    s3: 'Вам приходит сообщение в Telegram', s3d: 'Или вашему менеджеру. Можно сразу перезвонить.',
+    getTitle: 'Что вы получите', g1: 'Заявки с сайта сохраняются в Google Таблицу', g2: 'Мгновенные уведомления в Telegram вам или команде', g3: 'Связываю формы, CRM, почту и другие сервисы', g4: 'Настройка и короткая инструкция',
+    priceL: 'Цена', priceV: 'от $60', timeL: 'Срок', timeV: '1–3 дня', cta: 'Хочу автоматизацию', fine: 'Cleanly — вымышленная клининговая компания, придумана для этого демо.',
+    fH: 'Закажите уборку квартиры', fP: 'Оставьте номер, и мы перезвоним за 15 минут.', phName: 'Имя', phPhone: 'Телефон', phWhat: 'Что нужно убрать?',
+    fSend: 'Жду звонка', okT: 'Спасибо!', okP: 'Перезвоним в течение 15 минут.',
+    vName: 'Нина', vPhone: '+7 900 616-22-08', vWhat: 'После ремонта, 60 м²',
+    pushT: 'Cleanly · новая заявка', pushP: 'Нина · +7 900 616-22-08 · после ремонта, 60 м²'
+  },
+  uk: {
+    title: 'Автоматизація · Демо', service: 'Автоматизація', h1: 'Заявки розбираються самі. <em>Вам лишається передзвонити.</em>',
+    lead: 'Кожна заявка з сайту одразу потрапляє в таблицю і вам у Telegram. Нічого не треба копіювати вручну, нічого не губиться.',
+    play: 'Показати ще раз', now: 'зараз', howTitle: 'Що відбувається після «Надіслати»',
+    n1: 'Форма на сайті', n1d: 'Клієнт залишає заявку', n2: 'Google Таблиця', n2d: 'Новий рядок з усіма даними', n3d: 'Повідомлення вам або команді',
+    st_wait: 'чекає', st_ok: 'готово',
+    sheetTitle: 'Ваша таблиця заявок', thTime: 'Час', thName: 'Ім\'я', thPhone: 'Телефон', thWhat: 'Послуга',
+    r1n: 'Ольга', r1w: 'Підтримувальне прибирання', r2n: 'Марко', r2w: 'Миття вікон',
+    s1: 'Клієнт заповнює форму', s1d: 'Ім\'я, телефон і що потрібно зробити.',
+    s2: 'Заявка потрапляє в таблицю', s2d: 'Новий рядок з датою й часом, за секунду.',
+    s3: 'Вам приходить повідомлення в Telegram', s3d: 'Або вашому менеджеру. Можна одразу передзвонити.',
+    getTitle: 'Що ви отримаєте', g1: 'Заявки з сайту зберігаються в Google Таблицю', g2: 'Миттєві сповіщення в Telegram вам або команді', g3: 'Зв\'язую форми, CRM, пошту та інші сервіси', g4: 'Налаштування й коротка інструкція',
+    priceL: 'Ціна', priceV: 'від $60', timeL: 'Термін', timeV: '1–3 дні', cta: 'Хочу автоматизацію', fine: 'Cleanly — вигадана клінінгова компанія, створена для цього демо.',
+    fH: 'Замовте прибирання квартири', fP: 'Залиште номер, і ми передзвонимо за 15 хвилин.', phName: 'Ім\'я', phPhone: 'Телефон', phWhat: 'Що потрібно прибрати?',
+    fSend: 'Чекаю дзвінка', okT: 'Дякуємо!', okP: 'Передзвонимо протягом 15 хвилин.',
+    vName: 'Ніна', vPhone: '+380 67 616 22 08', vWhat: 'Після ремонту, 60 м²',
+    pushT: 'Cleanly · нова заявка', pushP: 'Ніна · +380 67 616 22 08 · після ремонту, 60 м²'
+  }
+};
+</script>
+<script src="../../lang.js"></script>
+<script src="../demo.js"></script>
+<script>
+(function () {
+  function T(k) { return window.t(k); }
+  function $(id) { return document.getElementById(id); }
+  var nodes = ['n1', 'n2', 'n3'].map($), wires = ['w1', 'w2'].map($);
+  function node(i, s) { var n = nodes[i]; n.classList.toggle('on', s === 'on'); n.classList.toggle('ok', s === 'ok'); n.querySelector('.st').textContent = s === 'ok' ? '✓ ' + T('st_ok') : s === 'on' ? '…' : ''; }
+  async function type(a, el, text) { el.classList.add('focus'); for (var i = 1; i <= text.length; i++) { el.textContent = text.slice(0, i); await a.wait(45); } el.classList.remove('focus'); }
+  function clock() { var d = new Date(); return ('0' + d.getHours()).slice(-2) + ':' + ('0' + d.getMinutes()).slice(-2); }
+  ChatDemo({
+    push: '#push', steps: '#steps', play: '#play',
+    reset: function () {
+      ['fName', 'fPhone', 'fWhat'].forEach(function (id) { $(id).textContent = ''; });
+      $('ok').classList.remove('on');
+      nodes.forEach(function (n, i) { node(i, ''); }); wires.forEach(function (w) { w.classList.remove('on'); });
+      var extra = document.querySelector('#rows tr.new'); if (extra) extra.remove();
+    },
+    script: async function (a) {
+      a.step(0); node(0, 'on');
+      await a.wait(800);
+      await type(a, $('fName'), T('vName'));
+      await type(a, $('fPhone'), T('vPhone'));
+      await type(a, $('fWhat'), T('vWhat'));
+      var b = $('send'); b.classList.add('tap'); await a.wait(260); b.classList.remove('tap');
+      $('ok').classList.add('on'); node(0, 'ok');
+      wires[0].classList.add('on'); await a.wait(500);
+      a.step(1); node(1, 'on'); await a.wait(700);
+      var tr = document.createElement('tr'); tr.className = 'new';
+      [clock(), T('vName'), T('vPhone'), T('vWhat')].forEach(function (v) { var td = document.createElement('td'); td.textContent = v; tr.appendChild(td); });
+      $('rows').appendChild(tr); node(1, 'ok');
+      wires[1].classList.add('on'); await a.wait(500);
+      a.step(2); node(2, 'on'); await a.wait(500);
+      node(2, 'ok');
+      await a.push(T('pushT'), T('pushP'), 3400);
+    }
+  });
+})();
+</script>
+</body>
+</html>

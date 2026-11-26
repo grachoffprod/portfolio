@@ -1,5 +1,280 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090909"><title data-en="Renovation estimate · Forma" data-ru="Расчёт ремонта · Форма">Renovation estimate · Forma</title><style>
-:root{color-scheme:dark;--bg:#090909;--panel:#121212;--line:#292929;--muted:#aaa;--red:#ff5c5c}*{box-sizing:border-box}h1{overflow-wrap:anywhere}body{margin:0;background:var(--bg);color:#f6f6f6;font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px max(16px,calc((100vw - 1000px)/2));border-bottom:1px solid var(--line);font-size:12px;color:#ccc}.notice{display:flex;align-items:center;gap:8px}.dot{width:7px;height:7px;background:var(--red);border-radius:50%}.top a{color:#fff;text-decoration:none;white-space:nowrap}#lang{font:600 12px system-ui;color:#fff;background:#171717;border:1px solid #3a3a3a;border-radius:8px;padding:7px 10px}.wrap{max-width:1000px;margin:auto;padding:clamp(18px,4vw,40px) 18px}.eyebrow{color:#aaa;text-transform:uppercase;letter-spacing:.12em;font-size:12px}.intro h1{font-size:clamp(28px,5vw,46px);letter-spacing:-.05em;line-height:1.05;margin:8px 0}.intro p{color:var(--muted);margin:0}.layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(290px,.85fr);gap:14px;margin-top:24px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:clamp(16px,3vw,24px)}.controls{display:grid;gap:23px}.field-title{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:650}.area-value{font-size:14px;color:#fff}.area-value b{font-size:22px;letter-spacing:-.03em}.range-wrap{margin-top:10px}.range-wrap input{width:100%;accent-color:var(--red)}.ends{display:flex;justify-content:space-between;color:#929292;font-size:12px}.segmented{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px;padding:4px;background:#090909;border:1px solid #292929;border-radius:11px}.segmented button{padding:10px 5px;background:transparent;border:0;color:#aaa;border-radius:8px;font:600 12px system-ui;cursor:pointer}.segmented button.active{background:#282828;color:#fff;box-shadow:inset 0 0 0 1px #404040}.segment-note{font-size:12px;color:#aaa;margin:8px 0 0}.addons{display:grid;grid-template-columns:1fr 1fr;gap:9px}.addon{display:flex;align-items:center;gap:9px;border:1px solid #303030;border-radius:10px;padding:11px;color:#ddd;font-size:12px;cursor:pointer}.addon input{accent-color:var(--red);width:16px;height:16px;margin:0}.result{display:flex;flex-direction:column}.result-top{display:flex;justify-content:space-between;gap:8px;align-items:center}.result-top h2{margin:0;font-size:14px}.pill{font-size:12px;color:#c9c9c9;padding:5px 8px;border:1px solid #343434;border-radius:30px}.total{font-size:clamp(30px,5vw,44px);font-weight:760;letter-spacing:-.055em;margin:13px 0 2px;font-variant-numeric:tabular-nums}.hint{font-size:12px;color:var(--muted);margin:0}.rule{height:1px;background:#292929;margin:19px 0 14px}.breakdown{display:grid;gap:12px}.break-row{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;font-size:12px;color:#c8c8c8}.break-row b{font-size:12px;color:#fff}.breakbar{grid-column:1/-1;height:5px;background:#292929;border-radius:9px;overflow:hidden}.breakbar i{display:block;height:100%;width:0;border-radius:inherit;background:var(--red);transition:width .6s}.timeline{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding:12px 0 15px;color:#ccc;font-size:12px}.timeline strong{font-size:14px;color:#fff}.cta{width:100%;padding:12px;border:0;border-radius:9px;background:var(--red);color:#111;font:700 14px system-ui;cursor:pointer;box-shadow:0 8px 25px #ff5c5c20;transition:transform .2s,filter .2s}.cta:hover{filter:brightness(1.12);transform:translateY(-1px)}.foot{font-size:12px;color:#858585;text-align:center;margin:11px 0 0}.toast{position:fixed;bottom:18px;left:50%;transform:translate(-50%,18px);opacity:0;pointer-events:none;padding:12px 16px;background:#f5f5f5;color:#111;border-radius:10px;font-size:13px;font-weight:650;box-shadow:0 10px 35px #0008;transition:.25s;max-width:calc(100% - 28px);text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}:focus-visible{outline:2px solid #fff;outline-offset:3px}@media(max-width:700px){.layout{grid-template-columns:1fr}.controls{gap:19px}}@media(max-width:390px){.top .notice{flex:1;min-width:0;align-items:flex-start}.top .notice span{line-height:1.2}.top a{white-space:normal;max-width:118px;line-height:1.2}.top>div:last-child{gap:6px!important}.top #lang{flex:none}.top{padding:9px 11px;font-size:12px}.addons{grid-template-columns:1fr}.panel{padding:15px}.segmented button{font-size:12px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
-</style></head><body><header class="top"><div class="notice"><i class="dot"></i><span data-en="Portfolio demo — simulation, not real client work" data-ru="Демо портфолио — симуляция, не реальный заказ">Portfolio demo — simulation, not real client work</span></div><div style="display:flex;align-items:center;gap:12px"><a href="../../" data-en="← back to portfolio" data-ru="← назад в портфолио">← back to portfolio</a><button id="lang" type="button">RU</button></div></header><main class="wrap"><div class="eyebrow" data-en="Forma renovation studio · Estimate" data-ru="Студия ремонта «Форма» · Расчёт">Forma renovation studio · Estimate</div><section class="intro"><h1 data-en="A clearer idea of your renovation." data-ru="Понятный бюджет ремонта — сразу.">A clearer idea of your renovation.</h1><p data-en="Build a first estimate around your space and priorities." data-ru="Получите первичный расчёт с учётом площади и задач.">Build a first estimate around your space and priorities.</p></section><div class="layout"><section class="panel controls"><div><div class="field-title"><label for="area" data-en="Space to renovate" data-ru="Площадь ремонта">Space to renovate</label><span class="area-value"><b id="areaNum">48</b> m²</span></div><div class="range-wrap"><input id="area" type="range" min="18" max="160" value="48"><div class="ends"><span>18 m²</span><span>160 m²</span></div></div></div><div><div class="field-title"><span data-en="Finish level" data-ru="Уровень отделки">Finish level</span><span class="pill" id="rate">$70 / m²</span></div><div class="segmented"><button data-rate="48" data-en="Refresh" data-ru="Освежить">Refresh</button><button class="active" data-rate="70" data-en="Full remodel" data-ru="Капремонт">Full remodel</button><button data-rate="112" data-en="Signature" data-ru="Дизайнерский">Signature</button></div><p class="segment-note" id="typeNote"></p></div><div><div class="field-title"><span data-en="Add what you need" data-ru="Добавьте услуги">Add what you need</span><span class="pill" data-en="Optional" data-ru="По желанию">Optional</span></div><div class="addons"><label class="addon"><input type="checkbox" id="demo"><span data-en="Strip-out · +$8/m²" data-ru="Демонтаж · +$8/м²">Strip-out · +$8/m²</span></label><label class="addon"><input type="checkbox" id="materials"><span data-en="Materials · +15%" data-ru="Материалы · +15%">Materials · +15%</span></label><label class="addon"><input type="checkbox" id="design"><span data-en="Design plan · +$950" data-ru="План дизайна · +$950">Design plan · +$950</span></label><label class="addon"><input type="checkbox" id="electrical"><span data-en="Electrical update · +$1,200" data-ru="Электрика · +$1,200">Electrical update · +$1,200</span></label></div></div></section><aside class="panel result"><div class="result-top"><h2 data-en="Your working estimate" data-ru="Предварительный расчёт">Your working estimate</h2><span class="pill" data-en="Indicative" data-ru="Ориентир">Indicative</span></div><div class="total" id="total">$3,360</div><p class="hint" data-en="Final price depends on an on-site assessment." data-ru="Итоговая стоимость уточняется после осмотра.">Final price depends on an on-site assessment.</p><div class="rule"></div><div class="breakdown"><div class="break-row"><span data-en="Core work" data-ru="Основные работы">Core work</span><b id="core">$3,360</b><div class="breakbar"><i id="coreBar"></i></div></div><div class="break-row"><span data-en="Selected extras" data-ru="Дополнительные услуги">Selected extras</span><b id="extras">$0</b><div class="breakbar"><i id="extrasBar"></i></div></div></div><div class="timeline"><span data-en="Estimated timeline" data-ru="Ориентировочный срок">Estimated timeline</span><strong id="days">4–6 weeks</strong></div><button class="cta" id="quote" data-en="Get an exact quote ↗" data-ru="Получить точную смету ↗">Get an exact quote ↗</button><p class="foot" data-en="No obligation · just a real conversation" data-ru="Без обязательств · просто обсудим проект">No obligation · just a real conversation</p></aside></div></main><div class="toast" id="toast" role="status"></div><script src="../../lang.js"></script><script>
-const area=document.getElementById('area'),segmentButtons=[...document.querySelectorAll('[data-rate]')],toast=document.getElementById('toast');let rate=70,displayed=0;function price(){const a=+area.value;let core=a*rate,extra=(document.getElementById('demo').checked?a*8:0)+(document.getElementById('design').checked?950:0)+(document.getElementById('electrical').checked?1200:0);const base=core+extra;if(document.getElementById('materials').checked)extra+=base*.15;const sum=Math.round(core+extra),weeks=Math.max(2,Math.ceil(a/13));document.getElementById('areaNum').textContent=a;document.getElementById('rate').textContent='$'+rate+' / m²';document.getElementById('typeNote').textContent=rate===48?(currentLang()==='ru'?'Обновление отделки и свежий вид.':'A lighter update for a refreshed space.'):rate===112?(currentLang()==='ru'?'Индивидуальные решения и премиальная отделка.':'Tailored details and a premium finish.'):currentLang()==='ru'?'Полная переделка с обновлением ключевых зон.':'A complete refresh of the main living spaces.';document.getElementById('core').textContent='$'+Math.round(core).toLocaleString('en-US');document.getElementById('extras').textContent='$'+Math.round(extra).toLocaleString('en-US');document.getElementById('days').textContent=currentLang()==='ru'?'~'+weeks+'–'+(weeks+2)+' нед.':'~'+weeks+'–'+(weeks+2)+' weeks';document.getElementById('coreBar').style.width=Math.min(100,core/sum*100)+'%';document.getElementById('extrasBar').style.width=Math.min(100,extra/sum*100)+'%';animateTotal(sum)}function animateTotal(target){const from=displayed,start=performance.now();function tick(now){const p=Math.min(1,(now-start)/420),ease=1-Math.pow(1-p,3),v=Math.round(from+(target-from)*ease);document.getElementById('total').textContent='$'+v.toLocaleString('en-US');if(p<1)requestAnimationFrame(tick);else displayed=target}requestAnimationFrame(tick)}area.addEventListener('input',price);document.querySelectorAll('.addon input').forEach(x=>x.addEventListener('change',price));segmentButtons.forEach(b=>b.addEventListener('click',()=>{segmentButtons.forEach(x=>x.classList.toggle('active',x===b));rate=+b.dataset.rate;price()}));document.addEventListener('langchange',price);document.getElementById('quote').addEventListener('click',()=>{toast.textContent=currentLang()==='ru'?'Заявка подготовлена — это демонстрация, данные никуда не отправляются.':'Your quote request is ready — this is a demo, nothing is sent.';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),3200)});price();
-</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0a0a0a">
+<title data-i18n="title">Price calculator · Demo</title>
+<link rel="stylesheet" href="../demo.css">
+<style>
+.calc{position:absolute;inset:0;background:#f5f6f8;color:#16181d;padding:48px 18px 18px;display:flex;flex-direction:column;gap:14px;overflow:hidden}
+.c-brand{font-weight:900;font-size:14px;letter-spacing:.04em}
+.calc .mh{margin:0;font-size:21px;line-height:1.15;letter-spacing:-.02em}
+.c-box{background:#fff;border-radius:16px;padding:14px;display:grid;gap:10px;box-shadow:0 1px 0 #e3e5ea}
+.c-row{display:flex;justify-content:space-between;align-items:baseline;font-size:13.5px;color:#545b66}
+.c-row b{color:#16181d;font-size:16px;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:#16181d;margin:0}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:#eef0f3;border-radius:12px;padding:4px}
+.seg button{border:0;background:transparent;border-radius:9px;padding:8px;font-size:13px;font-weight:700;color:#545b66;cursor:pointer;transition:background .25s,color .25s}
+.seg button.on{background:#16181d;color:#fff}
+.chk{display:flex;align-items:center;gap:10px;font-size:13.5px;cursor:pointer;user-select:none}
+.chk i{width:20px;height:20px;border-radius:6px;border:1.5px solid #b8bec8;display:grid;place-items:center;font-style:normal;font-size:12px;color:#fff;transition:background .2s,border-color .2s}
+.chk.on i{background:#16181d;border-color:#16181d}
+.chk.on i:after{content:"✓"}
+.total{margin-top:auto;background:#16181d;color:#fff;border-radius:16px;padding:14px 16px;display:grid;gap:10px}
+.total small{color:#b5bbc6;font-size:12.5px}
+.total b{font-size:30px;letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1}
+.c-btn{border:0;background:#fff;color:#16181d;border-radius:11px;padding:11px;font-weight:800;font-size:14px;cursor:pointer;transition:transform .2s,background .2s,color .2s}
+.c-btn.tap{transform:scale(.95);background:var(--red);color:#fff}
+.sent{position:absolute;inset:0;background:#f5f6f8;display:grid;place-content:center;justify-items:center;text-align:center;gap:8px;padding:30px;opacity:0;pointer-events:none;transition:opacity .5s}
+.sent.on{opacity:1}
+.sent i{width:56px;height:56px;border-radius:50%;background:#16181d;color:#fff;display:grid;place-items:center;font-style:normal;font-size:24px}
+.sent b{font-size:19px}.sent p{margin:0;color:#545b66;font-size:14px}
+.lead-card{display:grid;gap:6px}
+.lead-card div{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:9px 12px;border-radius:10px;background:var(--panel2);font-size:14px;transition:background .4s}
+.lead-card span{color:var(--muted)}
+.lead-card b{font-weight:650;min-height:1.4em}
+.lead-card div.fill{background:var(--red-dim)}
+</style>
+</head>
+<body>
+<header class="bar"><div class="wrap">
+  <a class="back notranslate" translate="no" href="../../"><i>←</i><span>Yakov<b>.</b></span></a>
+  <span class="sp"></span>
+  <button id="lang" type="button">EN</button>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="tag"><span class="n">03</span><span data-i18n="service">Price calculator</span></p>
+    <h1 data-i18n-html="h1">Clients see the price <em>before they call.</em></h1>
+    <p class="lead" data-i18n="lead">A calculator on your website: the client picks options, sees the cost right away and sends a request with all the details.</p>
+  </section>
+
+  <section class="show">
+    <div>
+      <div class="controls">
+        <button class="ctl" id="play" type="button"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg><span data-i18n="play">Play again</span></button>
+        <button class="ctl" id="try" type="button" aria-pressed="false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 8V3.5a1.5 1.5 0 0 1 3 0V7l3 .8a1.6 1.6 0 0 1 1.2 1.8l-.5 3.4H6.5L3.8 9.6a1.2 1.2 0 0 1 1.8-1.6z"/></svg><span data-i18n="try">Try it yourself</span></button>
+      </div>
+      <div class="nowcap" id="nowcap" aria-live="polite"></div>
+      <div class="phone">
+        <div class="screen">
+          <div class="notch"></div>
+          <div class="push" id="push"><span class="ava">TG</span><div><b></b><p></p></div><small data-i18n="now">now</small></div>
+          <div class="calc">
+            <span class="c-brand notranslate" translate="no">FORMA</span>
+            <div class="mh" data-i18n="cH">How much will your renovation cost?</div>
+            <div class="c-box">
+              <div class="c-row"><span data-i18n="cArea">Apartment area</span><b><span id="areaV">20</span> m²</b></div>
+              <input type="range" id="area" min="15" max="120" value="20" data-i18n-attr="aria-label:cArea">
+            </div>
+            <div class="c-box">
+              <div class="seg" id="seg"><button type="button" class="on" data-k="light" data-i18n="cLight">Cosmetic</button><button type="button" data-k="full" data-i18n="cFull">Full renovation</button></div>
+              <div class="chk" id="x1" role="checkbox" aria-checked="false" tabindex="0"><i></i><span data-i18n="cElec">New electrics</span></div>
+              <div class="chk" id="x2" role="checkbox" aria-checked="false" tabindex="0"><i></i><span data-i18n="cPlumb">New plumbing</span></div>
+            </div>
+            <div class="total">
+              <small data-i18n="cTotal">Approximate cost</small>
+              <b id="sum">$800</b>
+              <button class="c-btn" id="get" type="button" data-i18n="cGet">Get an exact quote</button>
+            </div>
+            <div class="sent" id="sent"><i>✓</i><b data-i18n="sentT">Request sent</b><p data-i18n="sentP">We'll call you within an hour.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="side">
+      <div class="panel">
+        <h2 data-i18n="howTitle">How it works</h2>
+        <ol class="steps" id="steps">
+          <li><span class="k">1</span><div><b data-i18n="s1">Client enters the basics</b><small data-i18n="s1d">Area, type of work, extras. Your own prices and formulas are inside.</small></div></li>
+          <li><span class="k">2</span><div><b data-i18n="s2">Sees the price right away</b><small data-i18n="s2d">No waiting for a call back. People who know the price are ready to talk.</small></div></li>
+          <li><span class="k">3</span><div><b data-i18n="s3">Sends a request</b><small data-i18n="s3d">All the chosen options go with it, so you don't ask the same questions again.</small></div></li>
+          <li><span class="k">4</span><div><b data-i18n="s4">You get a ready lead</b><small data-i18n="s4d">In Telegram or by email, with the area, options and price.</small></div></li>
+        </ol>
+      </div>
+      <div class="panel">
+        <h2 data-i18n="cardTitle">The request you get</h2>
+        <div class="lead-card">
+          <div id="l1"><span data-i18n="lArea">Area</span><b></b></div>
+          <div id="l2"><span data-i18n="lWork">Work</span><b></b></div>
+          <div id="l3"><span data-i18n="lPrice">Estimate</span><b></b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="get">
+    <div class="panel">
+      <h2 data-i18n="getTitle">What you get</h2>
+      <ul>
+        <li data-i18n="g1">Calculator with your prices and options</li>
+        <li data-i18n="g2">Works on your website or as a separate page</li>
+        <li data-i18n="g3">Requests with all details to Telegram</li>
+        <li data-i18n="g4">Prices are easy to change later</li>
+      </ul>
+    </div>
+    <div class="panel price">
+      <div class="row"><span data-i18n="priceL">Price</span><b data-i18n="priceV">from $50</b></div>
+      <div class="row"><span data-i18n="timeL">Timeline</span><b data-i18n="timeV">2–4 days</b></div>
+      <a class="cta" href="https://t.me/wakeupyakov" data-i18n="cta">I want a calculator</a>
+      <p class="fine" data-i18n="fine">Forma is a fictional renovation company made for this demo.</p>
+    </div>
+  </section>
+</main>
+
+<script>
+window.I18N = {
+  en: {
+    title: 'Price calculator · Demo', service: 'Price calculator', h1: 'Clients see the price <em>before they call.</em>',
+    lead: 'A calculator on your website: the client picks options, sees the cost right away and sends a request with all the details.',
+    play: 'Play again', try: 'Try it yourself', now: 'now', howTitle: 'How it works',
+    s1: 'Client enters the basics', s1d: 'Area, type of work, extras. Your own prices and formulas are inside.',
+    s2: 'Sees the price right away', s2d: 'No waiting for a call back. People who know the price are ready to talk.',
+    s3: 'Sends a request', s3d: 'All the chosen options go with it, so you don\'t ask the same questions again.',
+    s4: 'You get a ready lead', s4d: 'In Telegram or by email, with the area, options and price.',
+    cardTitle: 'The request you get', lArea: 'Area', lWork: 'Work', lPrice: 'Estimate',
+    getTitle: 'What you get', g1: 'Calculator with your prices and options', g2: 'Works on your website or as a separate page', g3: 'Requests with all details to Telegram', g4: 'Prices are easy to change later',
+    priceL: 'Price', priceV: 'from $50', timeL: 'Timeline', timeV: '2–4 days', cta: 'I want a calculator', fine: 'Forma is a fictional renovation company made for this demo.',
+    cH: 'How much will your renovation cost?', cArea: 'Apartment area', cLight: 'Cosmetic', cFull: 'Full renovation', cElec: 'New electrics', cPlumb: 'New plumbing',
+    cTotal: 'Approximate cost', cGet: 'Get an exact quote', sentT: 'Request sent', sentP: 'We\'ll call you within an hour.',
+    pushT: 'Forma · new request', pushP: '{area} m² · {work} · {sum}', sep: ' + '
+  },
+  de: {
+    title: 'Preiskalkulator · Demo', service: 'Preiskalkulator', h1: 'Kunden sehen den Preis, <em>bevor sie anrufen.</em>', lead: 'Ein Kalkulator auf Ihrer Website: Kunden wählen Optionen, sehen sofort den Preis und senden alle Angaben mit.',
+    play: 'Noch einmal ansehen', try: 'Selbst ausprobieren', now: 'jetzt', howTitle: 'So läuft es ab', s1: 'Kunde gibt die Eckdaten ein', s1d: 'Fläche, Arbeiten und Extras. Ihre Preise und Berechnungsregeln sind hinterlegt.', s2: 'Sieht sofort den Preis', s2d: 'Kein Warten auf einen Rückruf. Wer den Preis kennt, ist bereit fürs Gespräch.', s3: 'Sendet eine Anfrage', s3d: 'Alle gewählten Optionen sind dabei. Sie müssen nichts doppelt erfragen.', s4: 'Sie erhalten einen fertigen Kontakt', s4d: 'Per Telegram oder E-Mail, mit Fläche, Optionen und Preis.',
+    cardTitle: 'Ihre Anfrage', lArea: 'Fläche', lWork: 'Arbeiten', lPrice: 'Kostenschätzung', getTitle: 'Das bekommen Sie', g1: 'Kalkulator mit Ihren Preisen und Optionen', g2: 'Läuft auf Ihrer Website oder als eigene Seite', g3: 'Anfragen mit allen Angaben per Telegram', g4: 'Preise später einfach anpassen',
+    priceL: 'Preis', priceV: 'ab 50 $', timeL: 'Dauer', timeV: '2–4 Tage', cta: 'Ich möchte einen Kalkulator', fine: 'Forma ist ein erfundenes Renovierungsunternehmen für diese Demo.', cH: 'Was kostet Ihre Renovierung?', cArea: 'Wohnfläche', cLight: 'Kosmetikrenovierung', cFull: 'Komplettsanierung', cElec: 'Neue Elektrik', cPlumb: 'Neue Wasserleitungen', cTotal: 'Geschätzte Kosten', cGet: 'Verbindliches Angebot anfragen', sentT: 'Anfrage gesendet', sentP: 'Wir rufen Sie innerhalb einer Stunde an.', pushT: 'Forma · neue Anfrage', pushP: '{area} m² · {work} · {sum}', sep: ' + '
+  },
+  es: {
+    title: 'Calculadora de precios · Demo', service: 'Calculadora de precios', h1: 'Tus clientes ven el precio <em>antes de llamar.</em>', lead: 'Una calculadora en tu web: el cliente elige opciones, ve el coste al momento y envía la consulta con todos los detalles.',
+    play: 'Ver otra vez', try: 'Pruébala', now: 'ahora', howTitle: 'Cómo funciona', s1: 'El cliente indica lo básico', s1d: 'Superficie, tipo de trabajo y extras. Incluye tus precios y fórmulas.', s2: 'Ve el precio al instante', s2d: 'Sin esperar una llamada. Quien conoce el precio está listo para hablar.', s3: 'Envía una consulta', s3d: 'Incluye todas las opciones elegidas para que no tengas que volver a preguntarlas.', s4: 'Recibes un contacto listo', s4d: 'Por Telegram o correo, con superficie, opciones y precio.',
+    cardTitle: 'La consulta que recibes', lArea: 'Superficie', lWork: 'Trabajo', lPrice: 'Presupuesto', getTitle: 'Qué recibes', g1: 'Calculadora con tus precios y opciones', g2: 'Funciona en tu web o como página independiente', g3: 'Consultas detalladas por Telegram', g4: 'Puedes cambiar los precios fácilmente',
+    priceL: 'Precio', priceV: 'desde 50 $', timeL: 'Plazo', timeV: '2–4 días', cta: 'Quiero una calculadora', fine: 'Forma es una empresa de reformas ficticia creada para esta demo.', cH: '¿Cuánto costará la reforma?', cArea: 'Superficie del piso', cLight: 'Reforma básica', cFull: 'Reforma completa', cElec: 'Instalación eléctrica nueva', cPlumb: 'Fontanería nueva', cTotal: 'Coste aproximado', cGet: 'Pedir presupuesto exacto', sentT: 'Consulta enviada', sentP: 'Te llamaremos en menos de una hora.', pushT: 'Forma · consulta nueva', pushP: '{area} m² · {work} · {sum}', sep: ' + '
+  },
+  fr: {
+    title: 'Calculateur de prix · Démo', service: 'Calculateur de prix', h1: 'Vos clients connaissent le prix <em>avant d’appeler.</em>', lead: 'Un calculateur sur votre site : le client choisit ses options, voit le tarif aussitôt et envoie une demande détaillée.',
+    play: 'Revoir', try: 'À vous d’essayer', now: 'maintenant', howTitle: 'Comment ça marche', s1: 'Le client indique l’essentiel', s1d: 'Surface, type de travaux, options. Vos tarifs et vos règles de calcul sont intégrés.', s2: 'Il voit le prix tout de suite', s2d: 'Pas besoin d’attendre un rappel. Quand on connaît le prix, on est prêt à en parler.', s3: 'Il envoie une demande', s3d: 'Toutes les options choisies sont jointes : vous n’avez pas à les redemander.', s4: 'Vous recevez une demande complète', s4d: 'Sur Telegram ou par e-mail, avec la surface, les options et le prix.',
+    cardTitle: 'La demande reçue', lArea: 'Surface', lWork: 'Travaux', lPrice: 'Estimation', getTitle: 'Ce que vous obtenez', g1: 'Un calculateur avec vos tarifs et options', g2: 'Intégré à votre site ou disponible sur une page dédiée', g3: 'Les demandes détaillées sur Telegram', g4: 'Des tarifs faciles à modifier ensuite',
+    priceL: 'Prix', priceV: 'à partir de 50 $', timeL: 'Délai', timeV: '2–4 jours', cta: 'Je veux un calculateur', fine: 'Forma est une entreprise de rénovation fictive créée pour cette démo.', cH: 'Combien coûtera votre rénovation ?', cArea: 'Surface de l’appartement', cLight: 'Rénovation légère', cFull: 'Rénovation complète', cElec: 'Nouvelle installation électrique', cPlumb: 'Nouvelle plomberie', cTotal: 'Coût estimé', cGet: 'Obtenir un devis précis', sentT: 'Demande envoyée', sentP: 'Nous vous appelons dans l’heure.', pushT: 'Forma · nouvelle demande', pushP: '{area} m² · {work} · {sum}', sep: ' + '
+  },
+  zh: {
+    title: '价格计算器 · 演示', service: '价格计算器', h1: '客户来电前，<em>就能看到价格。</em>', lead: '在你的网站上加入计算器：客户选择项目后马上看到费用，并连同详情一起提交需求。',
+    play: '再看一次', try: '自己试试', now: '现在', howTitle: '计算流程', s1: '填写基本信息', s1d: '面积、施工类型和附加项目，使用你的价格和计算方式。', s2: '马上查看价格', s2d: '不用等回电。了解价格后，客户更容易开始沟通。', s3: '提交需求', s3d: '所选项目会一起发送，不用再重复询问。', s4: '你收到完整需求', s4d: '通过 Telegram 或邮件收到面积、选项和价格。',
+    cardTitle: '你收到的需求', lArea: '面积', lWork: '施工项目', lPrice: '估算费用', getTitle: '你将获得', g1: '可设置价格和选项的计算器', g2: '可嵌入网站，也可单独使用', g3: '详细需求发送到 Telegram', g4: '以后修改价格很方便',
+    priceL: '价格', priceV: '50 美元起', timeL: '周期', timeV: '2–4 天', cta: '我想要价格计算器', fine: 'Forma 是为本演示虚构的装修公司。', cH: '装修大概要花多少钱？', cArea: '公寓面积', cLight: '基础翻新', cFull: '全面翻新', cElec: '更换电路', cPlumb: '更换管道', cTotal: '预估费用', cGet: '获取准确报价', sentT: '需求已发送', sentP: '我们会在一小时内联系你。', pushT: 'Forma · 新需求', pushP: '{area} m² · {work} · {sum}', sep: ' + '
+  },
+  ar: {
+    title: 'حاسبة الأسعار · عرض تجريبي', service: 'حاسبة الأسعار', h1: 'يعرف عملاؤك السعر <em>قبل الاتصال.</em>', lead: 'حاسبة على موقعك: يختار العميل الخيارات، ويرى التكلفة فورًا، ثم يرسل طلبًا بكل التفاصيل.',
+    play: 'شاهد مرة أخرى', try: 'جرّب بنفسك', now: 'الآن', howTitle: 'كيف تعمل', s1: 'يدخل العميل المعلومات الأساسية', s1d: 'المساحة ونوع العمل والإضافات، وفق أسعارك وطريقة حسابك.', s2: 'يرى السعر فورًا', s2d: 'لا داعي لانتظار اتصال. معرفة السعر تساعد العميل على بدء الحديث.', s3: 'يرسل طلبًا', s3d: 'تصلك كل الخيارات التي اختارها، فلا تحتاج إلى تكرار الأسئلة.', s4: 'يصلك طلب مكتمل', s4d: 'عبر Telegram أو البريد، مع المساحة والخيارات والسعر.',
+    cardTitle: 'الطلب الذي يصلك', lArea: 'المساحة', lWork: 'الأعمال', lPrice: 'التكلفة التقديرية', getTitle: 'ما ستحصل عليه', g1: 'حاسبة بأسعارك وخياراتك', g2: 'تعمل على موقعك أو في صفحة مستقلة', g3: 'طلبات مفصلة تصلك عبر Telegram', g4: 'تعديل الأسعار لاحقًا سهل',
+    priceL: 'السعر', priceV: 'ابتداءً من 50 $', timeL: 'المدة', timeV: '2–4 أيام', cta: 'أريد حاسبة أسعار', fine: 'Forma شركة تجديد منازل خيالية أُنشئت لهذا العرض التجريبي.', cH: 'كم ستكلف أعمال التجديد؟', cArea: 'مساحة الشقة', cLight: 'تجديد بسيط', cFull: 'تجديد شامل', cElec: 'تمديدات كهرباء جديدة', cPlumb: 'تمديدات مياه جديدة', cTotal: 'التكلفة التقريبية', cGet: 'اطلب عرض سعر دقيقًا', sentT: 'تم إرسال الطلب', sentP: 'سنتصل بك خلال ساعة.', pushT: 'Forma · طلب جديد', pushP: '{area} m² · {work} · {sum}', sep: ' + '
+  },
+  ru: {
+    title: 'Калькулятор цены · Демо', service: 'Калькулятор цены', h1: 'Клиент видит цену <em>ещё до звонка.</em>',
+    lead: 'Калькулятор на вашем сайте: клиент выбирает параметры, сразу видит стоимость и отправляет заявку со всеми деталями.',
+    play: 'Показать ещё раз', try: 'Попробовать самому', now: 'сейчас', howTitle: 'Как это работает',
+    s1: 'Клиент вводит основное', s1d: 'Площадь, тип работ, дополнительные опции. Внутри ваши цены и формулы.',
+    s2: 'Сразу видит цену', s2d: 'Не нужно ждать обратного звонка. Кто знает цену, тот готов к разговору.',
+    s3: 'Отправляет заявку', s3d: 'Все выбранные параметры уходят вместе с ней, переспрашивать не придётся.',
+    s4: 'Вы получаете готовую заявку', s4d: 'В Telegram или на почту: площадь, опции и цена.',
+    cardTitle: 'Заявка, которую вы получите', lArea: 'Площадь', lWork: 'Работы', lPrice: 'Расчёт',
+    getTitle: 'Что вы получите', g1: 'Калькулятор с вашими ценами и опциями', g2: 'Работает на вашем сайте или отдельной страницей', g3: 'Заявки со всеми деталями в Telegram', g4: 'Цены легко поменять потом',
+    priceL: 'Цена', priceV: 'от $50', timeL: 'Срок', timeV: '2–4 дня', cta: 'Хочу калькулятор', fine: 'Forma — вымышленная ремонтная компания, придумана для этого демо.',
+    cH: 'Сколько будет стоить ваш ремонт?', cArea: 'Площадь квартиры', cLight: 'Косметический', cFull: 'Капитальный', cElec: 'Новая электрика', cPlumb: 'Новая сантехника',
+    cTotal: 'Примерная стоимость', cGet: 'Получить точную смету', sentT: 'Заявка отправлена', sentP: 'Перезвоним в течение часа.',
+    pushT: 'Forma · новая заявка', pushP: '{area} м² · {work} · {sum}', sep: ' + '
+  },
+  uk: {
+    title: 'Калькулятор ціни · Демо', service: 'Калькулятор ціни', h1: 'Клієнт бачить ціну <em>ще до дзвінка.</em>',
+    lead: 'Калькулятор на вашому сайті: клієнт обирає параметри, одразу бачить вартість і надсилає заявку з усіма деталями.',
+    play: 'Показати ще раз', try: 'Спробувати самому', now: 'зараз', howTitle: 'Як це працює',
+    s1: 'Клієнт вводить основне', s1d: 'Площа, тип робіт, додаткові опції. Усередині ваші ціни й формули.',
+    s2: 'Одразу бачить ціну', s2d: 'Не треба чекати на зворотний дзвінок. Хто знає ціну, той готовий до розмови.',
+    s3: 'Надсилає заявку', s3d: 'Усі обрані параметри йдуть разом із нею, перепитувати не доведеться.',
+    s4: 'Ви отримуєте готову заявку', s4d: 'У Telegram або на пошту: площа, опції та ціна.',
+    cardTitle: 'Заявка, яку ви отримаєте', lArea: 'Площа', lWork: 'Роботи', lPrice: 'Розрахунок',
+    getTitle: 'Що ви отримаєте', g1: 'Калькулятор з вашими цінами й опціями', g2: 'Працює на вашому сайті або окремою сторінкою', g3: 'Заявки з усіма деталями в Telegram', g4: 'Ціни легко змінити згодом',
+    priceL: 'Ціна', priceV: 'від $50', timeL: 'Термін', timeV: '2–4 дні', cta: 'Хочу калькулятор', fine: 'Forma — вигадана ремонтна компанія, створена для цього демо.',
+    cH: 'Скільки коштуватиме ваш ремонт?', cArea: 'Площа квартири', cLight: 'Косметичний', cFull: 'Капітальний', cElec: 'Нова електрика', cPlumb: 'Нова сантехніка',
+    cTotal: 'Орієнтовна вартість', cGet: 'Отримати точний кошторис', sentT: 'Заявку надіслано', sentP: 'Передзвонимо протягом години.',
+    pushT: 'Forma · нова заявка', pushP: '{area} м² · {work} · {sum}', sep: ' + '
+  }
+};
+</script>
+<script src="../../lang.js"></script>
+<script src="../demo.js"></script>
+<script>
+(function () {
+  function T(k, v) { return window.t(k, v); }
+  var area = document.getElementById('area'), areaV = document.getElementById('areaV'), sum = document.getElementById('sum');
+  var seg = document.getElementById('seg'), x1 = document.getElementById('x1'), x2 = document.getElementById('x2');
+  var getBtn = document.getElementById('get'), sent = document.getElementById('sent');
+  var state = { area: 20, kind: 'light', elec: false, plumb: false }, shown = 800, anim = 0;
+  function price() { return state.area * (state.kind === 'full' ? 90 : 40) + (state.elec ? state.area * 15 : 0) + (state.plumb ? 900 : 0); }
+  function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+  function render() {
+    area.value = state.area; areaV.textContent = state.area;
+    seg.querySelectorAll('button').forEach(function (b) { b.classList.toggle('on', b.dataset.k === state.kind); });
+    [[x1, state.elec], [x2, state.plumb]].forEach(function (p) { p[0].classList.toggle('on', p[1]); p[0].setAttribute('aria-checked', p[1]); });
+    var from = shown, to = price(), t0 = performance.now();
+    cancelAnimationFrame(anim);
+    (function tick(t) { var k = Math.min(1, (t - t0) / 450); shown = from + (to - from) * (1 - Math.pow(1 - k, 3)); sum.textContent = fmt(shown); if (k < 1) anim = requestAnimationFrame(tick); })(t0);
+  }
+  function work() { var w = [T(state.kind === 'full' ? 'cFull' : 'cLight')]; if (state.elec) w.push(T('cElec')); if (state.plumb) w.push(T('cPlumb')); return w.join(T('sep')).toLowerCase(); }
+  function setRow(id, text) { var r = document.getElementById(id); r.querySelector('b').textContent = text; r.classList.add('fill'); setTimeout(function () { r.classList.remove('fill'); }, 1200); }
+  // Manual controls always work, so visitors can play with it.
+  area.addEventListener('input', function () { state.area = +area.value; render(); });
+  seg.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) { state.kind = b.dataset.k; render(); } });
+  [[x1, 'elec'], [x2, 'plumb']].forEach(function (p) {
+    function flip() { state[p[1]] = !state[p[1]]; render(); }
+    p[0].addEventListener('click', flip);
+    p[0].addEventListener('keydown', function (e) { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flip(); } });
+  });
+  var sendResolve = null;
+  getBtn.addEventListener('click', function () { if (sendResolve) { var r = sendResolve; sendResolve = null; r(); } });
+
+  ChatDemo({
+    push: '#push', steps: '#steps', play: '#play', try: '#try',
+    reset: function () {
+      state = { area: 20, kind: 'light', elec: false, plumb: false }; render();
+      sent.classList.remove('on'); sendResolve = null;
+      ['l1', 'l2', 'l3'].forEach(function (id) { document.getElementById(id).querySelector('b').textContent = ''; });
+    },
+    script: async function (a) {
+      var manual = document.getElementById('try').getAttribute('aria-pressed') === 'true';
+      a.step(0);
+      if (!manual) {
+        await a.wait(900);
+        for (var v = 20; v <= 48; v += 2) { state.area = v; render(); await a.wait(55); }
+        await a.wait(500);
+        state.kind = 'full'; render(); await a.wait(800);
+        state.elec = true; render(); await a.wait(700);
+        a.step(1);
+        await a.wait(1600);
+      } else {
+        a.step(1);
+      }
+      a.step(2);
+      if (manual) {
+        await new Promise(function (res) { sendResolve = res; });
+      } else {
+        await a.wait(400);
+      }
+      getBtn.classList.add('tap'); await a.wait(260); getBtn.classList.remove('tap');
+      sent.classList.add('on');
+      await a.wait(700);
+      a.step(3);
+      var total = fmt(price());
+      setRow('l1', state.area + ' m²'); await a.wait(250);
+      setRow('l2', work()); await a.wait(250);
+      setRow('l3', total);
+      await a.push(T('pushT'), T('pushP', { area: state.area, work: work(), sum: total }), 3200);
+    }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,5 +1,280 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090909"><title data-en="Booking bot · Yakov Barbers" data-ru="Бот записи · «Яков»">Booking bot · Yakov Barbers</title><style>
-:root{color-scheme:dark;--bg:#090909;--panel:#111;--line:#2b2b2b;--muted:#aaa;--red:#ff5c5c}*{box-sizing:border-box}h1{overflow-wrap:anywhere}body{margin:0;background:var(--bg);color:#f4f4f4;font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px max(14px,calc((100vw - 1100px)/2));border-bottom:1px solid var(--line);font-size:12px;color:#ccc}.notice{display:flex;gap:8px;align-items:center}.dot{width:7px;height:7px;border-radius:50%;background:var(--red)}.top a{color:#fff;text-decoration:none;white-space:nowrap}#lang{font:600 12px system-ui;color:#eee;background:#171717;border:1px solid #393939;border-radius:8px;padding:7px 10px}.wrap{max-width:1100px;margin:auto;padding:22px 16px}.title{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:15px}.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#aaa}.title h1{font-size:clamp(24px,4vw,36px);letter-spacing:-.04em;margin:4px 0 0}.restart{border:1px solid #3d3d3d;border-radius:8px;background:#151515;color:#eee;padding:8px 11px;font:600 12px system-ui;cursor:pointer}.grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(250px,.65fr);gap:13px}.phone{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#0f0f0f}.chathead{display:flex;align-items:center;gap:10px;padding:12px 15px;background:#151515;border-bottom:1px solid var(--line)}.avatar{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#eee;color:#111;font-size:12px;font-weight:800}.chathead strong{font-size:13px}.online{color:#a5a5a5;font-size:12px}.messages{height:385px;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:9px;background:radial-gradient(ellipse at 50% 0,#1a1a1a,#0c0c0c 65%)}.bubble{max-width:88%;width:max-content;padding:9px 11px;border:1px solid #333;border-radius:5px 12px 12px;background:#1c1c1c;color:#f3f3f3;font-size:13px}.bubble.user{align-self:flex-end;background:#eee;color:#111;border-color:#eee;border-radius:12px 5px 12px 12px}.bubble small{display:block;margin-top:5px;font-size:12px;color:#aaa}.bubble.user small{color:#666}.typing{display:flex;gap:4px;align-items:center;padding:10px 12px}.typing i{width:5px;height:5px;border-radius:50%;background:#aaa;animation:blink 1s infinite alternate}.typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}@keyframes blink{to{opacity:.2;transform:translateY(-3px)}}.keyboard{margin:0 14px 14px;display:grid;gap:6px}.keyrow{display:flex;gap:6px}.keyboard button{flex:1;background:#171717;border:1px solid #3b3b3b;border-radius:8px;color:#eee;padding:9px 6px;font:600 12px system-ui;cursor:pointer}.keyboard button:hover,.keyboard button.selected{border-color:#fff;background:#252525}.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;padding:8px}.calendar button{padding:8px 2px}.calendar button:disabled{opacity:.3}.confirmation{border:1px solid #444;background:#151515;border-radius:10px;padding:11px}.confirmation strong{display:block;margin-bottom:5px}.admin{border:1px solid var(--line);border-radius:15px;background:#111;overflow:hidden}.admin-head{padding:14px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.admin-head h2{font-size:13px;margin:0}.live{font-size:12px;color:#ccc;display:flex;gap:6px;align-items:center}.live:before{content:"";width:6px;height:6px;border-radius:50%;background:#f5f5f5;box-shadow:0 0 9px #fff}.admin-body{padding:14px}.admin-label{color:#999;text-transform:uppercase;letter-spacing:.1em;font-size:12px}.booking{margin-top:10px;padding:12px;border:1px solid #333;border-radius:10px;background:#151515;animation:slide .4s ease}.booking strong{font-size:13px}.booking p{margin:7px 0 0;color:#bbb;font-size:12px}.status{display:inline-block;margin-top:10px;padding:4px 7px;border-radius:5px;background:#252525;color:#eee;font-size:12px}.empty{color:#888;font-size:12px;margin-top:14px}.disclaimer{padding:12px 14px;border-top:1px solid var(--line);color:#999;font-size:12px}@keyframes slide{from{opacity:0;transform:translateY(8px)}}:focus-visible{outline:2px solid #fff;outline-offset:3px}@media(max-width:720px){.grid{grid-template-columns:1fr}.messages{height:310px}.admin{min-height:160px}}@media(max-width:390px){.top .notice{flex:1;min-width:0;align-items:flex-start}.top .notice span{line-height:1.2}.top a{white-space:normal;max-width:118px;line-height:1.2}.top>div:last-child{gap:6px!important}.top #lang{flex:none}.wrap{padding:16px 11px}.messages{height:300px}.bubble{font-size:12px}.keyrow{gap:4px}.keyboard button{font-size:12px;padding:8px 4px}.top{padding:9px 10px;font-size:12px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
-</style></head><body><header class="top"><div class="notice"><i class="dot"></i><span data-en="Portfolio demo — simulation, not real client work" data-ru="Демо портфолио — симуляция, не реальный заказ">Portfolio demo — simulation, not real client work</span></div><div style="display:flex;align-items:center;gap:11px"><a href="../../" data-en="← back to portfolio" data-ru="← назад в портфолио">← back to portfolio</a><button id="lang" type="button">RU</button></div></header><main class="wrap"><div class="title"><div><div class="eyebrow" data-en="Automated booking · Yakov Barbers" data-ru="Автоматическая запись · «Яков»">Automated booking · Yakov Barbers</div><h1 data-en="A booking assistant that fills the chair." data-ru="Бот-помощник заполняет расписание.">A booking assistant that fills the chair.</h1></div><button class="restart" id="restart" data-en="↻ Restart demo" data-ru="↻ Перезапустить">↻ Restart demo</button></div><div class="grid"><section class="phone"><header class="chathead"><div class="avatar">YB</div><div><strong data-en="Yakov booking" data-ru="Запись в «Яков»">Yakov booking</strong><div class="online" data-en="bot · always available" data-ru="бот · всегда на связи">bot · always available</div></div></header><div class="messages" id="messages" aria-live="polite"></div><div class="keyboard" id="keyboard"></div><div class="disclaimer" data-en="Telegram-style preview · no messages are sent" data-ru="Демонстрация Telegram · сообщения не отправляются">Telegram-style preview · no messages are sent</div></section><aside class="admin"><header class="admin-head"><h2 data-en="Admin view" data-ru="Панель администратора">Admin view</h2><span class="live" data-en="LIVE PREVIEW" data-ru="ДЕМО-РЕЖИМ">LIVE PREVIEW</span></header><div class="admin-body"><div class="admin-label" data-en="Today's appointments" data-ru="Записи на сегодня">Today's appointments</div><div id="booking"><p class="empty" data-en="New bookings appear here instantly." data-ru="Новые записи появляются здесь сразу.">New bookings appear here instantly.</p></div></div></aside></div></main><script src="../../lang.js"></script><script>
-const messages=document.getElementById('messages'),keyboard=document.getElementById('keyboard'),booking=document.getElementById('booking');let chosen={service:'',date:''};const serviceData={en:['Classic haircut','Beard trim'],ru:['Классическая стрижка','Оформление бороды']};function t(en,ru){return currentLang()==='ru'?ru:en}function addBubble(text,user=false){const b=document.createElement('div');b.className='bubble'+(user?' user':'');b.textContent=text;messages.appendChild(b);messages.scrollTop=messages.scrollHeight;return b}function typing(){const b=document.createElement('div');b.className='bubble typing';b.innerHTML='<i></i><i></i><i></i>';messages.appendChild(b);messages.scrollTop=messages.scrollHeight;return b}function botReply(text){const wait=typing();setTimeout(()=>{wait.remove();addBubble(text)},550)}function buttons(rows){keyboard.replaceChildren();rows.forEach(row=>{const wrap=document.createElement('div');wrap.className='keyrow';row.forEach(item=>{const b=document.createElement('button');b.type='button';b.textContent=item.label;b.dataset.action=item.action;b.dataset.value=item.value;wrap.appendChild(b)});keyboard.appendChild(wrap)})}function datePicker(){const d=new Date();const year=d.getFullYear(),month=d.getMonth();const label=new Intl.DateTimeFormat(currentLang()==='ru'?'ru-RU':'en-US',{month:'long',year:'numeric'}).format(new Date(year,month,1));const title=document.createElement('div');title.className='bubble';title.textContent=label;messages.appendChild(title);const grid=document.createElement('div');grid.className='calendar';const short=currentLang()==='ru'?['Пн','Вт','Ср','Чт','Пт','Сб','Вс']:['M','T','W','T','F','S','S'];short.forEach(x=>{const b=document.createElement('button');b.textContent=x;b.disabled=true;grid.appendChild(b)});const start=(new Date(year,month,1).getDay()+6)%7,count=new Date(year,month+1,0).getDate();for(let i=0;i<start;i++){const b=document.createElement('button');b.disabled=true;b.textContent='·';grid.appendChild(b)}for(let day=1;day<=count;day++){const b=document.createElement('button');b.textContent=day;b.dataset.action='date';b.dataset.value=String(day);if(day<d.getDate())b.disabled=true;grid.appendChild(b)}keyboard.appendChild(grid);messages.scrollTop=messages.scrollHeight}function begin(){messages.replaceChildren();booking.innerHTML='<p class="empty">'+t('New bookings appear here instantly.','Новые записи появляются здесь сразу.')+'</p>';chosen={service:'',date:''};addBubble(t('Hi! I’m Yakov’s booking assistant. What can I help you book?','Привет! Я помощник барбершопа «Яков». На какую услугу записать?'));buttons([[{label:serviceData.en[0],value:serviceData.en[0],action:'service'},{label:serviceData.en[1],value:serviceData.en[1],action:'service'}]]);if(currentLang()==='ru')buttons([[{label:serviceData.ru[0],value:serviceData.ru[0],action:'service'},{label:serviceData.ru[1],value:serviceData.ru[1],action:'service'}]])}keyboard.addEventListener('click',e=>{const b=e.target.closest('[data-action]');if(!b)return;const a=b.dataset.action,v=b.dataset.value;addBubble(b.textContent,true);keyboard.replaceChildren();if(a==='service'){chosen.service=v;botReply(t('Great choice. Pick a day that works for you:','Отличный выбор. Выберите удобный день:'));setTimeout(datePicker,620)}else if(a==='date'){const day=+v;const date=new Date();date.setDate(day);chosen.date=new Intl.DateTimeFormat(currentLang()==='ru'?'ru-RU':'en-US',{weekday:'long',month:'short',day:'numeric'}).format(date);botReply(t('Here are the available times:','Вот свободное время:'));setTimeout(()=>buttons([[{label:'10:00',value:'10:00',action:'time'},{label:'14:30',value:'14:30',action:'time'},{label:'17:00',value:'17:00',action:'time'}]]),620)}else if(a==='time'){const details={service:chosen.service,date:chosen.date,time:v};botReply(t('You’re all set — see you soon!','Готово — будем ждать вас!'));setTimeout(()=>{const card=document.createElement('div');card.className='bubble confirmation';const h=document.createElement('strong');h.textContent=t('✓ Booking confirmed','✓ Запись подтверждена');const p=document.createElement('div');p.textContent=details.service+' · '+details.date+' · '+details.time;card.replaceChildren(h,p);messages.appendChild(card);messages.scrollTop=messages.scrollHeight;booking.innerHTML='';const row=document.createElement('div');row.className='booking';const name=document.createElement('strong');name.textContent='Alex Morgan';const info=document.createElement('p');info.textContent=details.time+' · '+details.service+' · '+details.date;const status=document.createElement('span');status.className='status';status.textContent=t('CONFIRMED','ПОДТВЕРЖДЕНО');row.append(name,info,status);booking.appendChild(row)},700)}});document.getElementById('restart').addEventListener('click',begin);document.addEventListener('langchange',begin);begin();
-</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0a0a0a">
+<title data-i18n="title">Telegram booking bot · Demo</title>
+<link rel="stylesheet" href="../demo.css">
+</head>
+<body>
+<header class="bar"><div class="wrap">
+  <a class="back notranslate" translate="no" href="../../"><i>←</i><span>Yakov<b>.</b></span></a>
+  <span class="sp"></span>
+  <button id="lang" type="button">EN</button>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <p class="tag"><span class="n">04</span><span data-i18n="service">Telegram booking bot</span></p>
+      <h1 data-i18n-html="h1">Clients book themselves. <em>Even while you sleep.</em></h1>
+      <p class="lead" data-i18n="lead">A bot that takes bookings 24/7, reminds clients about the visit and sends every booking to you.</p>
+    </div>
+  </section>
+
+  <section class="show">
+    <div>
+      <div class="controls">
+        <button class="ctl" id="play" type="button"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg><span data-i18n="play">Play again</span></button>
+        <button class="ctl" id="try" type="button" aria-pressed="false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 8V3.5a1.5 1.5 0 0 1 3 0V7l3 .8a1.6 1.6 0 0 1 1.2 1.8l-.5 3.4H6.5L3.8 9.6a1.2 1.2 0 0 1 1.8-1.6z"/></svg><span data-i18n="try">Try it yourself</span></button>
+      </div>
+      <div class="nowcap" id="nowcap" aria-live="polite"></div>
+      <div class="phone">
+        <div class="screen">
+          <div class="notch"></div>
+          <div class="push" id="push"><span class="ava">FC</span><div><b></b><p></p></div><small data-i18n="now">now</small></div>
+          <div class="chat-head"><span class="ava">FC</span><div><b data-i18n="chatName">Fade &amp; Co · Booking</b><small id="status" data-i18n="online">online</small></div></div>
+          <div class="msgs" id="msgs" aria-live="polite"></div>
+          <div class="replies" id="replies"></div>
+          <div class="inputbar"><span data-i18n="input">Message</span><i>🎤</i></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="side">
+      <div class="panel">
+        <h2 data-i18n="howTitle">How it works</h2>
+        <ol class="steps" id="steps">
+          <li><span class="k">1</span><div><b data-i18n="s1">Client picks a service</b><small data-i18n="s1d">Prices and duration are right in the buttons. No need to call and ask.</small></div></li>
+          <li><span class="k">2</span><div><b data-i18n="s2">Sees only free time</b><small data-i18n="s2d">The bot checks your schedule, so two clients never get the same slot.</small></div></li>
+          <li><span class="k">3</span><div><b data-i18n="s3">Leaves a contact in one tap</b><small data-i18n="s3d">Telegram shares the name and phone number, no typing needed.</small></div></li>
+          <li><span class="k">4</span><div><b data-i18n="s4">You get the booking instantly</b><small data-i18n="s4d">A message comes to you or your admin, and the slot is blocked in the schedule.</small></div></li>
+          <li><span class="k">5</span><div><b data-i18n="s5">The bot sends a reminder</b><small data-i18n="s5d">The day before the visit. The client confirms or reschedules in one tap.</small></div></li>
+        </ol>
+      </div>
+      <div class="panel">
+        <h2 data-i18n="schedTitle">Your schedule</h2>
+        <div class="sched" id="sched">
+          <div class="slot taken"><time>11:00</time><span data-i18n="slotA">Max · Haircut</span></div>
+          <div class="slot" data-t="12"><time>12:00</time><span data-i18n="free">free</span></div>
+          <div class="slot taken"><time>14:30</time><span data-i18n="slotB">Ivan · Beard</span></div>
+          <div class="slot" data-t="16"><time>16:00</time><span data-i18n="free">free</span></div>
+          <div class="slot" data-t="18"><time>18:00</time><span data-i18n="free">free</span></div>
+        </div>
+        <div class="feed" id="feed"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="get">
+    <div class="panel">
+      <h2 data-i18n="getTitle">What you get</h2>
+      <ul>
+        <li data-i18n="g1">Bot with your services, prices and staff</li>
+        <li data-i18n="g2">Booking into your schedule or Google Sheets</li>
+        <li data-i18n="g3">New booking alerts to you or your admin</li>
+        <li data-i18n="g4">Reminders and one-tap rescheduling</li>
+      </ul>
+    </div>
+    <div class="panel price">
+      <div class="row"><span data-i18n="priceL">Price</span><b data-i18n="priceV">from $100</b></div>
+      <div class="row"><span data-i18n="timeL">Timeline</span><b data-i18n="timeV">3–5 days</b></div>
+      <a class="cta" href="https://t.me/wakeupyakov" data-i18n="cta">I want a bot like this</a>
+      <p class="fine" data-i18n="fine">Fade &amp; Co is a fictional barbershop made for this demo.</p>
+    </div>
+  </section>
+</main>
+
+<script>
+window.I18N = {
+  en: {
+    chatName: 'Fade & Co · Booking', title: 'Telegram booking bot · Demo', pill: 'Demo · names and data are made up', service: 'Telegram booking bot',
+    h1: 'Clients book themselves. <em>Even while you sleep.</em>',
+    lead: 'A bot that takes bookings 24/7, reminds clients about the visit and sends every booking to you.',
+    chip1: 'Bookings 24/7', chip2: 'Fewer no-shows', chip3: 'No calls or chats',
+    play: 'Play again', try: 'Try it yourself', now: 'now', online: 'online', typing: 'typing…', input: 'Message',
+    howTitle: 'How it works',
+    s1: 'Client picks a service', s1d: 'Prices and duration are right in the buttons. No need to call and ask.',
+    s2: 'Sees only free time', s2d: 'The bot checks your schedule, so two clients never get the same slot.',
+    s3: 'Leaves a contact in one tap', s3d: 'Telegram shares the name and phone number, no typing needed.',
+    s4: 'You get the booking instantly', s4d: 'A message comes to you or your admin, and the slot is blocked in the schedule.',
+    s5: 'The bot sends a reminder', s5d: 'The day before the visit. The client confirms or reschedules in one tap.',
+    schedTitle: 'Your schedule', slotA: 'Max · Haircut', slotB: 'Ivan · Beard', free: 'free',
+    getTitle: 'What you get',
+    g1: 'Your services, prices and staff in the bot', g2: 'Booking into your schedule or Google Sheets', g3: 'New booking alerts to you or your admin',
+    g4: 'Reminders and one-tap rescheduling', g5: 'Price list, address and FAQ answers', g6: 'Setup on your account and a short guide',
+    priceL: 'Price', priceV: 'from $100', timeL: 'Timeline', timeV: '3–5 days', cta: 'I want a bot like this',
+    fine: 'Fade & Co is a fictional barbershop made for this demo.',
+    // chat
+    c_hi: 'Hi! I\'m the Fade & Co booking bot ✂️\nWhat would you like to book?',
+    o_cut: 'Haircut · $25', o_beard: 'Beard · $15', o_combo: 'Haircut + beard · $35',
+    c_day: 'Great choice. When works for you?', o_today: 'Today', o_tomorrow: 'Tomorrow', o_sat: 'Saturday',
+    c_time: 'Free times:', c_contact: 'Almost done. Share your contact so the barber can reach you if anything changes.',
+    o_share: '📱 Share my contact', me_contact: 'Alex · +1 555 014 2290',
+    card_title: 'You\'re booked!', r_service: 'Service', r_when: 'When', r_barber: 'Barber', r_barber_v: 'Dan',
+    c_done: 'I\'ll remind you the day before. See you! 👋',
+    push1_t: 'New booking', push1: 'Alex · {svc} · {when}',
+    slot_new: 'Alex · {svc}', feed_new: '<b>●</b> New booking · Alex, {when}',
+    c_remind: 'Hi Alex! Reminder: tomorrow at {time} you\'re booked with Dan ({svc}).\nAll good?',
+    o_yes: 'Yes, I\'ll be there', o_move: 'Reschedule', c_thanks: 'Thanks, see you tomorrow!',
+    push2_t: 'Visit confirmed', push2: 'Alex will come tomorrow at {time}', feed_ok: '<b>✓</b> Alex confirmed the visit'
+  },
+  de: {
+    chatName: 'Fade & Co · Buchung', title: 'Telegram-Buchungsbot · Demo', pill: 'Demo · Namen und Daten sind erfunden', service: 'Telegram-Buchungsbot', h1: 'Kunden buchen selbst. <em>Auch wenn Sie schlafen.</em>', lead: 'Der Bot nimmt rund um die Uhr Buchungen an, erinnert an Termine und schickt Ihnen jede Buchung.',
+    chip1: 'Buchungen rund um die Uhr', chip2: 'Weniger verpasste Termine', chip3: 'Keine Anrufe oder Chats', play: 'Noch einmal ansehen', try: 'Selbst ausprobieren', now: 'jetzt', online: 'online', typing: 'schreibt …', input: 'Nachricht', howTitle: 'So läuft es ab',
+    s1: 'Kunde wählt eine Leistung', s1d: 'Preis und Dauer stehen direkt auf den Schaltflächen. Nachfragen ist nicht nötig.', s2: 'Sieht nur freie Zeiten', s2d: 'Der Bot prüft Ihren Kalender. So wird kein Termin doppelt vergeben.', s3: 'Kontakt mit einem Tippen teilen', s3d: 'Telegram übermittelt Name und Telefonnummer automatisch.', s4: 'Sie erhalten sofort die Buchung', s4d: 'Sie oder Ihr Team bekommen eine Nachricht, und der Termin wird blockiert.', s5: 'Der Bot erinnert an den Termin', s5d: 'Am Vortag. Der Kunde bestätigt oder verschiebt mit einem Tippen.',
+    schedTitle: 'Ihr Kalender', slotA: 'Jonas · Haarschnitt', slotB: 'Lena · Bart', free: 'frei', getTitle: 'Das bekommen Sie', g1: 'Ihre Leistungen, Preise und Mitarbeitenden im Bot', g2: 'Buchungen in Ihren Kalender oder Google Sheets', g3: 'Benachrichtigungen an Sie oder Ihr Team', g4: 'Erinnerungen und Verschieben mit einem Tippen', g5: 'Preisliste, Adresse und Antworten auf häufige Fragen', g6: 'Einrichtung in Ihrem Konto und eine kurze Anleitung',
+    priceL: 'Preis', priceV: 'ab 100 $', timeL: 'Dauer', timeV: '3–5 Tage', cta: 'Ich möchte so einen Bot', fine: 'Fade & Co ist ein erfundener Barbershop für diese Demo.',
+    c_hi: 'Hallo! Ich bin der Buchungsbot von Fade & Co ✂️\nWas möchten Sie buchen?', o_cut: 'Haarschnitt · $25', o_beard: 'Bart · $15', o_combo: 'Haarschnitt + Bart · $35', c_day: 'Gute Wahl. Wann passt es Ihnen?', o_today: 'Heute', o_tomorrow: 'Morgen', o_sat: 'Samstag', c_time: 'Freie Termine:', c_contact: 'Fast geschafft. Teilen Sie Ihren Kontakt, damit der Barber Sie bei Änderungen erreichen kann.', o_share: '📱 Kontakt teilen', me_contact: 'Lena · +1 555 014 2290', card_title: 'Sie sind gebucht!', r_service: 'Leistung', r_when: 'Termin', r_barber: 'Barber', r_barber_v: 'Jonas', c_done: 'Ich erinnere Sie am Vortag. Bis bald! 👋', push1_t: 'Neue Buchung', push1: 'Lena · {svc} · {when}', slot_new: 'Lena · {svc}', feed_new: '<b>●</b> Neue Buchung · Lena, {when}',
+    c_remind: 'Hallo Lena! Zur Erinnerung: Morgen um {time} haben Sie einen Termin bei Jonas ({svc}).\nBleibt es dabei?', o_yes: 'Ja, ich komme', o_move: 'Termin verschieben', c_thanks: 'Danke, bis morgen!', push2_t: 'Termin bestätigt', push2: 'Lena kommt morgen um {time}', feed_ok: '<b>✓</b> Lena hat den Termin bestätigt'
+  },
+  es: {
+    chatName: 'Fade & Co · Reservas', title: 'Bot de reservas de Telegram · Demo', pill: 'Demo · nombres y datos ficticios', service: 'Bot de reservas de Telegram', h1: 'Tus clientes reservan solos. <em>Hasta mientras duermes.</em>', lead: 'El bot acepta reservas a cualquier hora, recuerda las citas y te avisa de cada una.',
+    chip1: 'Reservas 24/7', chip2: 'Menos plantones', chip3: 'Sin llamadas ni mensajes', play: 'Ver otra vez', try: 'Pruébalo', now: 'ahora', online: 'en línea', typing: 'escribiendo…', input: 'Mensaje', howTitle: 'Cómo funciona',
+    s1: 'El cliente elige un servicio', s1d: 'El precio y la duración aparecen en los botones. No hace falta preguntar.', s2: 'Ve solo los horarios libres', s2d: 'El bot consulta tu agenda para que nadie reserve la misma hora.', s3: 'Comparte sus datos con un toque', s3d: 'Telegram envía el nombre y el teléfono automáticamente.', s4: 'Recibes la reserva al momento', s4d: 'Te llega a ti o a tu equipo y la hora queda bloqueada en la agenda.', s5: 'El bot recuerda la cita', s5d: 'El día anterior. El cliente confirma o cambia la hora con un toque.',
+    schedTitle: 'Tu agenda', slotA: 'Pablo · Corte', slotB: 'Lucía · Barba', free: 'libre', getTitle: 'Qué recibes', g1: 'Tus servicios, precios y personal en el bot', g2: 'Reservas en tu agenda o en Google Sheets', g3: 'Avisos para ti o tu equipo', g4: 'Recordatorios y cambios de cita con un toque', g5: 'Precios, dirección y respuestas a preguntas frecuentes', g6: 'Configuración en tu cuenta y una guía breve',
+    priceL: 'Precio', priceV: 'desde 100 $', timeL: 'Plazo', timeV: '3–5 días', cta: 'Quiero un bot así', fine: 'Fade & Co es una barbería ficticia creada para esta demo.',
+    c_hi: '¡Hola! Soy el bot de reservas de Fade & Co ✂️\n¿Qué servicio quieres reservar?', o_cut: 'Corte · $25', o_beard: 'Barba · $15', o_combo: 'Corte + barba · $35', c_day: 'Buena elección. ¿Qué día te viene bien?', o_today: 'Hoy', o_tomorrow: 'Mañana', o_sat: 'Sábado', c_time: 'Horarios disponibles:', c_contact: 'Ya casi. Comparte tu contacto para que el barbero pueda avisarte si cambia algo.', o_share: '📱 Compartir mi contacto', me_contact: 'Lucía · +1 555 014 2290', card_title: '¡Cita reservada!', r_service: 'Servicio', r_when: 'Cuándo', r_barber: 'Barbero', r_barber_v: 'Pablo', c_done: 'Te avisaré el día antes. ¡Hasta pronto! 👋', push1_t: 'Reserva nueva', push1: 'Lucía · {svc} · {when}', slot_new: 'Lucía · {svc}', feed_new: '<b>●</b> Nueva reserva · Lucía, {when}',
+    c_remind: '¡Hola, Lucía! Te recuerdo que mañana a las {time} tienes cita con Pablo ({svc}).\n¿Sigue todo en pie?', o_yes: 'Sí, allí estaré', o_move: 'Cambiar cita', c_thanks: '¡Gracias, hasta mañana!', push2_t: 'Cita confirmada', push2: 'Lucía vendrá mañana a las {time}', feed_ok: '<b>✓</b> Lucía confirmó la cita'
+  },
+  fr: {
+    chatName: 'Fade & Co · Réservations', title: 'Bot de réservation Telegram · Démo', pill: 'Démo · noms et données fictifs', service: 'Bot de réservation Telegram', h1: 'Vos clients réservent seuls. <em>Même pendant votre sommeil.</em>', lead: 'Le bot prend les réservations 24 h/24, rappelle les rendez-vous et vous transmet chaque réservation.',
+    chip1: 'Réservations 24 h/24', chip2: 'Moins de rendez-vous manqués', chip3: 'Sans appels ni messages', play: 'Revoir', try: 'À vous d’essayer', now: 'maintenant', online: 'en ligne', typing: 'écrit…', input: 'Message', howTitle: 'Comment ça marche',
+    s1: 'Le client choisit une prestation', s1d: 'Le prix et la durée sont indiqués sur les boutons. Pas besoin de demander.', s2: 'Il ne voit que les créneaux libres', s2d: 'Le bot consulte votre agenda pour éviter les doubles réservations.', s3: 'Il partage son contact en un geste', s3d: 'Telegram transmet son nom et son numéro automatiquement.', s4: 'Vous recevez la réservation aussitôt', s4d: 'Vous ou votre équipe recevez un message, et le créneau est bloqué.', s5: 'Le bot rappelle le rendez-vous', s5d: 'La veille. Le client confirme ou déplace le rendez-vous en un geste.',
+    schedTitle: 'Votre agenda', slotA: 'Hugo · Coupe', slotB: 'Camille · Barbe', free: 'libre', getTitle: 'Ce que vous obtenez', g1: 'Vos prestations, tarifs et équipe dans le bot', g2: 'Réservations dans votre agenda ou Google Sheets', g3: 'Alertes pour vous ou votre équipe', g4: 'Rappels et report en un geste', g5: 'Tarifs, adresse et réponses aux questions fréquentes', g6: 'Installation sur votre compte et guide rapide',
+    priceL: 'Prix', priceV: 'à partir de 100 $', timeL: 'Délai', timeV: '3–5 jours', cta: 'Je veux un bot comme ça', fine: 'Fade & Co est un barbershop fictif créé pour cette démo.',
+    c_hi: 'Bonjour ! Je suis le bot de réservation de Fade & Co ✂️\nQue souhaitez-vous réserver ?', o_cut: 'Coupe · $25', o_beard: 'Barbe · $15', o_combo: 'Coupe + barbe · $35', c_day: 'Excellent choix. Quand êtes-vous disponible ?', o_today: 'Aujourd’hui', o_tomorrow: 'Demain', o_sat: 'Samedi', c_time: 'Créneaux disponibles :', c_contact: 'Presque terminé. Partagez votre contact pour que le barbier puisse vous joindre en cas de changement.', o_share: '📱 Partager mon contact', me_contact: 'Camille · +1 555 014 2290', card_title: 'Rendez-vous confirmé !', r_service: 'Prestation', r_when: 'Quand', r_barber: 'Barbier', r_barber_v: 'Hugo', c_done: 'Je vous rappellerai la veille. À bientôt ! 👋', push1_t: 'Nouvelle réservation', push1: 'Camille · {svc} · {when}', slot_new: 'Camille · {svc}', feed_new: '<b>●</b> Nouvelle réservation · Camille, {when}',
+    c_remind: 'Bonjour Camille ! Petit rappel : votre rendez-vous avec Hugo ({svc}) est demain à {time}.\nC’est toujours bon pour vous ?', o_yes: 'Oui, je serai là', o_move: 'Déplacer le rendez-vous', c_thanks: 'Merci, à demain !', push2_t: 'Rendez-vous confirmé', push2: 'Camille viendra demain à {time}', feed_ok: '<b>✓</b> Camille a confirmé le rendez-vous'
+  },
+  zh: {
+    chatName: 'Fade & Co · 预约', title: 'Telegram 预约机器人 · 演示', pill: '演示 · 姓名和数据均为虚构', service: 'Telegram 预约机器人', h1: '客户自己预约，<em>你睡觉时也能接单。</em>', lead: '机器人全天候接收预约、提醒客户到店，并把每笔预约发给你。',
+    chip1: '全天候预约', chip2: '减少爽约', chip3: '不用接电话或聊天', play: '再看一次', try: '自己试试', now: '现在', online: '在线', typing: '正在输入…', input: '消息', howTitle: '预约流程',
+    s1: '客户选择服务', s1d: '按钮上直接显示价格和时长，不用打电话询问。', s2: '只显示空闲时段', s2d: '机器人会检查你的日程，避免重复预约。', s3: '一键分享联系方式', s3d: 'Telegram 自动发送姓名和电话号码，无需手动输入。', s4: '你立即收到预约', s4d: '你或店员会收到通知，预约时段也会自动锁定。', s5: '机器人发送到店提醒', s5d: '提前一天提醒，客户可以一键确认或改期。',
+    schedTitle: '你的日程', slotA: '王磊 · 理发', slotB: '李娜 · 修胡子', free: '空闲', getTitle: '你将获得', g1: '录入服务、价格和员工信息的机器人', g2: '预约同步到日程或 Google Sheets', g3: '新预约即时通知你或店员', g4: '自动提醒和一键改期', g5: '价格表、地址和常见问题答复', g6: '在你的账号中完成配置，并附简明指南',
+    priceL: '价格', priceV: '100 美元起', timeL: '周期', timeV: '3–5 天', cta: '我想要这样的机器人', fine: 'Fade & Co 是为本演示虚构的理发店。',
+    c_hi: '你好！我是 Fade & Co 预约助手 ✂️\n你想预约什么服务？', o_cut: '理发 · $25', o_beard: '修胡子 · $15', o_combo: '理发 + 修胡子 · $35', c_day: '选得不错。你想约哪天？', o_today: '今天', o_tomorrow: '明天', o_sat: '周六', c_time: '可预约时段：', c_contact: '快好了。请分享联系方式，时间有变时理发师好联系你。', o_share: '📱 分享我的联系方式', me_contact: '李娜 · +1 555 014 2290', card_title: '预约成功！', r_service: '服务', r_when: '时间', r_barber: '理发师', r_barber_v: '王磊', c_done: '我会提前一天提醒你。到时见！👋', push1_t: '新预约', push1: '李娜 · {svc} · {when}', slot_new: '李娜 · {svc}', feed_new: '<b>●</b> 新预约 · 李娜，{when}',
+    c_remind: '李娜你好！提醒你：明天 {time} 预约了王磊（{svc}）。\n时间没问题吧？', o_yes: '好的，我会到', o_move: '改期', c_thanks: '谢谢，明天见！', push2_t: '预约已确认', push2: '李娜明天 {time} 到店', feed_ok: '<b>✓</b> 李娜已确认预约'
+  },
+  ar: {
+    chatName: 'Fade & Co · الحجوزات', title: 'روبوت الحجوزات عبر Telegram · عرض تجريبي', pill: 'عرض تجريبي · الأسماء والبيانات خيالية', service: 'روبوت حجوزات Telegram', h1: 'يحجز عملاؤك بأنفسهم. <em>حتى أثناء نومك.</em>', lead: 'يستقبل الروبوت الحجوزات طوال اليوم، ويذكّر العملاء بالمواعيد، ويرسل إليك كل حجز.',
+    chip1: 'حجوزات على مدار الساعة', chip2: 'حالات عدم الحضور أقل', chip3: 'بلا مكالمات أو محادثات', play: 'شاهد مرة أخرى', try: 'جرّب بنفسك', now: 'الآن', online: 'متصل', typing: 'يكتب…', input: 'رسالة', howTitle: 'كيف يعمل',
+    s1: 'يختار العميل الخدمة', s1d: 'يظهر السعر والمدة على الأزرار مباشرة، فلا حاجة للاتصال والسؤال.', s2: 'يرى الأوقات المتاحة فقط', s2d: 'يتحقق الروبوت من جدولك كي لا يحجز عميلان الموعد نفسه.', s3: 'يشارك بياناته بلمسة واحدة', s3d: 'يرسل Telegram الاسم ورقم الهاتف تلقائيًا.', s4: 'يصلك الحجز فورًا', s4d: 'تصلك أو لفريقك رسالة، ويُحجب الموعد من الجدول.', s5: 'يرسل الروبوت تذكيرًا', s5d: 'قبل الموعد بيوم. يؤكد العميل أو يغيّر الموعد بلمسة واحدة.',
+    schedTitle: 'جدولك', slotA: 'عمر · قص شعر', slotB: 'سارة · تهذيب اللحية', free: 'متاح', getTitle: 'ما ستحصل عليه', g1: 'خدماتك وأسعارك وفريقك داخل الروبوت', g2: 'حجوزات في جدولك أو Google Sheets', g3: 'تنبيهات بالحجوزات الجديدة لك أو لفريقك', g4: 'تذكيرات وتغيير الموعد بلمسة واحدة', g5: 'قائمة الأسعار والعنوان وإجابات الأسئلة الشائعة', g6: 'إعداد الروبوت على حسابك مع دليل مختصر',
+    priceL: 'السعر', priceV: 'ابتداءً من 100 $', timeL: 'المدة', timeV: '3–5 أيام', cta: 'أريد روبوتًا كهذا', fine: 'Fade & Co صالون حلاقة خيالي أُنشئ لهذا العرض التجريبي.',
+    c_hi: 'مرحبًا! أنا روبوت الحجوزات لدى Fade & Co ✂️\nما الخدمة التي تريد حجزها؟', o_cut: 'قص شعر · $25', o_beard: 'تهذيب اللحية · $15', o_combo: 'قص شعر ولحية · $35', c_day: 'اختيار رائع. متى يناسبك؟', o_today: 'اليوم', o_tomorrow: 'غدًا', o_sat: 'السبت', c_time: 'الأوقات المتاحة:', c_contact: 'أوشكنا على الانتهاء. شارك رقمك كي يتمكن الحلاق من التواصل إذا طرأ تغيير.', o_share: '📱 شارك بيانات الاتصال', me_contact: 'سارة · +1 555 014 2290', card_title: 'تم الحجز!', r_service: 'الخدمة', r_when: 'الموعد', r_barber: 'الحلاق', r_barber_v: 'عمر', c_done: 'سأذكّرك قبل الموعد بيوم. إلى اللقاء! 👋', push1_t: 'حجز جديد', push1: 'سارة · {svc} · {when}', slot_new: 'سارة · {svc}', feed_new: '<b>●</b> حجز جديد · سارة، {when}',
+    c_remind: 'مرحبًا سارة! تذكير: موعدك غدًا الساعة {time} مع عمر ({svc}).\nهل الموعد مناسب؟', o_yes: 'نعم، سأحضر', o_move: 'تغيير الموعد', c_thanks: 'شكرًا، أراك غدًا!', push2_t: 'تم تأكيد الموعد', push2: 'ستأتي سارة غدًا الساعة {time}', feed_ok: '<b>✓</b> أكدت سارة الموعد'
+  },
+  ru: {
+    chatName: 'Fade & Co · Запись', title: 'Telegram-бот для записи · Демо', pill: 'Демо · имена и данные вымышлены', service: 'Telegram-бот для записи',
+    h1: 'Клиенты записываются сами. <em>Даже когда вы спите.</em>',
+    lead: 'Бот принимает запись круглосуточно, напоминает клиенту о визите и присылает вам каждую запись.',
+    chip1: 'Запись 24/7', chip2: 'Меньше неявок', chip3: 'Без звонков и переписки',
+    play: 'Показать ещё раз', try: 'Попробовать самому', now: 'сейчас', online: 'в сети', typing: 'печатает…', input: 'Сообщение',
+    howTitle: 'Как это работает',
+    s1: 'Клиент выбирает услугу', s1d: 'Цена и длительность видны прямо на кнопках. Звонить и уточнять не нужно.',
+    s2: 'Видит только свободное время', s2d: 'Бот сверяется с вашим расписанием, поэтому два клиента не попадут на одно время.',
+    s3: 'Оставляет контакт в одно касание', s3d: 'Telegram сам передаёт имя и номер, ничего вводить не нужно.',
+    s4: 'Вы сразу получаете запись', s4d: 'Сообщение приходит вам или администратору, а время занимается в расписании.',
+    s5: 'Бот напоминает о визите', s5d: 'За день до записи. Клиент подтверждает или переносит одной кнопкой.',
+    schedTitle: 'Ваше расписание', slotA: 'Макс · Стрижка', slotB: 'Иван · Борода', free: 'свободно',
+    getTitle: 'Что вы получите',
+    g1: 'Бот с вашими услугами, ценами и мастерами', g2: 'Запись в ваше расписание или Google Таблицу', g3: 'Уведомления о новых записях вам или администратору',
+    g4: 'Напоминания и перенос в одно касание', g5: 'Прайс, адрес и ответы на частые вопросы', g6: 'Запуск на вашем аккаунте и короткая инструкция',
+    priceL: 'Цена', priceV: 'от $100', timeL: 'Срок', timeV: '3–5 дней', cta: 'Хочу такого бота',
+    fine: 'Fade & Co — вымышленный барбершоп, придуман для этого демо.',
+    c_hi: 'Здравствуйте! Я бот записи барбершопа Fade & Co ✂️\nНа что записать?',
+    o_cut: 'Стрижка · 2000 ₽', o_beard: 'Борода · 1200 ₽', o_combo: 'Стрижка + борода · 2800 ₽',
+    c_day: 'Отличный выбор. Когда вам удобно?', o_today: 'Сегодня', o_tomorrow: 'Завтра', o_sat: 'В субботу',
+    c_time: 'Свободное время:', c_contact: 'Почти готово. Поделитесь контактом, чтобы мастер мог связаться, если что-то изменится.',
+    o_share: '📱 Отправить контакт', me_contact: 'Алексей · +7 900 123-45-67',
+    card_title: 'Вы записаны!', r_service: 'Услуга', r_when: 'Когда', r_barber: 'Мастер', r_barber_v: 'Денис',
+    c_done: 'Напомню за день до визита. До встречи! 👋',
+    push1_t: 'Новая запись', push1: 'Алексей · {svc} · {when}',
+    slot_new: 'Алексей · {svc}', feed_new: '<b>●</b> Новая запись · Алексей, {when}',
+    c_remind: 'Алексей, добрый день! Напоминаю: завтра в {time} вы записаны к Денису ({svc}).\nВсё в силе?',
+    o_yes: 'Да, приду', o_move: 'Перенести', c_thanks: 'Спасибо, ждём вас завтра!',
+    push2_t: 'Визит подтверждён', push2: 'Алексей придёт завтра в {time}', feed_ok: '<b>✓</b> Алексей подтвердил визит'
+  },
+  uk: {
+    chatName: 'Fade & Co · Запис', title: 'Telegram-бот для запису · Демо', pill: 'Демо · імена та дані вигадані', service: 'Telegram-бот для запису',
+    h1: 'Клієнти записуються самі. <em>Навіть коли ви спите.</em>',
+    lead: 'Бот приймає запис цілодобово, нагадує клієнту про візит і надсилає вам кожен запис.',
+    chip1: 'Запис 24/7', chip2: 'Менше неявок', chip3: 'Без дзвінків і листування',
+    play: 'Показати ще раз', try: 'Спробувати самому', now: 'зараз', online: 'у мережі', typing: 'друкує…', input: 'Повідомлення',
+    howTitle: 'Як це працює',
+    s1: 'Клієнт обирає послугу', s1d: 'Ціна й тривалість видно просто на кнопках. Дзвонити й уточнювати не треба.',
+    s2: 'Бачить лише вільний час', s2d: 'Бот звіряється з вашим розкладом, тож два клієнти не потраплять на один час.',
+    s3: 'Залишає контакт одним дотиком', s3d: 'Telegram сам передає ім\'я та номер, нічого вводити не потрібно.',
+    s4: 'Ви одразу отримуєте запис', s4d: 'Повідомлення приходить вам або адміністратору, а час займається в розкладі.',
+    s5: 'Бот нагадує про візит', s5d: 'За день до запису. Клієнт підтверджує або переносить однією кнопкою.',
+    schedTitle: 'Ваш розклад', slotA: 'Макс · Стрижка', slotB: 'Іван · Борода', free: 'вільно',
+    getTitle: 'Що ви отримаєте',
+    g1: 'Бот з вашими послугами, цінами та майстрами', g2: 'Запис у ваш розклад або Google Таблицю', g3: 'Сповіщення про нові записи вам або адміністратору',
+    g4: 'Нагадування й перенесення одним дотиком', g5: 'Прайс, адреса та відповіді на часті запитання', g6: 'Запуск на вашому акаунті й коротка інструкція',
+    priceL: 'Ціна', priceV: 'від $100', timeL: 'Термін', timeV: '3–5 днів', cta: 'Хочу такого бота',
+    fine: 'Fade & Co — вигаданий барбершоп, створений для цього демо.',
+    c_hi: 'Вітаю! Я бот запису барбершопу Fade & Co ✂️\nНа що вас записати?',
+    o_cut: 'Стрижка · 600 ₴', o_beard: 'Борода · 350 ₴', o_combo: 'Стрижка + борода · 850 ₴',
+    c_day: 'Чудовий вибір. Коли вам зручно?', o_today: 'Сьогодні', o_tomorrow: 'Завтра', o_sat: 'У суботу',
+    c_time: 'Вільний час:', c_contact: 'Майже готово. Поділіться контактом, щоб майстер міг зв\'язатися, якщо щось зміниться.',
+    o_share: '📱 Надіслати контакт', me_contact: 'Олексій · +380 67 123 45 67',
+    card_title: 'Ви записані!', r_service: 'Послуга', r_when: 'Коли', r_barber: 'Майстер', r_barber_v: 'Денис',
+    c_done: 'Нагадаю за день до візиту. До зустрічі! 👋',
+    push1_t: 'Новий запис', push1: 'Олексій · {svc} · {when}',
+    slot_new: 'Олексій · {svc}', feed_new: '<b>●</b> Новий запис · Олексій, {when}',
+    c_remind: 'Олексію, добрий день! Нагадую: завтра о {time} ви записані до Дениса ({svc}).\nУсе в силі?',
+    o_yes: 'Так, прийду', o_move: 'Перенести', c_thanks: 'Дякуємо, чекаємо на вас завтра!',
+    push2_t: 'Візит підтверджено', push2: 'Олексій прийде завтра о {time}', feed_ok: '<b>✓</b> Олексій підтвердив візит'
+  }
+};
+</script>
+<script src="../../lang.js"></script>
+<script src="../demo.js"></script>
+<script>
+(function () {
+  var feed = document.getElementById('feed');
+  function T(k, v) { return window.t(k, v); }
+  function lower(x) { return x.charAt(0).toLowerCase() + x.slice(1); }
+  ChatDemo({
+    msgs: '#msgs', replies: '#replies', status: '#status', push: '#push', steps: '#steps', play: '#play', try: '#try',
+    reset: function () {
+      document.querySelectorAll('.slot[data-t]').forEach(function (x) { x.classList.remove('taken', 'new'); x.querySelector('span').textContent = T('free'); });
+      feed.innerHTML = '';
+    },
+    script: async function (a) {
+      a.step(0);
+      await a.wait(500);
+      await a.bot(T('c_hi'), 1100);
+      var svc = await a.ask([{ id: 'cut', label: T('o_cut') }, { id: 'beard', label: T('o_beard') }, { id: 'combo', label: T('o_combo') }], 'combo');
+      a.step(1);
+      await a.bot(T('c_day'));
+      var day = await a.ask([{ id: 'today', label: T('o_today') }, { id: 'tomorrow', label: T('o_tomorrow') }, { id: 'sat', label: T('o_sat') }], 'tomorrow');
+      await a.bot(T('c_time'), 700);
+      var time = await a.ask([{ id: '12', label: '12:00' }, { id: '16', label: '16:00' }, { id: '18', label: '18:00' }], '18');
+      a.step(2);
+      await a.bot(T('c_contact'));
+      await a.ask([{ id: 'share', label: T('o_share') }], 'share', '👤 ' + T('me_contact'));
+      await a.wait(400);
+      var name = svc.label.split(' · ')[0], when = day.label + ', ' + time.label;
+      await a.card(T('card_title'), [[T('r_service'), name], [T('r_when'), when], [T('r_barber'), T('r_barber_v')]]);
+      await a.bot(T('c_done'), 700);
+      a.step(3);
+      var slot = document.querySelector('.slot[data-t="' + time.id + '"]');
+      slot.classList.add('taken', 'new');
+      slot.querySelector('span').textContent = T('slot_new', { svc: lower(name) });
+      var f = document.createElement('div'); f.innerHTML = T('feed_new', { when: time.label }); feed.appendChild(f);
+      await a.push(T('push1_t'), T('push1', { svc: lower(name), when: lower(when) }), 2800);
+      a.step(4);
+      await a.wait(700);
+      await a.bot(T('c_remind', { time: time.label, svc: lower(name) }), 1200);
+      await a.ask([{ id: 'yes', label: T('o_yes') }, { id: 'move', label: T('o_move') }], 'yes');
+      await a.bot(T('c_thanks'), 700);
+      var g = document.createElement('div'); g.innerHTML = T('feed_ok'); feed.appendChild(g);
+      await a.push(T('push2_t'), T('push2', { time: time.label }), 2600);
+    }
+  });
+})();
+</script>
+</body>
+</html>

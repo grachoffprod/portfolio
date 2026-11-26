@@ -1,11 +1,286 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090909"><title data-en="Website fixes · Studio" data-ru="Исправление сайта · Студия">Website fixes · Studio</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0a0a0a">
+<title data-i18n="title">Website fixes · Demo</title>
+<link rel="stylesheet" href="../demo.css">
 <style>
-:root{color-scheme:dark;--bg:#090909;--panel:#121212;--line:#292929;--muted:#a8a8a8;--red:#ff5c5c}*{box-sizing:border-box}h1{overflow-wrap:anywhere}body{margin:0;background:var(--bg);color:#f7f7f7;font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px max(16px,calc((100vw - 1080px)/2));border-bottom:1px solid var(--line);font-size:12px;color:#d3d3d3}.top a{color:#fff;text-decoration:none;white-space:nowrap}.top .notice{display:flex;align-items:center;gap:8px}.dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 12px #ff5c5c88}#lang,.mode button,.slider button{background:#171717;color:#eee;border:1px solid #3a3a3a;border-radius:8px;padding:7px 10px;font:600 12px inherit;cursor:pointer}#lang{font:600 12px system-ui}.shell{max-width:1080px;margin:auto;padding:clamp(18px,4vw,38px) 18px}.eyebrow{color:#aaa;font-size:12px;letter-spacing:.12em;text-transform:uppercase}.heading{display:flex;justify-content:space-between;gap:20px;align-items:end}.heading h1{font-size:clamp(28px,5vw,48px);letter-spacing:-.05em;line-height:1.02;margin:8px 0 10px}.heading p{max-width:470px;color:var(--muted);margin:0 0 10px}.mode{display:flex;gap:6px;margin:22px 0 12px}.mode .active{background:#f4f4f4;color:#111;border-color:#f4f4f4}.compare{--split:50%;position:relative;height:clamp(240px,38vw,360px);overflow:hidden;border:1px solid #373737;border-radius:16px;background:#dededb;color:#171717;box-shadow:0 18px 50px #0008}.site{position:absolute;inset:0;padding:clamp(16px,4vw,36px);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}.site-bar{display:flex;justify-content:space-between;align-items:center;font-weight:800}.site-nav{font-size:12px;color:#666}.site h2{font-size:clamp(21px,4vw,36px);line-height:1.1;letter-spacing:-.04em;margin:0 0 10px}.site p{max-width:380px;margin:0;color:#555}.site-cta{display:inline-flex;padding:9px 14px;border-radius:6px;background:#191919;color:#fff;font-weight:700;font-size:13px;width:max-content}.broken{background:linear-gradient(130deg,#ddd 0%,#c5c5c2 100%);filter:saturate(.4)}.broken h2{width:120%;transform:translateX(-8px);line-height:.72}.broken .site-nav{font-size:12px;white-space:nowrap}.broken .site-cta{margin-left:60%;padding:4px 6px;font-size:12px;transform:translateY(9px)}.fixed{width:var(--split);background:#f6f5f2}.fixed .site-bar{color:#222}.fixed .site-cta{background:var(--red);color:#111;box-shadow:0 5px 16px #ff5c5c44}.split-line{position:absolute;left:var(--split);top:0;bottom:0;width:2px;background:#fff;box-shadow:0 0 0 1px #0005;pointer-events:none}.split-line:after{content:"↔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:36px;height:36px;border:1px solid #444;border-radius:50%;background:#fff;color:#111;font-size:18px}.range{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize}.range:focus-visible{opacity:.01;outline:2px solid #fff}.labels{position:absolute;top:12px;left:12px;right:12px;display:flex;justify-content:space-between;pointer-events:none}.labels span{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;padding:5px 8px;border-radius:6px;background:#101010;color:#fff}.audit{display:grid;grid-template-columns:1.15fr 1fr;gap:14px;margin-top:14px}.scores,.checklist{padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}.scores h2,.checklist h2{font-size:14px;margin:0 0 14px}.score-row{display:grid;grid-template-columns:120px 1fr 40px;gap:10px;align-items:center;margin:12px 0;font-size:12px}.meter{height:7px;border-radius:10px;background:#303030;overflow:hidden}.meter i{display:block;height:100%;width:0;background:var(--red);border-radius:inherit;transition:width 1.2s cubic-bezier(.2,.8,.2,1),background 1s}.score-row b{font-variant-numeric:tabular-nums;text-align:right}.checklist{display:grid;align-content:start;gap:10px}.checklist h2{margin-bottom:2px}.check{display:flex;align-items:center;gap:9px;color:#b5b5b5;font-size:12px;opacity:.45;transition:opacity .45s,color .45s}.check.on{opacity:1;color:#f5f5f5}.check i{display:grid;place-items:center;width:18px;height:18px;border-radius:50%;border:1px solid #555;color:transparent;font-size:12px;font-style:normal}.check.on i{background:var(--red);border-color:var(--red);color:#fff;animation:pop .35s ease}@keyframes pop{50%{transform:scale(1.18)}}.compare.mobile{width:min(100%,350px);height:390px;margin-inline:auto}.compare.mobile .site{padding:22px!important}.compare.mobile .site-nav{display:none}.compare.mobile .site h2{font-size:26px}.compare.mobile .fixed .site-bar{font-size:12px}@media(max-width:620px){.top{padding:9px 12px}.top .notice{font-size:12px}.heading{display:block}.heading p{font-size:13px}.audit{grid-template-columns:1fr}.compare{height:260px}.score-row{grid-template-columns:92px 1fr 34px}}.compare.mobile{height:360px}@media(max-width:380px){.top .notice{flex:1;min-width:0;align-items:flex-start}.top .notice span{line-height:1.2}.top a{white-space:normal;max-width:118px;line-height:1.2}.top>div:last-child{gap:6px!important}.top #lang{flex:none}.site-nav{display:none}.compare{height:230px}.score-row{grid-template-columns:82px 1fr 31px;gap:7px}.top{align-items:flex-start}.top .notice{max-width:215px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
-</style></head><body><header class="top"><div class="notice"><i class="dot"></i><span data-en="Portfolio demo — simulation, not real client work" data-ru="Демо портфолио — симуляция, не реальный заказ">Portfolio demo — simulation, not real client work</span></div><div style="display:flex;align-items:center;gap:12px"><a href="../../" data-en="← back to portfolio" data-ru="← назад в портфолио">← back to portfolio</a><button id="lang" type="button">RU</button></div></header>
-<main class="shell"><div class="eyebrow" data-en="Performance review · 01" data-ru="Аудит сайта · 01">Performance review · 01</div><div class="heading"><div><h1 data-en="Small fixes. A much better site." data-ru="Небольшие правки. Совсем другой сайт.">Small fixes. A much better site.</h1><p data-en="See what a focused website cleanup changes for a local business — from first impression to page speed." data-ru="Посмотрите, что даёт точечная доработка сайта локального бизнеса: от первого впечатления до скорости загрузки.">See what a focused website cleanup changes for a local business — from first impression to page speed.</p></div></div><div class="mode"><button class="active" data-mode="desktop" data-en="Desktop preview" data-ru="Версия для ПК">Desktop preview</button><button data-mode="mobile" data-en="Mobile preview" data-ru="Версия для телефона">Mobile preview</button></div><div class="compare" data-compare><section class="site broken"><div class="site-bar"><span>FIELDNOTE / LANDSCAPE</span><span class="site-nav" data-en="ABOUT · SERVICES · CONTACT" data-ru="О НАС · УСЛУГИ · КОНТАКТ">ABOUT · SERVICES · CONTACT</span></div><div><h2 data-en="A greener space, a better day" data-ru="Зелёный двор — лучше день">A greener space, a better day</h2><p data-en="Thoughtful garden care for homes across the neighbourhood." data-ru="Заботливый уход за садами в вашем районе.">Thoughtful garden care for homes across the neighbourhood.</p></div><span class="site-cta" data-en="Book a visit" data-ru="Заказать выезд">Book a visit</span></section><section class="site fixed"><div class="site-bar"><span>FIELDNOTE <span style="color:#ff5c5c">/</span> GARDEN</span><span class="site-nav">ABOUT　 SERVICES　 CONTACT</span></div><div><h2 data-en="A greener space, a better day" data-ru="Зелёный двор, хороший день.">A greener space, a better day.</h2><p data-en="Thoughtful garden care for homes across the neighbourhood." data-ru="Заботливый уход за садами в вашем районе.">Thoughtful garden care for homes across the neighbourhood.</p></div><span class="site-cta" data-en="Book a free visit ↗" data-ru="Заказать бесплатный выезд ↗">Book a free visit ↗</span></section><div class="labels"><span data-en="After" data-ru="После">After</span><span data-en="Before" data-ru="До">Before</span></div><div class="split-line"></div><input class="range" type="range" min="5" max="95" value="50" aria-label="Before and after comparison"></div>
-<section class="audit"><div class="scores"><h2 data-en="A healthier site, at a glance" data-ru="Сайт в цифрах">A healthier site, at a glance</h2><div class="score-row"><span data-en="Performance" data-ru="Скорость">Performance</span><div class="meter"><i data-score="94"></i></div><b data-value="94">0</b></div><div class="score-row"><span data-en="SEO basics" data-ru="Основы SEO">SEO basics</span><div class="meter"><i data-score="98"></i></div><b data-value="98">0</b></div><div class="score-row"><span data-en="Accessibility" data-ru="Доступность">Accessibility</span><div class="meter"><i data-score="96"></i></div><b data-value="96">0</b></div></div><div class="checklist"><h2 data-en="What got fixed" data-ru="Что исправлено">What got fixed</h2><div class="check"><i>✓</i><span data-en="Responsive layout that holds together" data-ru="Адаптивная вёрстка без сбоев">Responsive layout that holds together</span></div><div class="check"><i>✓</i><span data-en="Clearer headings and page structure" data-ru="Понятные заголовки и структура">Clearer headings and page structure</span></div><div class="check"><i>✓</i><span data-en="Larger, easier-to-tap actions" data-ru="Крупные и удобные кнопки">Larger, easier-to-tap actions</span></div><div class="check"><i>✓</i><span data-en="Images compressed for faster loading" data-ru="Сжатые изображения для быстрой загрузки">Images compressed for faster loading</span></div></div></section></main><script src="../../lang.js"></script><script>
-const compare=document.querySelector('[data-compare]'),range=compare.querySelector('input');range.addEventListener('input',()=>compare.style.setProperty('--split',range.value+'%'));document.querySelectorAll('[data-mode]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-mode]').forEach(item=>item.classList.toggle('active',item===button));compare.classList.toggle('mobile',button.dataset.mode==='mobile')}));
-document.querySelector('[data-mode="mobile"]').addEventListener('click',()=>compare.classList.add('mobile'));document.querySelector('[data-mode="desktop"]').addEventListener('click',()=>compare.classList.remove('mobile'));
-setTimeout(()=>{document.querySelectorAll('[data-score]').forEach((bar,i)=>{const end=+bar.dataset.score;bar.style.width=end+'%';bar.style.background='linear-gradient(90deg,#ff5c5c,#f5f5f5)';const out=bar.closest('.score-row').querySelector('[data-value]');let n=0;const timer=setInterval(()=>{n=Math.min(end,n+4);out.textContent=n;if(n>=end)clearInterval(timer)},28)});document.querySelectorAll('.check').forEach((item,i)=>setTimeout(()=>item.classList.add('on'),550+i*380))},250);
-</script></body></html>
+.fsite{position:absolute;inset:0;background:#fbf7f4;color:#2a1f22;overflow:hidden;padding:48px 0 0}
+.fs-nav{display:flex;justify-content:space-between;align-items:center;padding:6px 18px 12px;font-weight:900;letter-spacing:.08em;font-size:14px}
+.fs-nav i{font-style:normal;font-size:20px;letter-spacing:0}
+.fs-img{margin:0 18px;height:170px;border-radius:16px;background:linear-gradient(160deg,#f3c6cf,#e88fa1 55%,#c9677c);position:relative;overflow:hidden;transition:all .9s var(--ease)}
+.fs-img:before,.fs-img:after{content:"";position:absolute;border-radius:50%;background:#fff6;transition:all .9s var(--ease)}
+.fs-img:before{width:90px;height:90px;left:22%;top:30%}
+.fs-img:after{width:60px;height:60px;right:18%;top:18%}
+.fs-body{padding:16px 18px;display:grid;gap:10px}
+.fs-title{margin:0;font-size:26px;line-height:1.1;letter-spacing:-.02em;transition:all .9s var(--ease);white-space:normal}
+.fs-text{margin:0;font-size:14px;line-height:1.45;color:#6e5c61;transition:all .9s var(--ease)}
+.fs-btn{justify-self:start;display:inline-flex;align-items:center;gap:8px;background:#2a1f22;color:#fff;border-radius:99px;padding:11px 18px;font-weight:800;font-size:14px;transition:all .9s var(--ease)}
+.fs-btn.tg{background:#2aa1da}
+.speed{position:absolute;left:0;right:0;top:44px;height:3px;background:#0001}
+.speed i{display:block;height:100%;width:0;background:var(--red)}
+/* broken state */
+.broken .fs-img{height:70px;margin:0 -40px;border-radius:0}
+.broken .fs-title{font-size:38px;white-space:nowrap;transform:translateX(-6px)}
+.broken .fs-text{font-size:9.5px;line-height:1.2}
+.broken .fs-btn{transform:translateX(260px);opacity:.9}
+/* audit markers */
+.mark{position:absolute;z-index:4;border:2px solid var(--red);border-radius:10px;opacity:0;transform:scale(1.06);transition:opacity .35s,transform .35s var(--ease);pointer-events:none}
+.mark span{position:absolute;top:-12px;inset-inline-start:8px;background:var(--red);color:#fff;font-size:11px;font-weight:800;padding:2px 7px;border-radius:6px;white-space:nowrap}
+.mark.on{opacity:1;transform:none}
+.report{display:grid;gap:6px}
+.report div{display:grid;grid-template-columns:1fr auto auto auto;gap:10px;align-items:center;padding:10px 12px;border-radius:10px;background:var(--panel2);font-size:14px}
+.report span{color:var(--muted)}
+.report s{color:#ff8a8a;text-decoration:none;font-variant-numeric:tabular-nums}
+.report em{font-style:normal;color:var(--muted)}
+.report b{color:var(--muted);font-variant-numeric:tabular-nums;min-width:52px;text-align:end;transition:color .4s}
+.report div.fixed b{color:var(--green)}
+</style>
+</head>
+<body>
+<header class="bar"><div class="wrap">
+  <a class="back notranslate" translate="no" href="../../"><i>←</i><span>Yakov<b>.</b></span></a>
+  <span class="sp"></span>
+  <button id="lang" type="button">EN</button>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="tag"><span class="n">01</span><span data-i18n="service">Website fixes</span></p>
+    <h1 data-i18n-html="h1">Your website, <em>working properly again.</em></h1>
+    <p class="lead" data-i18n="lead">I find what scares clients away, like a broken mobile version, slow loading or no way to contact you, and fix it fast.</p>
+  </section>
+
+  <section class="show">
+    <div>
+      <div class="controls">
+        <button class="ctl" id="play" type="button"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg><span data-i18n="play">Play again</span></button>
+      </div>
+      <div class="nowcap" id="nowcap" aria-live="polite"></div>
+      <div class="phone">
+        <div class="screen">
+          <div class="notch"></div>
+          <div class="push" id="push"><span class="ava">TG</span><div><b></b><p></p></div><small data-i18n="now">now</small></div>
+          <div class="fsite broken" id="fsite" aria-hidden="true">
+            <div class="speed"><i id="bar"></i></div>
+            <div class="fs-nav notranslate" translate="no">PETAL<i>☰</i></div>
+            <div class="fs-img" id="img"></div>
+            <div class="fs-body">
+              <div class="mh fs-title" id="ttl" data-i18n="fsT">Fresh flowers delivered today</div>
+              <p class="fs-text" id="txt" data-i18n="fsP">Bouquets from local growers. Order before 2 pm and we deliver the same day anywhere in the city.</p>
+              <span class="fs-btn" id="btn" data-i18n="fsB">Order a bouquet</span>
+            </div>
+            <div class="mark" id="m1"><span data-i18n="m1">Doesn't fit the screen</span></div>
+            <div class="mark" id="m2"><span data-i18n="m2">Text too small</span></div>
+            <div class="mark" id="m3"><span data-i18n="m3">Button off screen</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="side">
+      <div class="panel">
+        <h2 data-i18n="howTitle">How it works</h2>
+        <ol class="steps" id="steps">
+          <li><span class="k">1</span><div><b data-i18n="s1">I check your site</b><small data-i18n="s1d">On real phones and computers. You get a list of problems in plain words.</small></div></li>
+          <li><span class="k">2</span><div><b data-i18n="s2">Fix the mobile version</b><small data-i18n="s2d">Most visitors come from phones. Everything should fit and be easy to read.</small></div></li>
+          <li><span class="k">3</span><div><b data-i18n="s3">Speed it up</b><small data-i18n="s3d">Every extra second of loading loses visitors. I compress images and remove the extra stuff.</small></div></li>
+          <li><span class="k">4</span><div><b data-i18n="s4">Make it easy to contact you</b><small data-i18n="s4d">A visible button to Telegram or WhatsApp, so clients write instead of leaving.</small></div></li>
+        </ol>
+      </div>
+      <div class="panel">
+        <h2 data-i18n="repTitle">Before and after</h2>
+        <div class="report">
+          <div id="r1"><span data-i18n="r1">Phone layout</span><s data-i18n="bad">broken</s><em>→</em><b data-i18n-attr="data-v:ok">—</b></div>
+          <div id="r2"><span data-i18n="r2">Loading time</span><s>6.8 s</s><em>→</em><b data-v="1.2 s">—</b></div>
+          <div id="r3"><span data-i18n="r3">Contact button</span><s data-i18n="none">none</s><em>→</em><b data-i18n-attr="data-v:added">—</b></div>
+          <div id="r4"><span data-i18n="r4">Google speed score</span><s>38</s><em>→</em><b data-v="94">—</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="get">
+    <div class="panel">
+      <h2 data-i18n="getTitle">What you get</h2>
+      <ul>
+        <li data-i18n="g1">A list of problems in plain words</li>
+        <li data-i18n="g2">Fixed mobile version and layout</li>
+        <li data-i18n="g3">Faster loading</li>
+        <li data-i18n="g4">Before and after screenshots</li>
+      </ul>
+    </div>
+    <div class="panel price">
+      <div class="row"><span data-i18n="priceL">Price</span><b data-i18n="priceV">from $20</b></div>
+      <div class="row"><span data-i18n="timeL">Timeline</span><b data-i18n="timeV">1–2 days</b></div>
+      <a class="cta" href="https://t.me/wakeupyakov" data-i18n="cta">Check my website</a>
+      <p class="fine" data-i18n="fine">Petal is a fictional flower shop made for this demo.</p>
+    </div>
+  </section>
+</main>
+
+<script>
+window.I18N = {
+  en: {
+    title: 'Website fixes · Demo', service: 'Website fixes', h1: 'Your website, <em>working properly again.</em>',
+    lead: 'I find what scares clients away, like a broken mobile version, slow loading or no way to contact you, and fix it fast.',
+    play: 'Play again', now: 'now', howTitle: 'How it works',
+    s1: 'I check your site', s1d: 'On real phones and computers. You get a list of problems in plain words.',
+    s2: 'Fix the mobile version', s2d: 'Most visitors come from phones. Everything should fit and be easy to read.',
+    s3: 'Speed it up', s3d: 'Every extra second of loading loses visitors. I compress images and remove the extra stuff.',
+    s4: 'Make it easy to contact you', s4d: 'A visible button to Telegram or WhatsApp, so clients write instead of leaving.',
+    repTitle: 'Before and after', r1: 'Phone layout', r2: 'Loading time', r3: 'Contact button', r4: 'Google speed score', bad: 'broken', ok: 'fixed', none: 'none', added: 'added',
+    getTitle: 'What you get', g1: 'A list of problems in plain words', g2: 'Fixed mobile version and layout', g3: 'Faster loading', g4: 'Before and after screenshots',
+    priceL: 'Price', priceV: 'from $20', timeL: 'Timeline', timeV: '1–2 days', cta: 'Check my website', fine: 'Petal is a fictional flower shop made for this demo.',
+    fsT: 'Fresh flowers delivered today', fsP: 'Bouquets from local growers. Order before 2 pm and we deliver the same day anywhere in the city.', fsB: 'Order a bouquet', fsTg: 'Write in Telegram',
+    m1: 'Doesn\'t fit the screen', m2: 'Text too small', m3: 'Button off screen',
+    pushT: 'Petal · new message', pushP: 'Hi! Can you deliver 15 roses today by 6 pm?'
+  },
+  de: {
+    title: 'Website reparieren · Demo', service: 'Website-Reparatur', h1: 'Ihre Website, <em>wieder in Bestform.</em>',
+    lead: 'Ich finde, was Kunden abschreckt – etwa eine fehlerhafte Mobilversion, lange Ladezeiten oder fehlende Kontaktmöglichkeiten – und behebe es schnell.',
+    play: 'Noch einmal ansehen', now: 'jetzt', howTitle: 'So läuft es ab', s1: 'Ich prüfe Ihre Website', s1d: 'Auf echten Smartphones und Computern. Sie erhalten eine verständliche Problemliste.',
+    s2: 'Mobilversion reparieren', s2d: 'Die meisten Besucher kommen übers Smartphone. Alles sollte passen und gut lesbar sein.',
+    s3: 'Ladezeit verkürzen', s3d: 'Jede zusätzliche Sekunde kostet Besucher. Ich komprimiere Bilder und entferne Überflüssiges.',
+    s4: 'Kontakt leicht machen', s4d: 'Ein gut sichtbarer Telegram- oder WhatsApp-Button sorgt dafür, dass Kunden schreiben statt weiterzuklicken.',
+    repTitle: 'Vorher und nachher', r1: 'Ansicht auf dem Handy', r2: 'Ladezeit', r3: 'Kontaktbutton', r4: 'Google-Speedwert', bad: 'fehlerhaft', ok: 'behoben', none: 'fehlt', added: 'vorhanden',
+    getTitle: 'Das bekommen Sie', g1: 'Eine verständliche Liste der Probleme', g2: 'Reparierte Mobilansicht und Seitenlayout', g3: 'Schnellere Ladezeit', g4: 'Screenshots vorher und nachher',
+    priceL: 'Preis', priceV: 'ab 20 $', timeL: 'Dauer', timeV: '1–2 Tage', cta: 'Meine Website prüfen lassen', fine: 'Petal ist ein erfundener Blumenladen für diese Demo.',
+    fsT: 'Frische Blumen – heute geliefert', fsP: 'Sträuße von regionalen Gärtnereien. Bis 14 Uhr bestellen, wir liefern noch heute in der ganzen Stadt.', fsB: 'Strauß bestellen', fsTg: 'Auf Telegram schreiben',
+    m1: 'Passt nicht auf den Bildschirm', m2: 'Text zu klein', m3: 'Button außerhalb des Bildschirms', pushT: 'Petal · neue Nachricht', pushP: 'Hallo! Können Sie heute bis 18:00 15 Rosen liefern?'
+  },
+  es: {
+    title: 'Arreglos web · Demo', service: 'Arreglos web', h1: 'Tu web, <em>como debería funcionar.</em>',
+    lead: 'Detecto qué aleja a tus clientes —una versión móvil rota, lentitud o falta de contacto— y lo arreglo rápido.',
+    play: 'Ver otra vez', now: 'ahora', howTitle: 'Cómo funciona', s1: 'Reviso tu web', s1d: 'En móviles y ordenadores reales. Recibes una lista clara de los problemas.',
+    s2: 'Arreglo la versión móvil', s2d: 'La mayoría de las visitas llegan desde el móvil. Todo debe verse bien y leerse con facilidad.',
+    s3: 'La hago más rápida', s3d: 'Cada segundo extra hace que se vayan visitas. Comprimo imágenes y quito lo que sobra.',
+    s4: 'Facilito el contacto', s4d: 'Un botón visible de Telegram o WhatsApp anima a escribir en vez de irse.',
+    repTitle: 'Antes y después', r1: 'Vista en el móvil', r2: 'Tiempo de carga', r3: 'Botón de contacto', r4: 'Puntuación de velocidad de Google', bad: 'roto', ok: 'arreglado', none: 'no hay', added: 'añadido',
+    getTitle: 'Qué recibes', g1: 'Una lista clara de problemas', g2: 'Versión móvil y diseño corregidos', g3: 'Carga más rápida', g4: 'Capturas del antes y el después',
+    priceL: 'Precio', priceV: 'desde 20 $', timeL: 'Plazo', timeV: '1–2 días', cta: 'Revisa mi web', fine: 'Petal es una floristería ficticia creada para esta demo.',
+    fsT: 'Flores frescas con entrega hoy', fsP: 'Ramos de productores locales. Pide antes de las 14:00 y te lo llevamos hoy a cualquier punto de la ciudad.', fsB: 'Pedir un ramo', fsTg: 'Escribir por Telegram',
+    m1: 'No cabe en la pantalla', m2: 'Texto demasiado pequeño', m3: 'Botón fuera de pantalla', pushT: 'Petal · mensaje nuevo', pushP: '¡Hola! ¿Podéis entregar 15 rosas hoy antes de las 18:00?'
+  },
+  fr: {
+    title: 'Corrections de site · Démo', service: 'Corrections de site', h1: 'Votre site, <em>à nouveau au top.</em>',
+    lead: 'Je repère ce qui fait fuir vos clients —version mobile cassée, lenteur ou absence de contact— et je le corrige vite.',
+    play: 'Revoir', now: 'maintenant', howTitle: 'Comment ça marche', s1: 'Je vérifie votre site', s1d: 'Sur de vrais téléphones et ordinateurs. Vous recevez une liste claire des problèmes.',
+    s2: 'Je corrige la version mobile', s2d: 'La plupart des visiteurs viennent du téléphone. Tout doit tenir et rester facile à lire.',
+    s3: 'J’accélère le chargement', s3d: 'Chaque seconde de trop fait partir des visiteurs. Je compresse les images et enlève le superflu.',
+    s4: 'Je facilite le contact', s4d: 'Un bouton Telegram ou WhatsApp bien visible incite les clients à vous écrire.',
+    repTitle: 'Avant et après', r1: 'Vue sur téléphone', r2: 'Temps de chargement', r3: 'Bouton de contact', r4: 'Score de vitesse Google', bad: 'cassé', ok: 'réparé', none: 'absent', added: 'ajouté',
+    getTitle: 'Ce que vous obtenez', g1: 'Une liste claire des problèmes', g2: 'Version mobile et mise en page corrigées', g3: 'Un chargement plus rapide', g4: 'Captures avant et après',
+    priceL: 'Prix', priceV: 'à partir de 20 $', timeL: 'Délai', timeV: '1–2 jours', cta: 'Vérifier mon site', fine: 'Petal est un fleuriste fictif créé pour cette démo.',
+    fsT: 'Fleurs fraîches livrées aujourd’hui', fsP: 'Bouquets de producteurs locaux. Commandez avant 14 h, livraison le jour même partout en ville.', fsB: 'Commander un bouquet', fsTg: 'Écrire sur Telegram',
+    m1: 'Ne tient pas à l’écran', m2: 'Texte trop petit', m3: 'Bouton hors écran', pushT: 'Petal · nouveau message', pushP: 'Bonjour ! Pouvez-vous livrer 15 roses aujourd’hui avant 18:00 ?'
+  },
+  zh: {
+    title: '网站修复 · 演示', service: '网站修复', h1: '让你的网站<em>恢复正常运行。</em>',
+    lead: '找出让客户离开的原因，比如手机页面错乱、加载慢或联系不便，并快速修好。',
+    play: '再看一次', now: '现在', howTitle: '修复流程', s1: '检查你的网站', s1d: '在真实手机和电脑上检查，并用简单的话列出问题。',
+    s2: '修好手机页面', s2d: '大多数访客使用手机。页面要显示完整，也要容易阅读。',
+    s3: '加快加载速度', s3d: '多等一秒，就可能少一位访客。我会压缩图片并清理多余内容。',
+    s4: '让客户更容易联系你', s4d: '添加醒目的 Telegram 或 WhatsApp 按钮，让客户愿意发消息。',
+    repTitle: '修复前后', r1: '手机页面', r2: '加载时间', r3: '联系按钮', r4: 'Google 速度评分', bad: '异常', ok: '已修复', none: '没有', added: '已添加',
+    getTitle: '你将获得', g1: '一份简单易懂的问题清单', g2: '修好的手机页面和布局', g3: '更快的加载速度', g4: '修复前后的截图',
+    priceL: '价格', priceV: '20 美元起', timeL: '周期', timeV: '1–2 天', cta: '检查我的网站', fine: 'Petal 是为本演示虚构的花店。',
+    fsT: '鲜花今日送达', fsP: '花束来自本地种植商。下午 2 点前下单，当天送达市内任意地点。', fsB: '订购花束', fsTg: '通过 Telegram 联系',
+    m1: '超出屏幕', m2: '文字太小', m3: '按钮跑到屏幕外', pushT: 'Petal · 新消息', pushP: '你好！今天 18:00 前可以送 15 朵玫瑰吗？'
+  },
+  ar: {
+    title: 'إصلاح المواقع · عرض تجريبي', service: 'إصلاح المواقع', h1: 'موقعك يعود <em>للعمل كما ينبغي.</em>',
+    lead: 'أكتشف ما ينفّر العملاء، مثل خلل نسخة الهاتف أو بطء التحميل أو صعوبة التواصل، وأصلحه بسرعة.',
+    play: 'شاهد مرة أخرى', now: 'الآن', howTitle: 'كيف يتم العمل', s1: 'أفحص موقعك', s1d: 'على هواتف وحواسيب حقيقية، وأرسل لك قائمة واضحة بالمشكلات.',
+    s2: 'أصلح نسخة الهاتف', s2d: 'يأتي معظم الزوار من الهاتف. يجب أن يظهر كل شيء بوضوح ويسهل قراءته.',
+    s3: 'أسرّع التحميل', s3d: 'كل ثانية إضافية قد تفقدك زائرًا. أضغط الصور وأزيل ما لا حاجة إليه.',
+    s4: 'أسهّل التواصل معك', s4d: 'زر واضح لـ Telegram أو WhatsApp يشجّع العميل على مراسلتك.',
+    repTitle: 'قبل وبعد', r1: 'العرض على الهاتف', r2: 'وقت التحميل', r3: 'زر التواصل', r4: 'تقييم سرعة Google', bad: 'معطّل', ok: 'مُصلح', none: 'غير موجود', added: 'مضاف',
+    getTitle: 'ما ستحصل عليه', g1: 'قائمة واضحة بالمشكلات', g2: 'نسخة هاتف وتنسيق بعد الإصلاح', g3: 'تحميل أسرع', g4: 'لقطات شاشة قبل الإصلاح وبعده',
+    priceL: 'السعر', priceV: 'ابتداءً من 20 $', timeL: 'المدة', timeV: 'يوم إلى يومين', cta: 'افحص موقعي', fine: 'Petal متجر زهور خيالي أُنشئ لهذا العرض التجريبي.',
+    fsT: 'زهور طازجة تصلك اليوم', fsP: 'باقات من مزارعين محليين. اطلب قبل 14:00 ونوصلها اليوم إلى أي مكان في المدينة.', fsB: 'اطلب باقة', fsTg: 'راسلنا على Telegram',
+    m1: 'لا يتسع للشاشة', m2: 'النص صغير جدًا', m3: 'الزر خارج الشاشة', pushT: 'Petal · رسالة جديدة', pushP: 'مرحبًا! هل يمكنكم توصيل 15 وردة اليوم قبل 18:00؟'
+  },
+  ru: {
+    title: 'Исправление сайта · Демо', service: 'Исправление сайта', h1: 'Ваш сайт снова <em>работает как надо.</em>',
+    lead: 'Нахожу то, что отпугивает клиентов: сломанную мобильную версию, долгую загрузку, отсутствие связи, и быстро это исправляю.',
+    play: 'Показать ещё раз', now: 'сейчас', howTitle: 'Как это работает',
+    s1: 'Проверяю ваш сайт', s1d: 'На настоящих телефонах и компьютерах. Вы получаете список проблем простыми словами.',
+    s2: 'Чиню мобильную версию', s2d: 'Большинство посетителей приходят с телефона. Всё должно помещаться и легко читаться.',
+    s3: 'Ускоряю загрузку', s3d: 'Каждая лишняя секунда загрузки — это ушедшие посетители. Сжимаю картинки и убираю лишнее.',
+    s4: 'Добавляю удобную связь', s4d: 'Заметная кнопка в Telegram или WhatsApp, чтобы клиент написал, а не ушёл.',
+    repTitle: 'До и после', r1: 'Вид на телефоне', r2: 'Время загрузки', r3: 'Кнопка связи', r4: 'Оценка скорости Google', bad: 'сломан', ok: 'исправлен', none: 'нет', added: 'есть',
+    getTitle: 'Что вы получите', g1: 'Список проблем простыми словами', g2: 'Исправленная мобильная версия и вёрстка', g3: 'Быстрая загрузка', g4: 'Скриншоты до и после',
+    priceL: 'Цена', priceV: 'от $20', timeL: 'Срок', timeV: '1–2 дня', cta: 'Проверить мой сайт', fine: 'Petal — вымышленный цветочный магазин, придуман для этого демо.',
+    fsT: 'Свежие цветы с доставкой сегодня', fsP: 'Букеты от местных фермеров. Закажите до 14:00, и мы привезём в тот же день в любую точку города.', fsB: 'Заказать букет', fsTg: 'Написать в Telegram',
+    m1: 'Не помещается', m2: 'Мелкий текст', m3: 'Кнопка за экраном',
+    pushT: 'Petal · новое сообщение', pushP: 'Здравствуйте! Можно 15 роз сегодня к 18:00?'
+  },
+  uk: {
+    title: 'Виправлення сайту · Демо', service: 'Виправлення сайту', h1: 'Ваш сайт знову <em>працює як слід.</em>',
+    lead: 'Знаходжу те, що відлякує клієнтів: зламану мобільну версію, повільне завантаження, відсутність зв\'язку, і швидко це виправляю.',
+    play: 'Показати ще раз', now: 'зараз', howTitle: 'Як це працює',
+    s1: 'Перевіряю ваш сайт', s1d: 'На справжніх телефонах і комп\'ютерах. Ви отримуєте список проблем простими словами.',
+    s2: 'Лагоджу мобільну версію', s2d: 'Більшість відвідувачів приходять із телефона. Усе має вміщатися й легко читатися.',
+    s3: 'Пришвидшую завантаження', s3d: 'Кожна зайва секунда завантаження — це відвідувачі, які пішли. Стискаю зображення й прибираю зайве.',
+    s4: 'Додаю зручний зв\'язок', s4d: 'Помітна кнопка в Telegram чи WhatsApp, щоб клієнт написав, а не пішов.',
+    repTitle: 'До і після', r1: 'Вигляд на телефоні', r2: 'Час завантаження', r3: 'Кнопка зв\'язку', r4: 'Оцінка швидкості Google', bad: 'зламаний', ok: 'виправлено', none: 'немає', added: 'є',
+    getTitle: 'Що ви отримаєте', g1: 'Список проблем простими словами', g2: 'Виправлена мобільна версія й верстка', g3: 'Швидке завантаження', g4: 'Скриншоти до і після',
+    priceL: 'Ціна', priceV: 'від $20', timeL: 'Термін', timeV: '1–2 дні', cta: 'Перевірити мій сайт', fine: 'Petal — вигаданий квітковий магазин, створений для цього демо.',
+    fsT: 'Свіжі квіти з доставкою сьогодні', fsP: 'Букети від місцевих фермерів. Замовте до 14:00, і ми привеземо того ж дня в будь-яку точку міста.', fsB: 'Замовити букет', fsTg: 'Написати в Telegram',
+    m1: 'Не вміщується', m2: 'Дрібний текст', m3: 'Кнопка за екраном',
+    pushT: 'Petal · нове повідомлення', pushP: 'Вітаю! Можна 15 троянд сьогодні до 18:00?'
+  }
+};
+</script>
+<script src="../../lang.js"></script>
+<script src="../demo.js"></script>
+<script>
+(function () {
+  function T(k) { return window.t(k); }
+  function $(id) { return document.getElementById(id); }
+  var site = $('fsite'), bar = $('bar');
+  function place(m, el, pad) {
+    var s = site.getBoundingClientRect(), r = el.getBoundingClientRect();
+    var left = Math.max(6, r.left - s.left - pad), right = Math.min(s.width - 6, r.right - s.left + pad);
+    m.style.left = left + 'px'; m.style.top = (r.top - s.top - pad) + 'px';
+    m.style.width = (right - left) + 'px'; m.style.height = (r.height + pad * 2) + 'px';
+  }
+  function fix(id) { var r = $(id), b = r.querySelector('b'); b.textContent = b.dataset.v; r.classList.add('fixed'); }
+  function load(ms) { bar.style.transition = 'none'; bar.style.width = '0'; void bar.offsetWidth; bar.style.transition = 'width ' + ms + 'ms linear'; bar.style.width = '100%'; }
+  ChatDemo({
+    push: '#push', steps: '#steps', play: '#play',
+    reset: function () {
+      site.classList.add('broken');
+      $('btn').classList.remove('tg'); $('btn').textContent = T('fsB');
+      ['m1', 'm2', 'm3'].forEach(function (id) { $(id).classList.remove('on'); });
+      ['r1', 'r2', 'r3', 'r4'].forEach(function (id) { $(id).classList.remove('fixed'); $(id).querySelector('b').textContent = '—'; });
+      bar.style.transition = 'none'; bar.style.width = '0';
+    },
+    script: async function (a) {
+      a.step(0);
+      load(2600); await a.wait(2700);
+      place($('m1'), $('ttl'), 4); $('m1').classList.add('on'); await a.wait(700);
+      place($('m2'), $('txt'), 4); $('m2').classList.add('on'); await a.wait(700);
+      $('m3').style.left = '62%'; $('m3').style.top = ($('btn').getBoundingClientRect().top - site.getBoundingClientRect().top - 6) + 'px'; $('m3').style.width = '36%'; $('m3').style.height = '52px';
+      $('m3').classList.add('on'); await a.wait(1500);
+      a.step(1);
+      ['m1', 'm2', 'm3'].forEach(function (id) { $(id).classList.remove('on'); });
+      await a.wait(300);
+      site.classList.remove('broken'); await a.wait(1000);
+      fix('r1'); await a.wait(900);
+      a.step(2);
+      load(500); await a.wait(700);
+      fix('r2'); await a.wait(300); fix('r4'); await a.wait(900);
+      a.step(3);
+      var b = $('btn'); b.classList.add('tg'); b.textContent = '✈ ' + T('fsTg');
+      fix('r3'); await a.wait(1100);
+      await a.push(T('pushT'), T('pushP'), 3200);
+    }
+  });
+})();
+</script>
+</body>
+</html>
