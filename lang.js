@@ -1,10 +1,10 @@
-// RU/EN copy with automatic browser-language translation for other languages.
+// Language follows the visitor's browser: RU/EN from built-in copy, any other via Google Translate.
 (function () {
   var languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en'];
   var detected = String(languages[0] || 'en').toLowerCase().split(/[-_]/)[0];
   if (!/^[a-z]{2,3}$/.test(detected)) detected = 'en';
-  var saved = localStorage.getItem('lang');
-  var lang = saved || detected;
+  try { localStorage.removeItem('lang'); } catch (e) {}
+  var lang = detected;
   var translated = lang !== 'ru' && lang !== 'en';
 
   function cookie(name, value, domain) {
@@ -33,8 +33,6 @@
       else el.textContent = value;
     });
     document.documentElement.lang = lang;
-    var selector = document.getElementById('lang');
-    if (selector) selector.value = lang;
     document.dispatchEvent(new Event('langchange'));
   }
   var translateStyles = document.createElement('style');
@@ -56,47 +54,7 @@
     script.async = true;
     document.head.appendChild(script);
   }
-  function choose(next) {
-    if (next !== 'ru' && next !== 'en' && next !== detected && next !== lang) return;
-    var wasTranslated = translated || document.cookie.indexOf('googtrans=') !== -1;
-    lang = next;
-    translated = next !== 'ru' && next !== 'en';
-    localStorage.setItem('lang', lang);
-    if (translated) {
-      setTranslateCookie(lang);
-      location.reload();
-      return;
-    }
-    clearTranslateCookie();
-    if (wasTranslated) { location.reload(); return; }
-    apply();
-  }
-
-  var oldButton = document.getElementById('lang');
-  if (oldButton && oldButton.tagName !== 'SELECT') {
-    var selector = document.createElement('select');
-    selector.id = 'lang';
-    selector.className = 'notranslate';
-    selector.setAttribute('translate', 'no');
-    selector.setAttribute('aria-label', 'Select language');
-    var options = [['ru', 'RU'], ['en', 'EN']];
-    if (detected !== 'ru' && detected !== 'en') options.push([detected, detected.toUpperCase()]);
-    if (lang !== 'ru' && lang !== 'en' && lang !== detected) options.push([lang, lang.toUpperCase()]);
-    options.forEach(function (option) {
-      var item = document.createElement('option');
-      item.value = option[0];
-      item.textContent = option[1];
-      selector.appendChild(item);
-    });
-    oldButton.replaceWith(selector);
-    selector.addEventListener('change', function () { choose(selector.value); });
-  }
-
   window.currentLang = function () { return lang; };
-  window.setLang = choose;
-  window.addEventListener('storage', function (event) {
-    if (event.key === 'lang' && event.newValue && event.newValue !== lang) location.reload();
-  });
   if (translated) addGoogleTranslate();
   else clearTranslateCookie();
   apply();
