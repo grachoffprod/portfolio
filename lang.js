@@ -4,6 +4,7 @@
     ['en', 'English'], ['ru', 'Русский'], ['uk', 'Українська'], ['de', 'Deutsch'],
     ['es', 'Español'], ['fr', 'Français'], ['zh', '中文'], ['ar', 'العربية']
   ];
+  function label(c) { return c === 'uk' ? 'UA' : c.toUpperCase(); }
   var codes = LANGS.map(function (item) { return item[0]; });
   window.LANGS = LANGS;
   var lang = 'en';
@@ -103,7 +104,7 @@
       option.setAttribute('data-lang', item[0]);
       option.innerHTML = '<span class="lm-check" aria-hidden="true"></span><span class="lm-name"></span><span class="lm-code"></span>';
       option.querySelector('.lm-name').textContent = item[1];
-      option.querySelectorAll('.lm-code')[0].textContent = item[0];
+      option.querySelectorAll('.lm-code')[0].textContent = label(item[0]);
       panel.appendChild(option);
       options.push(option);
       option.addEventListener('click', function () { window.setLang(item[0]); closeMenu(true); });
@@ -112,7 +113,7 @@
     document.body.appendChild(panel);
 
     function updateMenu() {
-      trigger.querySelector('.lm-code').textContent = lang.toUpperCase();
+      trigger.querySelector('.lm-code').textContent = label(lang);
       options.forEach(function (option) {
         var selected = option.getAttribute('data-lang') === lang;
         option.setAttribute('aria-selected', selected ? 'true' : 'false');
@@ -191,7 +192,7 @@
     });
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    if (trigger) trigger.querySelector('.lm-code').textContent = lang.toUpperCase();
+    if (trigger) trigger.querySelector('.lm-code').textContent = label(lang);
     if (panel) options.forEach(function (option) {
       var selected = option.getAttribute('data-lang') === lang;
       option.setAttribute('aria-selected', selected ? 'true' : 'false');
