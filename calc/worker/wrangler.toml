@@ -1,0 +1,7 @@
+name = "calc-leads"
+main = "worker.js"
+compatibility_date = "2026-11-01"
+
+[vars]
+# Сайты клиента через запятую, например "https://potolki.ua,https://www.potolki.ua". Пусто = любой.
+ALLOWED_ORIGINS = ""
