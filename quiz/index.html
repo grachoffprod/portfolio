@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kitchen quiz</title>
+<style>
+  :root { --accent:#c2410c; --ink:#1c1917; --muted:#6b645e; --line:#e7e2dc; --bg:#f7f4f0; --card:#fff; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; color:var(--ink); background:var(--bg); min-height:100vh; }
+  .bar { display:flex; align-items:center; justify-content:space-between; max-width:760px; margin:0 auto; padding:16px 20px 0; }
+  .back { color:var(--muted); text-decoration:none; font-size:14px; } .back:hover { color:var(--ink); }
+  main { max-width:760px; margin:0 auto; padding:24px 20px 48px; }
+  .card { background:var(--card); border-radius:20px; padding:32px; box-shadow:0 1px 2px rgba(0,0,0,.04); }
+  .screen { animation:in .35s cubic-bezier(.2,.8,.2,1); }
+  @keyframes in { from { opacity:0; transform:translateY(8px); } }
+  .tag { display:inline-block; font-size:13px; font-weight:600; color:var(--accent); background:color-mix(in srgb,var(--accent) 10%,white); padding:5px 10px; border-radius:999px; }
+  h1 { font-size:clamp(26px,4.5vw,40px); line-height:1.12; letter-spacing:-.02em; margin:14px 0 12px; }
+  h2 { font-size:clamp(21px,3.4vw,28px); line-height:1.2; letter-spacing:-.01em; margin:6px 0 22px; }
+  .lead { color:var(--muted); margin:0 0 26px; max-width:52ch; }
+  .gift { display:flex; align-items:center; gap:10px; margin-top:20px; font-size:14px; color:var(--muted); }
+  .gift svg { width:22px; height:22px; color:var(--accent); flex:none; }
+  .btn { font:inherit; font-weight:600; padding:15px 28px; border:0; border-radius:12px; background:var(--accent); color:#fff; cursor:pointer; }
+  .btn:hover { filter:brightness(1.07); } .btn:disabled { opacity:.6; cursor:wait; }
+  .ghost { font:inherit; background:none; border:0; color:var(--muted); cursor:pointer; padding:10px 4px; }
+  .ghost:hover { color:var(--ink); }
+  .prog { display:flex; justify-content:space-between; font-size:13px; color:var(--muted); margin-bottom:8px; }
+  .track { height:6px; background:var(--line); border-radius:9px; overflow:hidden; margin-bottom:24px; }
+  .fill { height:100%; background:var(--accent); border-radius:9px; transition:width .35s cubic-bezier(.2,.8,.2,1); }
+  .opts { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+  .opts.icons { grid-template-columns:repeat(4,1fr); }
+  .opt { font:inherit; text-align:start; padding:16px; border:1.5px solid var(--line); border-radius:14px; background:var(--card); cursor:pointer; color:var(--ink); display:flex; flex-direction:column; gap:10px; transition:border-color .15s, background .15s; }
+  .opts.icons .opt { align-items:center; text-align:center; }
+  .opt svg { width:64px; height:64px; color:var(--muted); }
+  .opt:hover { border-color:color-mix(in srgb,var(--accent) 50%,var(--line)); }
+  .opt.on { border-color:var(--accent); background:color-mix(in srgb,var(--accent) 7%,white); }
+  .opt.on svg { color:var(--accent); }
+  .opt:focus-visible, .btn:focus-visible, .chip:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+  .nav { display:flex; justify-content:space-between; align-items:center; margin-top:24px; min-height:44px; }
+  .price { font-size:clamp(30px,5.5vw,46px); font-weight:700; letter-spacing:-.02em; margin:4px 0 10px; font-variant-numeric:tabular-nums; }
+  .bonus { display:flex; gap:12px; align-items:center; background:color-mix(in srgb,var(--accent) 8%,white); border:1px dashed color-mix(in srgb,var(--accent) 45%,white); border-radius:14px; padding:14px 16px; margin:20px 0 24px; font-weight:600; }
+  .bonus svg { width:26px; height:26px; color:var(--accent); flex:none; }
+  form { display:flex; flex-direction:column; gap:12px; max-width:420px; }
+  input[type=text], input[type=tel] { font:inherit; padding:14px; border:1.5px solid var(--line); border-radius:12px; }
+  input:focus { outline:none; border-color:var(--accent); }
+  .lbl { font-size:14px; color:var(--muted); margin-top:4px; }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; }
+  .chip { font:inherit; font-size:14px; padding:9px 14px; border:1.5px solid var(--line); border-radius:999px; background:var(--card); cursor:pointer; color:var(--ink); }
+  .chip.on { border-color:var(--accent); color:var(--accent); font-weight:600; }
+  .hp { position:absolute; left:-9999px; }
+  .msg { margin:0; font-size:14px; color:var(--muted); min-height:1em; } .msg.err { color:#d33; }
+  .ok { width:56px; height:56px; border-radius:50%; background:var(--accent); color:#fff; display:grid; place-items:center; font-size:28px; margin-bottom:12px; }
+  .demo { font-style:italic; color:var(--muted); font-size:14px; }
+  @media (max-width:640px) { .card { padding:22px; } .opts, .opts.icons { grid-template-columns:1fr 1fr; } }
+  @media (prefers-reduced-motion:reduce) { .screen { animation:none; } .fill { transition:none; } }
+</style>
+</head>
+<body>
+<header class="bar">
+  <a class="back" href="../" data-i18n="back">Portfolio</a>
+  <button id="lang" type="button">EN</button>
+</header>
+<main><div class="card" id="quiz"></div></main>
+
+<script>
+  // Настройки под клиента:
+  window.QUIZ_SETTINGS = {
+    endpoint: "",  // URL воркера из calc/worker. Пусто = демо, заявка не отправляется
+    currency: ""   // пусто = по языку (RU → RUB, UA → UAH, остальные → USD)
+  };
+</script>
+<script src="i18n.js"></script>
+<script src="../lang.js"></script>
+<script>
+(function () {
+  const S = window.QUIZ_SETTINGS, CUR = window.QUIZ_CURRENCIES, LC = window.QUIZ_LANG_CURRENCY;
+  const T = (k, v) => window.t(k, v), lang = () => window.currentLang();
+  const root = document.getElementById("quiz");
+
+  // Иконки формы кухни (вид сверху).
+  const ic = (d) => `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="56" height="56" rx="6" stroke-opacity=".25"/>${d}</svg>`;
+  const ICONS = [
+    ic('<rect x="10" y="10" width="44" height="12" rx="2"/>'),
+    ic('<path d="M10 10h44v12H22v32H10z"/>'),
+    ic('<path d="M10 10h44v44H42V22H22v32H10z"/>'),
+    ic('<rect x="10" y="10" width="44" height="12" rx="2"/><rect x="20" y="36" width="24" height="12" rx="2"/>')
+  ];
+
+  // Вопросы. Цена в USD: base[длина] × shape × facade + worktop.
+  const Q = [
+    { k: "q1", opts: ["q1a", "q1b", "q1c", "q1d"], icons: true, mult: [1, 1.25, 1.5, 1.7] },
+    { k: "q2", opts: ["q2a", "q2b", "q2c", "q2d"], base: [1200, 1800, 2500, 3300] },
+    { k: "q3", opts: ["q3a", "q3b", "q3c", "q3d"], mult: [1, 1.2, 1.5, 2.2] },
+    { k: "q4", opts: ["q4a", "q4b", "q4c"], add: [0, 400, 800] },
+    { k: "q5", opts: ["q5a", "q5b", "q5c"] },
+    { k: "q6", opts: ["q6a", "q6b", "q6c"] }
+  ];
+  const VIA = ["Telegram", "Viber", "WhatsApp", "call"];
+
+  let screen = "intro", step = 0, ans = [], via = 0, sent = false;
+
+  const cur = () => S.currency || LC[lang()] || "USD";
+  function money(n) {
+    const c = CUR[cur()], l = lang(), v = Math.round(n * c.rate / c.round) * c.round;
+    const num = v.toLocaleString(l === "en" || l === "ar" ? "en-US" : l === "zh" ? "zh-CN" : l).replace(/ | /g, " ");
+    if (cur() === "RUB") return num + " ₽";
+    if (cur() === "UAH") return num + " ₴";
+    return l === "en" ? "$" + num : l === "zh" ? num + " 美元" : num + " $";
+  }
+  function priceUSD() {
+    const g = (i) => ans[i] ?? 0;
+    return Q[1].base[g(1)] * Q[0].mult[g(0)] * Q[2].mult[g(2)] + Q[3].add[g(3)];
+  }
+  const range = () => { const p = priceUSD(); return [p * 0.9, p * 1.15]; };
+  const rangeText = () => { const [a, b] = range(); return `${money(a)} – ${money(b)}`; };
+
+  function render(focus) {
+    document.title = T("pageTitle");
+    let h = "";
+    if (screen === "intro") {
+      h = `<span class="tag">${T("introTag")}</span><h1>${T("introH")}</h1><p class="lead">${T("introP")}</p>
+        <button class="btn" data-act="start">${T("start")}</button>
+        <p class="gift"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M12 8S10.5 3 8 3a2.5 2.5 0 0 0 0 5h4zM12 8s1.5-5 4-5a2.5 2.5 0 0 1 0 5h-4z"/></svg>${T("gift")}</p>`;
+    } else if (screen === "q") {
+      const q = Q[step], pct = Math.round((step) / Q.length * 100);
+      h = `<div class="prog"><span>${T("step", { n: step + 1, total: Q.length })}</span><span>${pct}%</span></div>
+        <div class="track"><div class="fill" style="width:${pct}%"></div></div>
+        <h2 id="qh">${T(q.k)}</h2>
+        <div class="opts${q.icons ? " icons" : ""}" role="radiogroup" aria-labelledby="qh">
+          ${q.opts.map((o, i) => `<button class="opt${ans[step] === i ? " on" : ""}" role="radio" aria-checked="${ans[step] === i}" data-i="${i}">${q.icons ? ICONS[i] : ""}<span>${T(o)}</span></button>`).join("")}
+        </div>
+        <div class="nav"><button class="ghost" data-act="back">← ${T("backBtn")}</button>${ans[step] != null ? `<button class="btn" data-act="next">${T("next")} →</button>` : ""}</div>`;
+    } else if (sent) {
+      h = `<div class="ok">✓</div><h2>${T("sent")}</h2><p class="lead">${T("sentNote")}</p>${S.endpoint ? "" : `<p class="demo">${T("demoNote")}</p>`}
+        <button class="ghost" data-act="again">↻ ${T("again")}</button>`;
+    } else {
+      h = `<div class="track"><div class="fill" style="width:100%"></div></div>
+        <p class="lead" style="margin:0">${T("resH")}</p>
+        <div class="price" aria-live="polite">${rangeText()}</div>
+        <p class="lead" style="margin:0">${T("resP")}</p>
+        <div class="bonus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>${T("bonus")}</div>
+        <form novalidate>
+          <input type="text" name="name" placeholder="${T("name")}" aria-label="${T("name")}" autocomplete="name">
+          <input type="tel" name="phone" placeholder="${T("phone")}" aria-label="${T("phone")}" autocomplete="tel" dir="ltr">
+          <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <span class="lbl">${T("via")}</span>
+          <div class="chips" role="radiogroup" aria-label="${T("via")}">${VIA.map((v, i) => `<button type="button" class="chip${i === via ? " on" : ""}" role="radio" aria-checked="${i === via}" data-via="${i}">${v === "call" ? T("call") : v}</button>`).join("")}</div>
+          <button class="btn" type="submit">${T("cta")}</button>
+          <p class="msg" role="status"></p>
+        </form>
+        <div class="nav"><button class="ghost" data-act="back">← ${T("backBtn")}</button></div>`;
+    }
+    root.innerHTML = `<div class="screen">${h}</div>`;
+    if (focus) (root.querySelector(".opt.on, .opt, input[name=name], .btn") || root).focus({ preventScroll: true });
+  }
+
+  root.addEventListener("click", (e) => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    const act = b.dataset.act;
+    if (act === "start") { screen = "q"; step = 0; return render(true); }
+    if (act === "again") { screen = "intro"; ans = []; sent = false; return render(true); }
+    if (act === "back") { if (screen === "res") { screen = "q"; step = Q.length - 1; } else if (step > 0) step--; else screen = "intro"; return render(true); }
+    if (act === "next") { if (step < Q.length - 1) step++; else screen = "res"; return render(true); }
+    if (b.dataset.via != null) {
+      via = Number(b.dataset.via);
+      b.parentElement.querySelectorAll(".chip").forEach((c, i) => { c.classList.toggle("on", i === via); c.setAttribute("aria-checked", i === via); });
+      return;
+    }
+    if (b.classList.contains("opt")) {
+      ans[step] = Number(b.dataset.i);
+      b.parentElement.querySelectorAll(".opt").forEach((o, i) => { o.classList.toggle("on", i === ans[step]); o.setAttribute("aria-checked", i === ans[step]); });
+      // Автопереход к следующему вопросу после выбора.
+      clearTimeout(render.t);
+      render.t = setTimeout(() => { if (step < Q.length - 1) step++; else screen = "res"; render(true); }, 280);
+    }
+  });
+
+  root.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const f = e.target, msg = f.querySelector(".msg"), btn = f.querySelector("[type=submit]");
+    const phone = f.phone.value.trim();
+    if (phone.replace(/\D/g, "").length < 9) { msg.className = "msg err"; msg.textContent = T("phoneErr"); f.phone.focus(); return; }
+    const [a, b] = range(), c = CUR[cur()];
+    const items = Q.map((q, i) => ({ label: T(q.k), value: T(q.opts[ans[i]]) }));
+    items.push({ label: T("range"), value: rangeText() }, { label: T("via"), value: VIA[via] === "call" ? T("call") : VIA[via] });
+    const payload = { niche: "kitchen-quiz", title: T("introTag"), total: Math.round((a + b) / 2 * c.rate / c.round) * c.round, currency: cur(), lang: lang(),
+      items, name: f.name.value.trim(), phone, website: f.website.value, page: location.href };
+    btn.disabled = true; msg.className = "msg"; msg.textContent = T("sending");
+    try {
+      if (!S.endpoint) { console.log("Demo request:", payload); await new Promise((r) => setTimeout(r, 500)); }
+      else { const r = await fetch(S.endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) }); if (!r.ok) throw 0; }
+      sent = true; render(true);
+    } catch { btn.disabled = false; msg.className = "msg err"; msg.textContent = T("sendErr"); }
+  });
+
+  // Смена языка → тексты и валюта меняются сразу, ответы сохраняются.
+  document.addEventListener("langchange", () => render(false));
+  render(false);
+})();
+</script>
+</body>
+</html>
